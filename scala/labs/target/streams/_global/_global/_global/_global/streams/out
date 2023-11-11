@@ -1,0 +1,57 @@
+[0m[[0m[0mdebug[0m] [0m[0m[watch] [root / Compile / runMain] Found inputs: /home/salahytm/Langages-fonctionnels/scala/labs/*.{java,scala},/home/salahytm/Langages-fonctionnels/scala/labs/src/main/java/**/*.{java,scala},/home/salahytm/Langages-fonctionnels/scala/labs/src/main/resources/**/*,/home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/**/*.{java,scala},/home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala-2.13/**/*.{java,scala}[0m
+[0m[[0m[0minfo[0m] [0m[0m1. Monitoring source files for root/runMain HigherOrderApp...[0m
+[0m[[0m[0minfo[0m] [0m[0m   Press <enter> to interrupt or '?' for more options.[0m
+[0m[[0m[0mdebug[0m] [0m[0mroot / Compile / runMain - Accepted event for /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/HigherOrder.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0mReceived Update(/home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/HigherOrder.scala,FileAttributes(isDirectory = false, isOther = false,isRegularFile = true, isSymbolicLink = false),FileAttributes(isDirectory = false, isOther = false,isRegularFile = true, isSymbolicLink = false))[0m
+[0m[[0m[0mdebug[0m] [0m[0mroot / Compile / runMain - Accepted event for /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/HigherOrder.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0mReceived Update(/home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/HigherOrder.scala,FileAttributes(isDirectory = false, isOther = false,isRegularFile = true, isSymbolicLink = false),FileAttributes(isDirectory = false, isOther = false,isRegularFile = true, isSymbolicLink = false))[0m
+[0m[[0m[0mdebug[0m] [0m[0mReceived event for path /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/HigherOrder.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0mReceived event for path /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/HigherOrder.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0mCreating update event for modified /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/HigherOrder.scala (previous stamp: Hash(f17ab49d918ba4c7e2fd613e14441f7fdbabff59), current stamp: Hash(4c78af9d3d0115c5416fb39420a1ac4420a4ee18))[0m
+[0m[[0m[0mdebug[0m] [0m[0mReceived file event actions: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/HigherOrder.scala -> Trigger. Returning: (Update(/home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/HigherOrder.scala, 2023-mai-10 10:34:25.317 CET),Trigger)[0m
+[0m[[0m[0minfo[0m] [0m[0mBuild triggered by /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/HigherOrder.scala. Running 'runMain HigherOrderApp'.[0m
+[0m[[0m[0mdebug[0m] [0m[0m[watch] [debug] Received file event Trigger for Update(/home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/HigherOrder.scala, 2023-mai-10 10:34:25.317 CET).[0m
+[0m[[0m[0minfo[0m] [0m[0m2. Monitoring source files for root/runMain HigherOrderApp...[0m
+[0m[[0m[0minfo[0m] [0m[0m   Press <enter> to interrupt or '?' for more options.[0m
+[0m[[0m[0mdebug[0m] [0m[0mDiscarding entry for recently updated path /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/HigherOrder.scala. This event occurred 10 ms since the last event for this path.[0m
+[0m[[0m[0mdebug[0m] [0m[0mroot / Compile / runMain - Accepted event for /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/HigherOrder.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0mReceived Update(/home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/HigherOrder.scala,FileAttributes(isDirectory = false, isOther = false,isRegularFile = true, isSymbolicLink = false),FileAttributes(isDirectory = false, isOther = false,isRegularFile = true, isSymbolicLink = false))[0m
+[0m[[0m[0mdebug[0m] [0m[0mReceived event for path /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/HigherOrder.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0mroot / Compile / runMain - Accepted event for /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/HigherOrder.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0mReceived event for path /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/HigherOrder.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0mReceived Update(/home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/HigherOrder.scala,FileAttributes(isDirectory = false, isOther = false,isRegularFile = true, isSymbolicLink = false),FileAttributes(isDirectory = false, isOther = false,isRegularFile = true, isSymbolicLink = false))[0m
+[0m[[0m[0mdebug[0m] [0m[0mCreating update event for modified /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/HigherOrder.scala (previous stamp: Hash(4c78af9d3d0115c5416fb39420a1ac4420a4ee18), current stamp: Hash(6ec5f11d5cd035e3a61d75a7abe3c3974a12621d))[0m
+[0m[[0m[0mdebug[0m] [0m[0mReceived file event actions: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/HigherOrder.scala -> Trigger. Returning: (Update(/home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/HigherOrder.scala, 2023-mai-10 10:35:30.108 CET),Trigger)[0m
+[0m[[0m[0minfo[0m] [0m[0mBuild triggered by /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/HigherOrder.scala. Running 'runMain HigherOrderApp'.[0m
+[0m[[0m[0mdebug[0m] [0m[0m[watch] [debug] Received file event Trigger for Update(/home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/HigherOrder.scala, 2023-mai-10 10:35:30.108 CET).[0m
+[0m[[0m[0minfo[0m] [0m[0m3. Monitoring source files for root/runMain HigherOrderApp...[0m
+[0m[[0m[0minfo[0m] [0m[0m   Press <enter> to interrupt or '?' for more options.[0m
+[0m[[0m[0mdebug[0m] [0m[0mDiscarding entry for recently updated path /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/HigherOrder.scala. This event occurred 1 ms since the last event for this path.[0m
+[0m[[0m[0mdebug[0m] [0m[0mroot / Compile / runMain - Accepted event for /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/HigherOrder.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0mReceived Update(/home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/HigherOrder.scala,FileAttributes(isDirectory = false, isOther = false,isRegularFile = true, isSymbolicLink = false),FileAttributes(isDirectory = false, isOther = false,isRegularFile = true, isSymbolicLink = false))[0m
+[0m[[0m[0mdebug[0m] [0m[0mReceived event for path /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/HigherOrder.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0mroot / Compile / runMain - Accepted event for /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/HigherOrder.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0mReceived Update(/home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/HigherOrder.scala,FileAttributes(isDirectory = false, isOther = false,isRegularFile = true, isSymbolicLink = false),FileAttributes(isDirectory = false, isOther = false,isRegularFile = true, isSymbolicLink = false))[0m
+[0m[[0m[0mdebug[0m] [0m[0mReceived event for path /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/HigherOrder.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0mCreating update event for modified /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/HigherOrder.scala (previous stamp: Hash(6ec5f11d5cd035e3a61d75a7abe3c3974a12621d), current stamp: Hash(4b90f38a602502022a645be1c7f7ce27458bb0ae))[0m
+[0m[[0m[0mdebug[0m] [0m[0mReceived file event actions: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/HigherOrder.scala -> Trigger. Returning: (Update(/home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/HigherOrder.scala, 2023-mai-10 10:35:56.309 CET),Trigger)[0m
+[0m[[0m[0minfo[0m] [0m[0mBuild triggered by /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/HigherOrder.scala. Running 'runMain HigherOrderApp'.[0m
+[0m[[0m[0mdebug[0m] [0m[0m[watch] [debug] Received file event Trigger for Update(/home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/HigherOrder.scala, 2023-mai-10 10:35:56.309 CET).[0m
+[0m[[0m[0minfo[0m] [0m[0m4. Monitoring source files for root/runMain HigherOrderApp...[0m
+[0m[[0m[0minfo[0m] [0m[0m   Press <enter> to interrupt or '?' for more options.[0m
+[0m[[0m[0mdebug[0m] [0m[0mDiscarding entry for recently updated path /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/HigherOrder.scala. This event occurred 1 ms since the last event for this path.[0m
+[0m[[0m[0mdebug[0m] [0m[0mroot / Compile / runMain - Accepted event for /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/HigherOrder.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0mReceived Update(/home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/HigherOrder.scala,FileAttributes(isDirectory = false, isOther = false,isRegularFile = true, isSymbolicLink = false),FileAttributes(isDirectory = false, isOther = false,isRegularFile = true, isSymbolicLink = false))[0m
+[0m[[0m[0mdebug[0m] [0m[0mReceived event for path /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/HigherOrder.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0mroot / Compile / runMain - Accepted event for /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/HigherOrder.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0mReceived event for path /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/HigherOrder.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0mReceived Update(/home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/HigherOrder.scala,FileAttributes(isDirectory = false, isOther = false,isRegularFile = true, isSymbolicLink = false),FileAttributes(isDirectory = false, isOther = false,isRegularFile = true, isSymbolicLink = false))[0m
+[0m[[0m[0mdebug[0m] [0m[0mCreating update event for modified /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/HigherOrder.scala (previous stamp: Hash(4b90f38a602502022a645be1c7f7ce27458bb0ae), current stamp: Hash(f8844e286e05897e3f4afba842d64dfc3ea4b101))[0m
+[0m[[0m[0mdebug[0m] [0m[0mReceived file event actions: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/HigherOrder.scala -> Trigger. Returning: (Update(/home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/HigherOrder.scala, 2023-mai-10 10:37:16.633 CET),Trigger)[0m
+[0m[[0m[0minfo[0m] [0m[0mBuild triggered by /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/HigherOrder.scala. Running 'runMain HigherOrderApp'.[0m
+[0m[[0m[0mdebug[0m] [0m[0m[watch] [debug] Received file event Trigger for Update(/home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/HigherOrder.scala, 2023-mai-10 10:37:16.633 CET).[0m
+[0m[[0m[0minfo[0m] [0m[0m5. Monitoring source files for root/runMain HigherOrderApp...[0m
+[0m[[0m[0minfo[0m] [0m[0m   Press <enter> to interrupt or '?' for more options.[0m
+[0m[[0m[0mdebug[0m] [0m[0mDiscarding entry for recently updated path /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/HigherOrder.scala. This event occurred 1 ms since the last event for this path.[0m
+[0m[[0m[0mdebug[0m] [0m[0m[watch] [debug] Received input event: Run().[0m
+[0m[[0m[0mdebug[0m] [0m[0m[watch] [debug] Received input event: Run().[0m

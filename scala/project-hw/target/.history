@@ -1,0 +1,31 @@
+ Turtle.draw(instructions)
+ Turtle.draw(instructions);
+run
+compile
+~runMain DoodleExApp
+show discoveredMainClasses
+runMain DoodleEx
+~runMain DoodleEx
+List(1, 2, 3).map( x => List(x, x, x) )
+runMain AlgaeApp
+compile
+runMain AlgaeApp
+runMain SerpinskyApp
+compile 
+runMain SerpinskyApp
+run  
+runMain SerpinskyApp
+runMain PlantApp
+runMain AlgaeApp
+runMain SerpinskyApp
+runMain SpiralApp
+runMain PlantApp
+runMain DoodleEx
+runMain PlantApp
+runMain SpiralApp
+runMain SerpinskyApp
+runMain SpiralApp
+runMain PlantApp
+runMain DoodleEx
+runMain AlgaeApp
+runMain SpiralApp

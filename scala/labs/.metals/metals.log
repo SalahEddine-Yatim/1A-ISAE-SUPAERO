@@ -1,0 +1,280 @@
+2023.05.05 09:58:43 INFO  Started: Metals version 0.11.12 in workspace '/home/salahytm/Langages-fonctionnels/scala/labs' for client Visual Studio Code 1.78.0.[0m
+mai 05, 2023 9:58:43 AM org.flywaydb.core.internal.license.VersionPrinter printVersionOnly
+INFOS: Flyway Community Edition 9.16.3 by Redgate
+mai 05, 2023 9:58:43 AM org.flywaydb.core.internal.license.VersionPrinter printVersion
+INFOS: See release notes here: https://rd.gt/416ObMi
+mai 05, 2023 9:58:43 AM org.flywaydb.core.internal.license.VersionPrinter printVersion
+INFOS: 
+mai 05, 2023 9:58:43 AM org.flywaydb.core.internal.database.base.BaseDatabaseType createDatabase
+INFOS: Database: jdbc:h2:file:/home/salahytm/Langages-fonctionnels/scala/labs/.metals/metals (H2 2.1)
+mai 05, 2023 9:58:44 AM org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory allAppliedMigrations
+INFOS: Schema history table "PUBLIC"."flyway_schema_history" does not exist yet
+mai 05, 2023 9:58:44 AM org.flywaydb.core.internal.command.DbValidate validate
+INFOS: Successfully validated 4 migrations (execution time 00:00.016s)
+mai 05, 2023 9:58:44 AM org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory create
+INFOS: Creating Schema History table "PUBLIC"."flyway_schema_history" ...
+mai 05, 2023 9:58:44 AM org.flywaydb.core.internal.command.DbMigrate migrateGroup
+INFOS: Current version of schema "PUBLIC": << Empty Schema >>
+mai 05, 2023 9:58:44 AM org.flywaydb.core.internal.command.DbMigrate doMigrateGroup
+INFOS: Migrating schema "PUBLIC" to version "1 - Create tables"
+mai 05, 2023 9:58:44 AM org.flywaydb.core.internal.command.DbMigrate doMigrateGroup
+INFOS: Migrating schema "PUBLIC" to version "2 - Server discovery"
+mai 05, 2023 9:58:44 AM org.flywaydb.core.internal.command.DbMigrate doMigrateGroup
+INFOS: Migrating schema "PUBLIC" to version "3 - Jar symbols"
+mai 05, 2023 9:58:44 AM org.flywaydb.core.internal.command.DbMigrate doMigrateGroup
+INFOS: Migrating schema "PUBLIC" to version "4 - Fingerprints"
+mai 05, 2023 9:58:44 AM org.flywaydb.core.internal.command.DbMigrate logSummary
+INFOS: Successfully applied 4 migrations to schema "PUBLIC", now at version v4 (execution time 00:00.051s)
+2023.05.05 09:58:44 INFO  time: initialize in 1.06s[0m
+2023.05.05 09:58:45 WARN  Build server is not auto-connectable.[0m
+2023.05.05 09:59:07 INFO  running '/home/salahytm/.cache/coursier/arc/https/github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u292-b10/OpenJDK8U-jdk_x64_linux_hotspot_8u292b10.tar.gz/jdk8u292-b10/bin/java -Djline.terminal=jline.UnsupportedTerminal -Dsbt.log.noformat=true -Dfile.encoding=UTF-8 -jar /tmp/metals5037490112161322581/sbt-launch.jar -Dbloop.export-jar-classifiers=sources bloopInstall'[0m
+2023.05.05 09:59:08 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/project/metals.sbt[0m
+2023.05.05 09:59:08 INFO  skipping build import with status 'Started'[0m
+2023.05.05 09:59:13 INFO  [info] Loading settings for project labs-build-build from metals.sbt ...[0m
+2023.05.05 09:59:13 INFO  [info] Loading project definition from /home/salahytm/Langages-fonctionnels/scala/labs/project/project[0m
+2023.05.05 09:59:18 INFO  [info] Loading settings for project labs-build from metals.sbt ...[0m
+2023.05.05 09:59:18 INFO  [info] Loading project definition from /home/salahytm/Langages-fonctionnels/scala/labs/project[0m
+2023.05.05 09:59:23 INFO  [success] Generated .bloop/labs-build.json[0m
+2023.05.05 09:59:23 INFO  [success] Total time: 4 s, completed 5 mai 2023 09:59:23[0m
+2023.05.05 09:59:24 INFO  [info] Loading settings for project root from build.sbt ...[0m
+2023.05.05 09:59:24 INFO  [info] Set current project to eisc101-labs (in build file:/home/salahytm/Langages-fonctionnels/scala/labs/)[0m
+2023.05.05 09:59:25 INFO  user cancelled sbt bloopInstall[0m
+2023.05.05 09:59:25 INFO  no build target found for /home/salahytm/Langages-fonctionnels/scala/labs/project/metals.sbt. Using presentation compiler with project's scala-library version: 3.2.2[0m
+2023.05.05 09:59:25 INFO  time: ran 'sbt bloopInstall' in 17s[0m
+2023.05.05 10:00:02 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/Hello.scala[0m
+2023.05.05 10:00:04 INFO  time: code lens generation in 1.49s[0m
+2023.05.05 10:06:32 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/TP.worksheet.sc[0m
+2023.05.05 10:06:41 INFO  no build target found for /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/TP.worksheet.sc. Using presentation compiler with project's scala-library version: 3.2.2[0m
+2023.05.05 10:06:41 INFO  time: evaluated worksheet 'TP.worksheet.sc' in 9.04s[0m
+2023.05.05 10:07:02 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/TP.worksheet.sc[0m
+2023.05.05 10:07:03 INFO  time: evaluated worksheet 'TP.worksheet.sc' in 0.69s[0m
+2023.05.05 10:10:56 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/TP.worksheet.sc[0m
+2023.05.05 10:10:56 INFO  time: evaluated worksheet 'TP.worksheet.sc' in 0.56s[0m
+2023.05.05 10:11:02 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/TP.worksheet.sc[0m
+2023.05.05 10:11:03 INFO  time: evaluated worksheet 'TP.worksheet.sc' in 0.54s[0m
+2023.05.05 10:13:23 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/TP.worksheet.sc[0m
+2023.05.05 10:13:24 INFO  time: evaluated worksheet 'TP.worksheet.sc' in 0.45s[0m
+2023.05.05 10:13:28 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/TP.worksheet.sc[0m
+2023.05.05 10:13:28 INFO  time: evaluated worksheet 'TP.worksheet.sc' in 0.34s[0m
+2023.05.05 11:18:18 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/Hello.scala[0m
+2023.05.05 11:18:20 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/FunctionsEx.scala[0m
+2023.05.05 11:18:22 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/HigherOrder.scala[0m
+2023.05.05 14:07:43 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/Evaluation.scala[0m
+2023.05.05 14:08:49 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/Evaluation.scala[0m
+2023.05.05 14:10:18 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/Evaluation.scala[0m
+2023.05.05 14:10:33 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/Evaluation.scala[0m
+2023.05.05 14:12:08 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/Evaluation.scala[0m
+2023.05.05 14:12:10 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/Evaluation.scala[0m
+2023.05.05 14:12:26 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/Evaluation.scala[0m
+2023.05.05 14:13:27 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/Evaluation.scala[0m
+2023.05.05 14:13:29 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/Evaluation.scala[0m
+2023.05.05 14:14:21 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/Evaluation.scala[0m
+2023.05.05 14:14:23 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/Evaluation.scala[0m
+2023.05.05 14:14:37 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/Evaluation.scala[0m
+mai 05, 2023 2:16:35 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+2023.05.05 14:20:41 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/Evaluation.scala[0m
+2023.05.05 14:20:54 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/Evaluation.scala[0m
+2023.05.05 14:20:58 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/Evaluation.scala[0m
+2023.05.05 14:22:23 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/Evaluation.scala[0m
+2023.05.05 14:23:35 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/Evaluation.scala[0m
+2023.05.05 14:24:11 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/Evaluation.scala[0m
+2023.05.05 14:24:21 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/Evaluation.scala[0m
+2023.05.05 14:24:24 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/Evaluation.scala[0m
+2023.05.05 14:24:26 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/Evaluation.scala[0m
+2023.05.05 14:24:28 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/Evaluation.scala[0m
+2023.05.05 14:25:28 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/Evaluation.scala[0m
+2023.05.05 14:25:30 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/Evaluation.scala[0m
+2023.05.05 14:30:17 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/Either.scala[0m
+2023.05.05 14:30:20 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/Evaluation.worksheet.sc[0m
+2023.05.05 14:30:21 INFO  no build target found for /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/Evaluation.worksheet.sc. Using presentation compiler with project's scala-library version: 3.2.2[0m
+2023.05.05 14:30:21 INFO  time: evaluated worksheet 'Evaluation.worksheet.sc' in 0.81s[0m
+2023.05.05 14:30:22 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/Factorial.scala[0m
+2023.05.05 14:30:23 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/FunctionsEx.scala[0m
+2023.05.05 14:30:24 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/GCD.scala[0m
+2023.05.05 14:30:25 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/Hello.scala[0m
+2023.05.05 14:30:27 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/HigherOrder.scala[0m
+2023.05.05 14:30:28 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/ListInt.scala[0m
+2023.05.05 14:30:29 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/HigherOrder.scala[0m
+2023.05.05 14:30:30 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/ListInt.scala[0m
+2023.05.05 14:30:32 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/Operators.scala[0m
+2023.05.05 14:30:33 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/Option.scala[0m
+2023.05.05 14:30:34 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/Pascal.scala[0m
+2023.05.05 14:30:35 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/PatternMatching.scala[0m
+2023.05.05 14:30:36 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/PointObject.scala[0m
+2023.05.05 14:30:38 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/Rational.scala[0m
+2023.05.05 14:30:40 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/Streams.scala[0m
+2023.05.05 14:34:02 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/Evaluation.scala[0m
+2023.05.05 14:34:12 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/Evaluation.scala[0m
+2023.05.05 14:41:42 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/Evaluation.scala[0m
+2023.05.05 14:41:55 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/Evaluation.scala[0m
+2023.05.05 14:41:56 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/Evaluation.scala[0m
+2023.05.05 14:42:01 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/Evaluation.scala[0m
+2023.05.05 14:42:13 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/Evaluation.scala[0m
+2023.05.05 14:42:16 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/Evaluation.scala[0m
+2023.05.05 14:42:24 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/Evaluation.scala[0m
+2023.05.05 14:47:05 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/Evaluation.scala[0m
+2023.05.05 14:47:12 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/Operators.scala[0m
+2023.05.05 14:51:14 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/Operators.scala[0m
+2023.05.05 14:51:22 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/Operators.scala[0m
+mai 05, 2023 2:51:49 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVERTISSEMENT: Unmatched cancel notification for request id 2091
+2023.05.05 14:52:01 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/Operators.scala[0m
+2023.05.05 14:52:05 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/Operators.scala[0m
+2023.05.05 14:52:36 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/Operators.scala[0m
+2023.05.05 14:52:43 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/Operators.scala[0m
+2023.05.05 14:54:30 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/Operators.scala[0m
+2023.05.05 14:54:46 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/Operators.scala[0m
+2023.05.05 14:55:09 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/Operators.scala[0m
+mai 05, 2023 2:55:58 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVERTISSEMENT: Unmatched cancel notification for request id 2548
+mai 05, 2023 2:56:09 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVERTISSEMENT: Unmatched cancel notification for request id 2587
+2023.05.05 14:56:11 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/Operators.scala[0m
+2023.05.05 14:56:15 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/Operators.scala[0m
+2023.05.05 14:58:37 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/Operators.scala[0m
+2023.05.05 14:58:39 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/Operators.scala[0m
+2023.05.05 15:00:10 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/Operators.scala[0m
+2023.05.05 15:00:19 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/Operators.scala[0m
+2023.05.05 15:01:06 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/Operators.scala[0m
+2023.05.05 15:01:13 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/Operators.scala[0m
+2023.05.05 15:08:20 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/Operators.scala[0m
+2023.05.05 15:08:21 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/Factorial.scala[0m
+2023.05.05 15:10:39 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/Factorial.scala[0m
+mai 05, 2023 3:13:21 PM scala.meta.internal.pc.CompilerAccess handleError
+GRAVE: String index out of range: 0
+java.lang.StringIndexOutOfBoundsException: String index out of range: 0
+	at java.lang.String.charAt(String.java:658)
+	at scala.collection.StringOps$.apply$extension(StringOps.scala:188)
+	at scala.meta.internal.pc.ExtractMethodUtils.adjustIndent(ExtractMethodUtils.scala:11)
+	at scala.meta.internal.pc.ExtractMethodUtils.adjustIndent$(ExtractMethodUtils.scala:3)
+	at scala.meta.internal.pc.ExtractMethodProvider.adjustIndent(ExtractMethodProvider.scala:30)
+	at scala.meta.internal.pc.ExtractMethodUtils.textToExtract$$anonfun$1(ExtractMethodUtils.scala:38)
+	at scala.collection.ArrayOps$.map$extension(ArrayOps.scala:932)
+	at scala.meta.internal.pc.ExtractMethodUtils.textToExtract(ExtractMethodUtils.scala:38)
+	at scala.meta.internal.pc.ExtractMethodUtils.textToExtract$(ExtractMethodUtils.scala:3)
+	at scala.meta.internal.pc.ExtractMethodProvider.textToExtract(ExtractMethodProvider.scala:30)
+	at scala.meta.internal.pc.ExtractMethodProvider.$anonfun$11$$anonfun$1$$anonfun$2(ExtractMethodProvider.scala:150)
+	at scala.Option.map(Option.scala:242)
+	at scala.meta.internal.pc.ExtractMethodProvider.$anonfun$11$$anonfun$1(ExtractMethodProvider.scala:167)
+	at scala.Option.flatMap(Option.scala:283)
+	at scala.meta.internal.pc.ExtractMethodProvider.$anonfun$11(ExtractMethodProvider.scala:167)
+	at scala.Option.flatMap(Option.scala:283)
+	at scala.meta.internal.pc.ExtractMethodProvider.extractMethod(ExtractMethodProvider.scala:167)
+
+2023.05.05 15:13:21 ERROR Could not extract method from range 
+Range [
+  start = Position [
+    line = 10
+    character = 4
+  ]
+  end = Position [
+    line = 10
+    character = 8
+  ]
+]
+in file /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/Factorial.scala[0m
+2023.05.05 15:14:52 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/Factorial.scala[0m
+2023.05.05 15:15:00 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/Factorial.scala[0m
+2023.05.05 15:15:24 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/Factorial.scala[0m
+2023.05.05 15:15:33 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/HigherOrder.scala[0m
+2023.05.05 15:15:47 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/Factorial.scala[0m
+2023.05.05 15:15:52 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/HigherOrder.scala[0m
+2023.05.05 15:17:31 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/HigherOrder.scala[0m
+2023.05.05 15:17:57 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/Factorial.scala[0m
+2023.05.05 15:18:43 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/Factorial.scala[0m
+2023.05.05 15:18:48 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/HigherOrder.scala[0m
+mai 05, 2023 3:19:26 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVERTISSEMENT: Unmatched cancel notification for request id 3813
+2023.05.05 15:19:32 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/Factorial.scala[0m
+2023.05.05 15:19:38 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/Factorial.scala[0m
+2023.05.05 15:20:07 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/Factorial.scala[0m
+2023.05.05 15:20:19 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/Factorial.scala[0m
+2023.05.05 15:21:12 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/Factorial.scala[0m
+2023.05.05 15:22:11 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/Factorial.scala[0m
+2023.05.05 15:24:10 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/Factorial.scala[0m
+2023.05.05 15:24:28 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/Factorial.scala[0m
+2023.05.05 15:25:03 INFO  Shutting down server[0m
+2023.05.05 15:25:03 INFO  shutting down Metals[0m
+2023.05.05 15:25:03 INFO  Exiting server[0m
+2023.05.05 15:25:50 INFO  Started: Metals version 0.11.12 in workspace '/home/salahytm/Langages-fonctionnels/scala/labs' for client Visual Studio Code 1.78.0.
+mai 05, 2023 3:25:50 PM org.flywaydb.core.internal.license.VersionPrinter printVersionOnly
+INFOS: Flyway Community Edition 9.16.3 by Redgate
+mai 05, 2023 3:25:50 PM org.flywaydb.core.internal.license.VersionPrinter printVersion
+INFOS: See release notes here: https://rd.gt/416ObMi
+mai 05, 2023 3:25:50 PM org.flywaydb.core.internal.license.VersionPrinter printVersion
+INFOS: 
+mai 05, 2023 3:25:51 PM org.flywaydb.core.internal.database.base.BaseDatabaseType createDatabase
+INFOS: Database: jdbc:h2:file:/home/salahytm/Langages-fonctionnels/scala/labs/.metals/metals (H2 2.1)
+mai 05, 2023 3:25:51 PM org.flywaydb.core.internal.command.DbValidate validate
+INFOS: Successfully validated 4 migrations (execution time 00:00.031s)
+mai 05, 2023 3:25:51 PM org.flywaydb.core.internal.command.DbMigrate migrateGroup
+INFOS: Current version of schema "PUBLIC": 4
+mai 05, 2023 3:25:51 PM org.flywaydb.core.internal.command.DbMigrate logSummary
+INFOS: Schema "PUBLIC" is up to date. No migration necessary.
+2023.05.05 15:25:52 INFO  time: initialize in 2.26s
+2023.05.05 15:25:53 WARN  Build server is not auto-connectable.
+2023.05.05 15:25:53 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/Factorial.scala
+2023.05.05 15:25:54 INFO  skipping build import with status 'Cancelled'
+2023.05.05 15:25:57 INFO  no build target found for /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/Factorial.scala. Using presentation compiler with project's scala-library version: 3.2.2
+2023.05.05 15:26:00 INFO  time: code lens generation in 3.1s
+2023.05.05 15:26:00 INFO  time: code lens generation in 5.19s
+2023.05.05 15:31:50 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/Factorial.scala
+2023.05.05 15:31:52 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/Factorial.scala
+2023.05.05 15:32:31 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/Factorial.scala
+2023.05.05 15:32:37 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/Factorial.scala
+2023.05.05 15:32:44 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/Factorial.scala
+2023.05.05 15:33:23 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/Factorial.scala
+2023.05.05 15:33:44 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/Factorial.scala
+2023.05.05 15:33:55 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/Factorial.scala
+2023.05.05 15:34:02 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/Factorial.scala
+2023.05.05 15:34:14 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/Factorial.scala
+2023.05.05 15:34:51 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/Factorial.scala
+2023.05.05 15:34:55 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/Factorial.scala
+2023.05.05 15:36:24 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/Factorial.scala
+2023.05.05 15:36:35 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/Factorial.scala
+2023.05.05 15:36:55 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/Factorial.scala
+2023.05.05 15:37:06 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/Factorial.scala
+2023.05.05 15:37:12 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/Factorial.scala
+2023.05.05 15:37:58 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/Factorial.scala
+2023.05.05 15:38:00 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/GCD.scala
+2023.05.05 15:42:03 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/GCD.scala
+2023.05.05 15:42:14 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/GCD.scala
+2023.05.05 15:42:26 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/GCD.scala
+2023.05.05 15:42:28 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/GCD.scala
+2023.05.05 15:42:34 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/GCD.scala
+2023.05.05 15:45:06 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/GCD.scala
+2023.05.05 15:45:39 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/GCD.scala
+2023.05.05 15:46:13 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/GCD.scala
+mai 05, 2023 3:46:21 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVERTISSEMENT: Unmatched cancel notification for request id 2137
+2023.05.05 15:46:34 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/GCD.scala
+2023.05.05 15:47:39 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/GCD.scala
+2023.05.05 15:48:24 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/GCD.scala
+2023.05.05 15:48:31 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/GCD.scala
+2023.05.05 15:49:17 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/GCD.scala
+2023.05.05 15:50:30 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/GCD.scala
+2023.05.05 15:50:48 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/GCD.scala
+2023.05.05 15:51:20 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/GCD.scala
+2023.05.05 15:52:29 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/GCD.scala
+2023.05.05 15:52:48 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/test/scala/GCDSpecification.scala
+2023.05.05 15:57:45 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/GCD.scala
+2023.05.05 15:59:34 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/GCD.scala
+mai 05, 2023 4:01:25 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVERTISSEMENT: Unmatched cancel notification for request id 3214
+2023.05.05 16:01:31 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/GCD.scala
+2023.05.05 16:02:16 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/GCD.scala
+2023.05.05 16:02:49 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/Pascal.scala
+2023.05.05 16:03:00 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/test/scala/GCDSpecification.scala
+2023.05.05 16:03:03 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/test/scala/GCDSpecification.scala
+2023.05.05 16:03:06 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/Pascal.scala
+2023.05.05 16:04:34 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/GCD.scala
+2023.05.05 16:06:33 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/GCD.scala
+2023.05.05 16:06:52 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/GCD.scala
+mai 05, 2023 4:07:45 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVERTISSEMENT: Unmatched cancel notification for request id 3458
+2023.05.05 16:07:46 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/GCD.scala
+2023.05.05 16:09:10 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/GCD.scala
+2023.05.05 16:09:11 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/GCD.scala
+2023.05.05 16:12:18 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/GCD.scala
+2023.05.05 16:12:18 WARN  no build target for: /home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/GCD.scala

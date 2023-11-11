@@ -1,0 +1,11 @@
+[0m[[0m[31merror[0m] [0m[0m/home/salahytm/Langages-fonctionnels/scala/project-hw/src/main/scala/Spiral.scala:15:100: type mismatch;[0m
+[0m[[0m[31merror[0m] [0m[0m found   : Double(2.2)[0m
+[0m[[0m[31merror[0m] [0m[0m required: Float[0m
+[0m[[0m[31merror[0m] [0m[0m  def axiom : List[Letter] = (1 to 10).toList.flatMap(i => List(Branche(List(Minus(36 * i), L(100, 2.2, 6)))))[0m
+[0m[[0m[31merror[0m] [0m[0m                                                                                                   ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/salahytm/Langages-fonctionnels/scala/project-hw/src/main/scala/Spiral.scala:23:83: type mismatch;[0m
+[0m[[0m[31merror[0m] [0m[0m found   : Double[0m
+[0m[[0m[31merror[0m] [0m[0m required: Float[0m
+[0m[[0m[31merror[0m] [0m[0m      case R(l, a, s) if s == 0   => List(F(l), Plus(a), Branche(List(L(l * 0.93, a, 6))), R(l * 0.93, a, 6))[0m
+[0m[[0m[31merror[0m] [0m[0m                                                                                  ^[0m
+[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m

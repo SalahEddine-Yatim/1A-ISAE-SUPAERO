@@ -1,0 +1,40 @@
+compile
+runMain HelloApp
+~runMain HelloApp
+run 
+run
+run 
+runMain EvaluationApp
+~runMain EvaluationApp
+runMain EvaluationApp
+compile
+run
+runMain EvaluationApp
+~runMain EvaluationApp
+runMain EvaluationApp
+~runMain EvaluationApp
+~runMain OperatorsApp
+~runMain FactorialApp
+~runMain Factorial
+~runMain FactorialApp
+~runMain GCDApp
+test
+~runMain GCDApp
+test
+runMain GCDApp
+~runMain RationalApp
+compile 
+~runMain RationalApp
+~runMain ListIntApp
+~runMain BSTApp
+run
+run 
+run
+run 
+~runMain PatternMatchingApp
+~runMain BSTApp
+~runMain PatternMatchingApp
+~runMain ListIntApp
+~runMain HigherOrderApp
+runMain HigherOrderApp
+runMain StreamsApp

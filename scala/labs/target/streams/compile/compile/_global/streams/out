@@ -1,0 +1,4 @@
+[0m[[0m[33mwarn[0m] [0m[0m/home/salahytm/Langages-fonctionnels/scala/labs/src/main/scala/Streams.scala:3:19: method loop in object StreamsApp does nothing other than call itself recursively[0m
+[0m[[0m[33mwarn[0m] [0m[0m  def loop: Int = loop[0m
+[0m[[0m[33mwarn[0m] [0m[0m                  ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mone warning found[0m

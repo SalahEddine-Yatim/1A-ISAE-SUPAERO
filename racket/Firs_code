@@ -1,0 +1,219 @@
+#lang racket
+
+(define (fact x)
+  (if (zero? x)
+      1
+      (* x(fact (- x 1)))))
+
+;On va faire une fonction pour transformer les si pour executer 
+;(define (si (zero? x) alors 1 sinon (* (fact ))))
+
+;utiliser fonction map pour apliquer une fonction sur tous la list 
+
+(define (transform-les-si code)
+  (if (list? code)
+      (si-vers-if code)
+      code))
+
+(define (si-vers-if lst)
+  (if (equal? (first lst) 'si)
+      (list 'if
+            (transform-les-si (second lst))
+            (transform-les-si (fourth lst))
+            (transform-les-si (sixth lst)))
+      (map transform-les-si lst)))
+
+
+(define (last l)
+  (if (empty? (rest l))
+      (first l)
+      (last (rest l))))
+
+;Premier methode pour append 
+(define (append l1 l2)
+  (match l1
+    [(cons e l) (cons e (append l l2))]
+    [_ l2]))
+
+;Deuxieme methode
+(define (append-aux l1 l2)
+  (append-reverse (reverse l1) l2))
+
+
+(define (append-reverse l1 l2)
+  (if (empty? l1)
+      l2
+      (append-reverse (rest l1) (cons (first l1) l2))))
+
+(define (reverse l1 [accum empty])
+  (if (empty? l1)
+      accum
+      (reverse (rest l1) (cons (first l1) accum))))
+
+(define (double-reverse lst accu)
+  (if (empty? lst)
+      accu
+      (double-reverse (rest lst)
+                      (cons (* 2 (first lst))  accu))))
+
+(define (newton f x0)
+  (define g     (dérivée f))
+  (define x1    (-  x0 (/  (f x0) (g x0))))
+  (define rdist (magnitude (/  (-  x1 x0) x0)))
+  (if (< rdist 1e-15)
+      x1
+      (newton f x1)))
+
+(define (taux-accroissement h f x)
+   (/  (-  (f (+  x h))
+           (f x))
+       h))
+
+(define (dérivée f)
+  (define (df/dx x) (taux-accroissement 1e-6 f x))
+  df/dx)
+
+;Autre methode
+(define (dérivée-aux f)
+  (λ(x) (taux-accroissement 1e-6 f x)))
+
+
+(define (f x) (- (* x x x) 1))
+
+;il existe la fonction compose
+(define g (compose (λ(x)(* 2 x))  add1 ))
+(g 3)
+
+(define (^ f n)
+  (if (zero? n)
+      identity
+      (compose f (^ f (- n 1)))))
+
+(foldl cons empty '(a b c d e))
+
+(foldr cons empty '(a b c d e))
+
+(filter even? '(1 2 3 4 82 6))
+
+(filter-not even? '(1 2 3 4 5 6 7))
+
+(define (est-gagnant? n) (not (est-perdant? n)))
+
+(define (est-perdant? n)
+   (or (= n 1)
+       (and (est-gagnant? (- n 1))
+	    (est-gagnant? (- n 2))
+	    (est-gagnant? (- n 3)))))
+
+(define (est-perdant-aux? n)
+   (if (= n 1)
+	true
+	(if (or (est-perdant? (- n 1))
+	        (est-perdant? (- n 2))
+	        (est-perdant? (- n 3)))
+	false
+	true)))
+
+;(define (wins-at-marienbad? tas1 tas2 tas3 tas4)
+;  (not (loses-at-marienbad? tas1 tas2 tas3 tas4)
+;  )
+
+;(define (loses-at-marienbad? tas1 tas2 tas3 tas4)
+;  (or (= 1 (+ tas1 tas2 tas3 tas4))
+
+(define (foldl1 fn z lst)
+  (foldr fn z (reverse lst)))
+
+(define (foldr1 fn z lst)
+  (foldl fn z (reverse lst)))
+
+(define (map1 fn lst)
+  (define (apply-f-and-cons x lst) (cons(f x) lst)) 
+  (foldr apply-f-and-cons empty lst))
+
+(define (filter1 pred? lst)
+  (define (to-be-in-or-not x lst)(if (pred? x) (cons x lst) lst))
+  (foldr to-be-in-or-not empty lst))
+
+(define (wins? heap-list) (not (loses? heap-list)))
+
+(define (loses? heap-list)
+ (or (= 1(apply + heap-list))
+     (for*/and ([i (length heap-list)]
+                [n (list-ref heap-list)])
+       (wins? (list-set heap-list i n )))))
+
+
+;Forme Syntaxique
+
+(define-syntax si
+  (syntax-rules (alors sinon)
+  [(si condition alors  exp1 sinon exp2) (if condition exp1 exp2)]))
+
+(define-syntax case
+  (syntax-rules (in)
+    [(case exp in default expr0)     expr0]
+    [(case exp in valeur1 expr1 etc ...) (if (equal? exp valeur1)
+                                             expr1
+                                             (case exp in etc ...))]))
+
+(define-syntax let*
+  (syntax-rules()
+    [(let* ((var val)) exp ...)   ((λ(var) exp ...) val)]))
+
+    
+[let* ((x 43))(displayln 43)(even? x)]
+
+
+(define-syntax let
+  (syntax-rules()
+    [(let ((var val) ...) exp ...)   ((λ(var ...) exp ...) val ...)]))
+
+(let ((x 42) (y 10)) (+ x y))
+
+
+(define-syntax and
+  (syntax-rules ()
+    [(and exp1)       exp1]
+    [(and exp1 etc ...) (if exp1 (and etc ...) false)]))
+
+(and (even? 5) (= 5 (+ 2 3)))
+
+      
+(define (sommielle i)
+  (if (zero? i)
+      0
+      (+ i (sommielle (- i 1)))))
+
+(case (sommielle 5) in
+  15 "trop bas"
+  6 " raté aussi"
+  default "bof")
+
+(case (+ 2 2) in
+  1 "trop bas"
+  2 "pas loin"
+  3 "yes"
+  4 "trop haut"
+  default "huh?")
+
+;Structure Queue
+
+(struct queue (list stack))
+
+(define (queue-is-empty? q)
+  (and (empty? (queue-list q))
+       (empty? (queue-stack q))))
+
+(define (queue-head q)
+  (if (empty? (queue-list q))
+      (last (queue-stack q))
+      (first (queue-list q))))
+
+(define (queue-tail q)
+  (if (empty? (queue-list q))
+      (queue (rest(reverse (queue-stack q))) empty)
+      (queue (rest (queue-list q)) (queue-stack q))))
+
+
+

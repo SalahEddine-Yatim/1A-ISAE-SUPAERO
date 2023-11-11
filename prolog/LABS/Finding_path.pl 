@@ -1,0 +1,40 @@
+/*Finding path*/
+can_move1(X,Y).
+can_move2(X,Y) :-  can_move1(X,Y).
+can_move2(X,Y) :-  can_move1(Y,X).
+connected(X,Y) :- can_move2(X,Y).
+connected(X,Y) :- can_move1(X,Y).
+connected(X,Y) :- can_move1(Y,X).
+
+can_move1(cellar,attic).
+can_move2(shed,garage).
+can_move2(garage,cellar).
+can_move2(entrance,attic).
+can_move2(garage,entrance).
+can_move2(entrance,living_room).
+can_move2(entrance,bathroom).
+can_move2(living_room,kitchen).
+can_move2(living_room,room2).
+can_move2(room1,room2).
+can_move2(bathroom,room1).
+can_move2(kitchen,room2).
+
+notmember(X,[]).
+notmember(X, [H | T]) :- X \= H, notmember(X,T).
+
+path(Room , Room , [Room] , _).
+path(Start,Arrival,[Start|P],Visited) :-
+    connected(Start,Room),
+    notmember(Room, Visited),
+    path(Room,Arrival, P, [Room,Visited]).
+
+better(Start,Arrival,P1,P2,Visited):-
+    path(Start,Arrival,P1,Visited),
+    path(Start,Arrival,P2,Visited),
+    length(P1, L1),
+    length(P2,L2),
+    L1 < L2.
+
+shortest_path(Start,Arrival,P,Visited):-
+    path(Start,Arrival,P,Visited),
+    not(better(Start,Arrival,P1,P,Visited)).

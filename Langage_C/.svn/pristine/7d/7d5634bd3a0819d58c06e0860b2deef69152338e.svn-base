@@ -1,0 +1,31 @@
+\hypertarget{test-move_8c}{}\doxysection{tests/test-\/move.c File Reference}
+\label{test-move_8c}\index{tests/test-\/move.c@{tests/test-\/move.c}}
+
+
+Simple test executable to show if the move function is good.  
+
+
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}move.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}loader.\+h\char`\"{}}\newline
+Include dependency graph for test-\/move.c\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{test-move_8c_a26995fca666fb9fff5753c61191743c8}\label{test-move_8c_a26995fca666fb9fff5753c61191743c8}} 
+void {\bfseries test\+\_\+move\+\_\+player} (FILE $\ast$p\+\_\+file, char direction, FILE $\ast$rp\+\_\+file)
+\item 
+\mbox{\Hypertarget{test-move_8c_a840291bc02cba5474a4cb46a9b9566fe}\label{test-move_8c_a840291bc02cba5474a4cb46a9b9566fe}} 
+int {\bfseries main} (void)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Simple test executable to show if the move function is good. 
+
+\begin{DoxyAuthor}{Author}
+Salah-\/\+Eddine Yatim 
+\end{DoxyAuthor}

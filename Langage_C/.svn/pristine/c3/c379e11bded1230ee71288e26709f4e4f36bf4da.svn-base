@@ -1,0 +1,16 @@
+{
+    "files.associations": {
+        "move.h": "c",
+        "stdio.h": "c",
+        "stdlib.h": "c",
+        "replay_function.h": "c",
+        "loader.h": "c",
+        "print_function.h": "c",
+        "sokoban.h": "c",
+        "linked_list_map.h": "c",
+        "assert.h": "c",
+        "queue_map.h": "c",
+        "stdbool.h": "c",
+        "bst_map.h": "c"
+    }
+}

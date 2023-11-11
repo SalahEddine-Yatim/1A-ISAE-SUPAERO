@@ -1,0 +1,69 @@
+\hypertarget{structcell__map}{}\doxysection{cell\+\_\+map Struct Reference}
+\label{structcell__map}\index{cell\_map@{cell\_map}}
+
+
+The structure representing the cells of the linked\+\_\+list.  
+
+
+
+
+{\ttfamily \#include $<$linked\+\_\+list\+\_\+map.\+h$>$}
+
+
+
+Collaboration diagram for cell\+\_\+map\+:
+% FIG 0
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \mbox{\hyperlink{structcell__map_abc5776a6604ab487ccb90ba4e462667b}{p\+\_\+map}}
+\item 
+\mbox{\hyperlink{structcell__map}{cell\+\_\+map}} $\ast$ \mbox{\hyperlink{structcell__map_a9c139beadfd1d0599e25960cb288b21a}{p\+\_\+next\+\_\+map}}
+\item 
+char \mbox{\hyperlink{structcell__map_ae00f9904b50e6af16f577d59ac4c36dc}{dir}}
+\item 
+\mbox{\hyperlink{structcell__map}{cell\+\_\+map}} $\ast$ \mbox{\hyperlink{structcell__map_a079f2d447501cd2b0390d86a26b1eea1}{p\+\_\+origin\+\_\+map}}
+\item 
+int \mbox{\hyperlink{structcell__map_ad3787d6921b0f475692cfe726a4020ba}{depth}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The structure representing the cells of the linked\+\_\+list. 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structcell__map_ad3787d6921b0f475692cfe726a4020ba}\label{structcell__map_ad3787d6921b0f475692cfe726a4020ba}} 
+\index{cell\_map@{cell\_map}!depth@{depth}}
+\index{depth@{depth}!cell\_map@{cell\_map}}
+\doxysubsubsection{\texorpdfstring{depth}{depth}}
+{\footnotesize\ttfamily int cell\+\_\+map\+::depth}
+
+the number of maps we past by to get the p\+\_\+map (cette parti sera util dans le solver) \mbox{\Hypertarget{structcell__map_ae00f9904b50e6af16f577d59ac4c36dc}\label{structcell__map_ae00f9904b50e6af16f577d59ac4c36dc}} 
+\index{cell\_map@{cell\_map}!dir@{dir}}
+\index{dir@{dir}!cell\_map@{cell\_map}}
+\doxysubsubsection{\texorpdfstring{dir}{dir}}
+{\footnotesize\ttfamily char cell\+\_\+map\+::dir}
+
+the direction utiliser pour avoir cette liste (cette parti sera util dans le solver) \mbox{\Hypertarget{structcell__map_abc5776a6604ab487ccb90ba4e462667b}\label{structcell__map_abc5776a6604ab487ccb90ba4e462667b}} 
+\index{cell\_map@{cell\_map}!p\_map@{p\_map}}
+\index{p\_map@{p\_map}!cell\_map@{cell\_map}}
+\doxysubsubsection{\texorpdfstring{p\_map}{p\_map}}
+{\footnotesize\ttfamily char$\ast$ cell\+\_\+map\+::p\+\_\+map}
+
+the p\+\_\+map stored in the cell \mbox{\Hypertarget{structcell__map_a9c139beadfd1d0599e25960cb288b21a}\label{structcell__map_a9c139beadfd1d0599e25960cb288b21a}} 
+\index{cell\_map@{cell\_map}!p\_next\_map@{p\_next\_map}}
+\index{p\_next\_map@{p\_next\_map}!cell\_map@{cell\_map}}
+\doxysubsubsection{\texorpdfstring{p\_next\_map}{p\_next\_map}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structcell__map}{cell\+\_\+map}}$\ast$ cell\+\_\+map\+::p\+\_\+next\+\_\+map}
+
+the next p\+\_\+map in the list \mbox{\Hypertarget{structcell__map_a079f2d447501cd2b0390d86a26b1eea1}\label{structcell__map_a079f2d447501cd2b0390d86a26b1eea1}} 
+\index{cell\_map@{cell\_map}!p\_origin\_map@{p\_origin\_map}}
+\index{p\_origin\_map@{p\_origin\_map}!cell\_map@{cell\_map}}
+\doxysubsubsection{\texorpdfstring{p\_origin\_map}{p\_origin\_map}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structcell__map}{cell\+\_\+map}}$\ast$ cell\+\_\+map\+::p\+\_\+origin\+\_\+map}
+
+the cell contains the map from where we got the new map (cette parti sera util dans le solver) 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/linked\+\_\+list\+\_\+map.\+h\end{DoxyCompactItemize}

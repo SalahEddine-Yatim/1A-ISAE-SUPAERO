@@ -1,0 +1,60 @@
+{
+    // a simple task file to build the application
+    "version": "2.0.0",
+    "tasks": [
+        {
+        "type": "cppbuild",
+        "label": "build array-as-parameter-size",
+        "command": "make",
+        "args": [
+            "array-as-parameter-size"
+        ],
+        "options": {
+            "cwd": "${workspaceFolder}"
+        },
+        "problemMatcher": [
+            "$gcc"
+        ],
+        "group": {
+            "kind": "build",
+            "isDefault": false
+        },
+    },
+        {
+        "type": "cppbuild",
+        "label": "build prog-array-to-pointer",
+        "command": "make",
+        "args": [
+            "prog-array-to-pointer"
+        ],
+        "options": {
+            "cwd": "${workspaceFolder}"
+        },
+        "problemMatcher": [
+            "$gcc"
+        ],
+        "group": {
+            "kind": "build",
+            "isDefault": false
+        },
+    },
+        {
+        "type": "cppbuild",
+        "label": "build prog-pascal",
+        "command": "make",
+        "args": [
+            "prog-pascal"
+        ],
+        "options": {
+            "cwd": "${workspaceFolder}"
+        },
+        "problemMatcher": [
+            "$gcc"
+        ],
+        "group": {
+            "kind": "build",
+            "isDefault": false
+        },
+    },
+    ]
+}

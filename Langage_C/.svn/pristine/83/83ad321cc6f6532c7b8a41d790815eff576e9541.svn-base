@@ -1,0 +1,44 @@
+\hypertarget{test-replay_8c}{}\section{tests/test-\/replay.c File Reference}
+\label{test-replay_8c}\index{tests/test-\/replay.\+c@{tests/test-\/replay.\+c}}
+
+
+Simple test executable to show if the replay function is good.  
+
+
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}loader.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}move.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}replay\+\_\+function.\+h\char`\"{}}\newline
+Include dependency graph for test-\/replay.c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{test-replay_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{test-replay_8c_a77e9958aca0e6ffaea0ad557faadea0b}\label{test-replay_8c_a77e9958aca0e6ffaea0ad557faadea0b}} 
+\#define {\bfseries B\+I\+G\+\_\+\+P\+L\+AN}~\char`\"{}N\+N\+W\+W\+S\+W\+W\+N\+E\+E\+S\+W\+S\+W\+W\+W\+N\+N\+E\+E\+S\+S\+E\+S\+S\+W\+W\+N\+S\+E\+E\+N\+N\+N\+E\+N\+E\+N\+E\+S\+S\+S\+W\+S\+W\+E\+N\+E\+E\+S\+W\+W\+N\+E\+N\+N\+W\+W\+S\+W\+W\+N\+W\+W\+S\+S\+E\+S\+S\+E\+E\+N\+N\+W\+N\+E\+W\+N\+E\+E\+E\+N\+E\+S\+S\+S\+W\+S\+W\+E\+N\+E\+N\+N\+W\+W\+W\+W\+W\+W\+S\+S\+E\+S\+S\+E\+E\+N\+N\+W\+E\+S\+E\+E\+N\+E\+E\+S\+W\+W\+W\+E\+N\+E\+N\+N\+W\+W\+W\+W\+S\+S\+E\+N\+W\+N\+E\+E\+E\+N\+E\+S\+S\+N\+W\+W\+W\+W\+W\+W\+S\+S\+E\+S\+S\+E\+E\+N\+E\+E\+E\+E\+N\+W\+S\+W\+W\+W\+N\+N\+W\+N\+E\+E\+E\+N\+E\+S\+S\+S\+E\+S\+WW\char`\"{}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{test-replay_8c_a0ad572c7dc0e71fee43736274aac359f}\label{test-replay_8c_a0ad572c7dc0e71fee43736274aac359f}} 
+void {\bfseries test\+\_\+replay\+\_\+function} (F\+I\+LE $\ast$p\+\_\+file, char $\ast$plan, int lenght, F\+I\+LE $\ast$rp\+\_\+file)
+\item 
+\mbox{\Hypertarget{test-replay_8c_a840291bc02cba5474a4cb46a9b9566fe}\label{test-replay_8c_a840291bc02cba5474a4cb46a9b9566fe}} 
+int {\bfseries main} (void)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Simple test executable to show if the replay function is good. 
+
+\begin{DoxyAuthor}{Author}
+Salah-\/\+Eddine Yatim 
+\end{DoxyAuthor}

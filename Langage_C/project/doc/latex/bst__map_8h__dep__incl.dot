@@ -1,0 +1,11 @@
+digraph "include/bst_map.h"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="include/bst_map.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Simple definition of BST containing cells_map values."];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="src/bst_map.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$bst__map_8c.html",tooltip="A simple program to use bst_map"];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="tests/test-bst-map.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$test-bst-map_8c.html",tooltip="Simple test to see if bst_map_solver work."];
+}

@@ -1,0 +1,279 @@
+\hypertarget{bst__map_8h}{}\doxysection{include/bst\+\_\+map.h File Reference}
+\label{bst__map_8h}\index{include/bst\_map.h@{include/bst\_map.h}}
+
+
+Simple definition of BST containing {\ttfamily cells\+\_\+map} values.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}loader.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}move.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}solver.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}linked\+\_\+list\+\_\+map.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}queue\+\_\+map.\+h\char`\"{}}\newline
+Include dependency graph for bst\+\_\+map.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structbst__node__map}{bst\+\_\+node\+\_\+map}}
+\begin{DoxyCompactList}\small\item\em The structure representing the nodes of the binary tree. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{bst__map_8h_ae28f0ae1cb7ded7f20f5e430fafd2d89}\label{bst__map_8h_ae28f0ae1cb7ded7f20f5e430fafd2d89}} 
+typedef struct \mbox{\hyperlink{structbst__node__map}{bst\+\_\+node\+\_\+map}} \mbox{\hyperlink{bst__map_8h_ae28f0ae1cb7ded7f20f5e430fafd2d89}{bst\+\_\+node\+\_\+map}}
+\begin{DoxyCompactList}\small\item\em An alias to the structure representing the nodes of the tree. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{bst__map_8h_a5d0ef1495885491a0d07d7c73dfc2d89}\label{bst__map_8h_a5d0ef1495885491a0d07d7c73dfc2d89}} 
+typedef \mbox{\hyperlink{structbst__node__map}{bst\+\_\+node\+\_\+map}} $\ast$ \mbox{\hyperlink{bst__map_8h_a5d0ef1495885491a0d07d7c73dfc2d89}{bst\+\_\+map}}
+\begin{DoxyCompactList}\small\item\em A binary tree is just a pointer to the root node of the tree. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{bst__map_8h_a5d0ef1495885491a0d07d7c73dfc2d89}{bst\+\_\+map}} \mbox{\hyperlink{bst__map_8h_abd75f820f8f3d7e005b0a1813e74b9cf}{nil\+\_\+tree}} ()
+\begin{DoxyCompactList}\small\item\em Create a nil binary search tree. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{bst__map_8h_aa47debc970f9ea68a1f44ed55edff857}{is\+\_\+empty\+\_\+tree}} (\mbox{\hyperlink{bst__map_8h_a5d0ef1495885491a0d07d7c73dfc2d89}{bst\+\_\+map}} tree)
+\begin{DoxyCompactList}\small\item\em Is the binary search tree empty? \end{DoxyCompactList}\item 
+char $\ast$ \mbox{\hyperlink{bst__map_8h_ad1cacaf2739727db68b5ea6d1a9709c9}{value}} (\mbox{\hyperlink{bst__map_8h_a5d0ef1495885491a0d07d7c73dfc2d89}{bst\+\_\+map}} tree)
+\begin{DoxyCompactList}\small\item\em The value in the root of the binary search tree. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{bst__map_8h_ad0df24dd3d570f9f2d88be6ead89c54a}{size}} (\mbox{\hyperlink{bst__map_8h_a5d0ef1495885491a0d07d7c73dfc2d89}{bst\+\_\+map}} tree)
+\begin{DoxyCompactList}\small\item\em The number of nodes in the binary search tree. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{bst__map_8h_a5b6eab7c0c0e148caacae4d6c92d4e9b}{height}} (\mbox{\hyperlink{bst__map_8h_a5d0ef1495885491a0d07d7c73dfc2d89}{bst\+\_\+map}} tree)
+\begin{DoxyCompactList}\small\item\em The height of the binary search tree. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{bst__map_8h_a5d0ef1495885491a0d07d7c73dfc2d89}{bst\+\_\+map}} \mbox{\hyperlink{bst__map_8h_ab1c1db45b9787dc66e73bae8a62046dc}{left\+\_\+child}} (\mbox{\hyperlink{bst__map_8h_a5d0ef1495885491a0d07d7c73dfc2d89}{bst\+\_\+map}} tree)
+\begin{DoxyCompactList}\small\item\em The left subtree of the tree. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{bst__map_8h_a5d0ef1495885491a0d07d7c73dfc2d89}{bst\+\_\+map}} \mbox{\hyperlink{bst__map_8h_a88afa36fb6513084247ebe1aab9259f3}{right\+\_\+child}} (\mbox{\hyperlink{bst__map_8h_a5d0ef1495885491a0d07d7c73dfc2d89}{bst\+\_\+map}} tree)
+\begin{DoxyCompactList}\small\item\em The right subtree of the tree. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{bst__map_8h_aebfd0a3a515c4a8a662ea204722d9d0b}{is\+\_\+in\+\_\+tree}} (\mbox{\hyperlink{bst__map_8h_a5d0ef1495885491a0d07d7c73dfc2d89}{bst\+\_\+map}} tree, char $\ast$p\+\_\+map, int \mbox{\hyperlink{bst__map_8c_a5b6eab7c0c0e148caacae4d6c92d4e9b}{height}}, int width)
+\begin{DoxyCompactList}\small\item\em Insert a value in the tree. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{bst__map_8h_a2bab24fa9841c17f4c28a60af4fedb24}{insert}} (\mbox{\hyperlink{bst__map_8h_a5d0ef1495885491a0d07d7c73dfc2d89}{bst\+\_\+map}} tree, char $\ast$p\+\_\+map, int \mbox{\hyperlink{bst__map_8c_a5b6eab7c0c0e148caacae4d6c92d4e9b}{height}}, int width)
+\begin{DoxyCompactList}\small\item\em Insert a value in the tree. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{bst__map_8h_a41997494e40c6b322aa249dc2cf535d6}{deallocate\+\_\+bst}} (\mbox{\hyperlink{bst__map_8h_a5d0ef1495885491a0d07d7c73dfc2d89}{bst\+\_\+map}} tree)
+\begin{DoxyCompactList}\small\item\em Deallocate a binary search tree. \end{DoxyCompactList}\item 
+char $\ast$ \mbox{\hyperlink{bst__map_8h_ace33872b481006e6ddaf7d2b5dba273d}{solve\+\_\+function\+\_\+bst}} (FILE $\ast$p\+\_\+file)
+\begin{DoxyCompactList}\small\item\em building a wining plan \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Simple definition of BST containing {\ttfamily cells\+\_\+map} values. 
+
+\begin{DoxyAuthor}{Author}
+S.\+Yatim 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{bst__map_8h_a41997494e40c6b322aa249dc2cf535d6}\label{bst__map_8h_a41997494e40c6b322aa249dc2cf535d6}} 
+\index{bst\_map.h@{bst\_map.h}!deallocate\_bst@{deallocate\_bst}}
+\index{deallocate\_bst@{deallocate\_bst}!bst\_map.h@{bst\_map.h}}
+\doxysubsubsection{\texorpdfstring{deallocate\_bst()}{deallocate\_bst()}}
+{\footnotesize\ttfamily void deallocate\+\_\+bst (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{bst__map_8h_a5d0ef1495885491a0d07d7c73dfc2d89}{bst\+\_\+map}}}]{tree }\end{DoxyParamCaption})}
+
+
+
+Deallocate a binary search tree. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tree} & the tree to be deallocated\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPostcond}{Postcondition}
+After the call, all memory regions used for the nodes are deallocated 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{bst__map_8h_a5b6eab7c0c0e148caacae4d6c92d4e9b}\label{bst__map_8h_a5b6eab7c0c0e148caacae4d6c92d4e9b}} 
+\index{bst\_map.h@{bst\_map.h}!height@{height}}
+\index{height@{height}!bst\_map.h@{bst\_map.h}}
+\doxysubsubsection{\texorpdfstring{height()}{height()}}
+{\footnotesize\ttfamily int height (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{bst__map_8h_a5d0ef1495885491a0d07d7c73dfc2d89}{bst\+\_\+map}}}]{tree }\end{DoxyParamCaption})}
+
+
+
+The height of the binary search tree. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tree} & the tree\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the height of the tree 
+\end{DoxyReturn}
+\mbox{\Hypertarget{bst__map_8h_a2bab24fa9841c17f4c28a60af4fedb24}\label{bst__map_8h_a2bab24fa9841c17f4c28a60af4fedb24}} 
+\index{bst\_map.h@{bst\_map.h}!insert@{insert}}
+\index{insert@{insert}!bst\_map.h@{bst\_map.h}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}}
+{\footnotesize\ttfamily void insert (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{bst__map_8h_a5d0ef1495885491a0d07d7c73dfc2d89}{bst\+\_\+map}}}]{tree,  }\item[{char $\ast$}]{p\+\_\+map,  }\item[{int}]{height,  }\item[{int}]{width }\end{DoxyParamCaption})}
+
+
+
+Insert a value in the tree. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tree} & the tree in which the value is to be inserted \\
+\hline
+{\em value} & the value to be inserted\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a tree in which there is a node containing {\ttfamily value}. This node is correctly placed with respect to the binary search tree property. If the node was already in the tree, no new node is inserted and {\ttfamily tree} is returned. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{bst__map_8h_aa47debc970f9ea68a1f44ed55edff857}\label{bst__map_8h_aa47debc970f9ea68a1f44ed55edff857}} 
+\index{bst\_map.h@{bst\_map.h}!is\_empty\_tree@{is\_empty\_tree}}
+\index{is\_empty\_tree@{is\_empty\_tree}!bst\_map.h@{bst\_map.h}}
+\doxysubsubsection{\texorpdfstring{is\_empty\_tree()}{is\_empty\_tree()}}
+{\footnotesize\ttfamily bool is\+\_\+empty\+\_\+tree (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{bst__map_8h_a5d0ef1495885491a0d07d7c73dfc2d89}{bst\+\_\+map}}}]{tree }\end{DoxyParamCaption})}
+
+
+
+Is the binary search tree empty? 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tree} & a the tree you want to check the emptiness\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if {\ttfamily tree} is empty, {\ttfamily false} else 
+\end{DoxyReturn}
+\mbox{\Hypertarget{bst__map_8h_aebfd0a3a515c4a8a662ea204722d9d0b}\label{bst__map_8h_aebfd0a3a515c4a8a662ea204722d9d0b}} 
+\index{bst\_map.h@{bst\_map.h}!is\_in\_tree@{is\_in\_tree}}
+\index{is\_in\_tree@{is\_in\_tree}!bst\_map.h@{bst\_map.h}}
+\doxysubsubsection{\texorpdfstring{is\_in\_tree()}{is\_in\_tree()}}
+{\footnotesize\ttfamily bool is\+\_\+in\+\_\+tree (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{bst__map_8h_a5d0ef1495885491a0d07d7c73dfc2d89}{bst\+\_\+map}}}]{tree,  }\item[{char $\ast$}]{p\+\_\+map,  }\item[{int}]{height,  }\item[{int}]{width }\end{DoxyParamCaption})}
+
+
+
+Insert a value in the tree. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tree} & the tree in which the value is to be inserted \\
+\hline
+{\em value} & the value to be inserted\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a tree in which there is a node containing {\ttfamily value}. This node is correctly placed with respect to the binary search tree property. If the node was already in the tree, no new node is inserted and {\ttfamily tree} is returned. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{bst__map_8h_ab1c1db45b9787dc66e73bae8a62046dc}\label{bst__map_8h_ab1c1db45b9787dc66e73bae8a62046dc}} 
+\index{bst\_map.h@{bst\_map.h}!left\_child@{left\_child}}
+\index{left\_child@{left\_child}!bst\_map.h@{bst\_map.h}}
+\doxysubsubsection{\texorpdfstring{left\_child()}{left\_child()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{bst__map_8h_a5d0ef1495885491a0d07d7c73dfc2d89}{bst\+\_\+map}} left\+\_\+child (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{bst__map_8h_a5d0ef1495885491a0d07d7c73dfc2d89}{bst\+\_\+map}}}]{tree }\end{DoxyParamCaption})}
+
+
+
+The left subtree of the tree. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tree} & the tree\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+{\ttfamily tree} is not empty.
+\end{DoxyPrecond}
+\begin{DoxyReturn}{Returns}
+the left subtree of {\ttfamily tree} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{bst__map_8h_abd75f820f8f3d7e005b0a1813e74b9cf}\label{bst__map_8h_abd75f820f8f3d7e005b0a1813e74b9cf}} 
+\index{bst\_map.h@{bst\_map.h}!nil\_tree@{nil\_tree}}
+\index{nil\_tree@{nil\_tree}!bst\_map.h@{bst\_map.h}}
+\doxysubsubsection{\texorpdfstring{nil\_tree()}{nil\_tree()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{bst__map_8h_a5d0ef1495885491a0d07d7c73dfc2d89}{bst\+\_\+map}} nil\+\_\+tree (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Create a nil binary search tree. 
+
+\begin{DoxyReturn}{Returns}
+an empty binary search tree 
+\end{DoxyReturn}
+\mbox{\Hypertarget{bst__map_8h_a88afa36fb6513084247ebe1aab9259f3}\label{bst__map_8h_a88afa36fb6513084247ebe1aab9259f3}} 
+\index{bst\_map.h@{bst\_map.h}!right\_child@{right\_child}}
+\index{right\_child@{right\_child}!bst\_map.h@{bst\_map.h}}
+\doxysubsubsection{\texorpdfstring{right\_child()}{right\_child()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{bst__map_8h_a5d0ef1495885491a0d07d7c73dfc2d89}{bst\+\_\+map}} right\+\_\+child (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{bst__map_8h_a5d0ef1495885491a0d07d7c73dfc2d89}{bst\+\_\+map}}}]{tree }\end{DoxyParamCaption})}
+
+
+
+The right subtree of the tree. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tree} & the tree\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+{\ttfamily tree} is not empty.
+\end{DoxyPrecond}
+\begin{DoxyReturn}{Returns}
+the right subtree of {\ttfamily tree} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{bst__map_8h_ad0df24dd3d570f9f2d88be6ead89c54a}\label{bst__map_8h_ad0df24dd3d570f9f2d88be6ead89c54a}} 
+\index{bst\_map.h@{bst\_map.h}!size@{size}}
+\index{size@{size}!bst\_map.h@{bst\_map.h}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily int size (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{bst__map_8h_a5d0ef1495885491a0d07d7c73dfc2d89}{bst\+\_\+map}}}]{tree }\end{DoxyParamCaption})}
+
+
+
+The number of nodes in the binary search tree. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tree} & the tree\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the number of nodes in the tree 
+\end{DoxyReturn}
+\mbox{\Hypertarget{bst__map_8h_ace33872b481006e6ddaf7d2b5dba273d}\label{bst__map_8h_ace33872b481006e6ddaf7d2b5dba273d}} 
+\index{bst\_map.h@{bst\_map.h}!solve\_function\_bst@{solve\_function\_bst}}
+\index{solve\_function\_bst@{solve\_function\_bst}!bst\_map.h@{bst\_map.h}}
+\doxysubsubsection{\texorpdfstring{solve\_function\_bst()}{solve\_function\_bst()}}
+{\footnotesize\ttfamily char$\ast$ solve\+\_\+function\+\_\+bst (\begin{DoxyParamCaption}\item[{FILE $\ast$}]{p\+\_\+file }\end{DoxyParamCaption})}
+
+
+
+building a wining plan 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+map\+\_\+cell} & a pointer to a cell\\
+\hline
+{\em p\+\_\+initial\+\_\+map} & a pointer to the origin map ~\newline
+\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the plan frm where how got this map 
+\end{DoxyReturn}
+\mbox{\Hypertarget{bst__map_8h_ad1cacaf2739727db68b5ea6d1a9709c9}\label{bst__map_8h_ad1cacaf2739727db68b5ea6d1a9709c9}} 
+\index{bst\_map.h@{bst\_map.h}!value@{value}}
+\index{value@{value}!bst\_map.h@{bst\_map.h}}
+\doxysubsubsection{\texorpdfstring{value()}{value()}}
+{\footnotesize\ttfamily char$\ast$ value (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{bst__map_8h_a5d0ef1495885491a0d07d7c73dfc2d89}{bst\+\_\+map}}}]{tree }\end{DoxyParamCaption})}
+
+
+
+The value in the root of the binary search tree. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tree} & the tree\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+{\ttfamily tree} is not empty.
+\end{DoxyPrecond}
+\begin{DoxyReturn}{Returns}
+the value in the root of the tree 
+\end{DoxyReturn}

@@ -1,0 +1,79 @@
+/**
+ * @file queue_map.c
+ * 
+ * @author Salah-Eddine Yatim
+ */
+
+#include <assert.h>
+#include <stdbool.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+#include "queue_map.h"
+
+
+void nil_queue(queue_map* p_queue){
+    
+    p_queue->p_tail = malloc(sizeof(cell_map)) ;
+    p_queue->p_head = malloc(sizeof(cell_map)) ;
+
+    p_queue->p_tail->p_map = NULL ;
+    p_queue->p_tail->p_next_map = NULL ;
+
+    p_queue->p_head->p_map = NULL ;
+    p_queue->p_head->p_next_map = NULL ;
+
+}
+
+char* dequeue(queue_map* p_queue){
+
+    cell_map* head = p_queue->p_head->p_next_map ;
+    char* p_map = head->p_map ;
+
+    if(p_queue->p_head->p_next_map == p_queue->p_tail->p_next_map){
+
+        p_queue->p_tail->p_next_map = NULL ;
+        p_queue->p_head->p_next_map = NULL ;
+
+    }
+    else{
+        p_queue->p_head->p_next_map = head->p_next_map ;
+    }
+
+    free(head);
+
+    return p_map ;
+}
+
+
+void enqueue(queue_map* p_queue , char* p_map){
+
+    cell_map *p_new_tail = malloc(sizeof(cell_map));
+
+    if (p_new_tail == NULL) {
+        printf("problem with creating cell in enqueue!\n");
+    }
+
+    p_new_tail->p_map = p_map;
+    p_new_tail->p_next_map  = NULL;
+
+    if ( p_queue->p_head->p_next_map == NULL){
+        p_queue->p_head->p_next_map = p_new_tail ;
+    }
+    else{
+        p_queue->p_tail->p_next_map->p_next_map = p_new_tail ;
+    }
+    
+    p_queue->p_tail->p_next_map = p_new_tail ;
+
+
+}
+
+void deallocate_queue(queue_map* p_queue){
+
+    free(p_queue->p_head);
+    free(p_queue->p_tail);
+
+}
+
+

@@ -1,0 +1,203 @@
+/**
+ * @file solver.c
+ * 
+ * @author Salah-Eddine Yatim
+ */
+
+
+#include <stdbool.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+#include "solver.h" 
+#include "linked_list_map.h"
+#include "queue_map.h"
+#include "loader.h"
+#include "move.h"
+
+bool is_a_winnig_map(char* p_map , int height , int width){
+    
+    for(int i=0 ; i < height ; i++ ){
+
+        for(int j=0 ; j < width ; j++ ){
+
+            //if there is still a box on an empty cell then not winnig 
+            if( p_map[i*width + j] == '$'){
+                
+                return false ;
+            }
+        }
+    }
+    return true;
+}
+
+bool is_in_list_map(linked_list_map* p_list, char* p_map , int height , int width){
+
+    cell_map *p_current_cell = *p_list;
+
+    while (p_current_cell != NULL) {
+
+        if(equal_maps(p_map, p_current_cell->p_map , height , width)){
+
+            return true ;
+        }
+        p_current_cell = p_current_cell->p_next_map ;
+    }
+
+    return false;
+}
+
+char* build_plan(cell_map* p_map_cell , cell_map* p_initial_cell){
+
+    char* plan = (char*) malloc(( p_map_cell->depth + 1) * sizeof(char));
+
+    cell_map* current_cell = p_map_cell ;
+    int i = p_map_cell->depth -1 ;
+
+    while (current_cell != p_initial_cell){
+        
+        plan[i] = current_cell->dir ;
+        current_cell = current_cell->p_origin_map ;
+        i--;
+    }
+    
+    plan[p_map_cell->depth] = '\0' ;
+
+    return plan ; 
+}
+
+bool equal_maps(char* p_map1 , char* p_map2 , int height , int width){
+
+    for(int i=0 ; i < height ; i++ ){
+
+        for(int j=0 ; j < width ; j++ ){
+
+            //if there is still a different caractere
+
+            if( p_map1[i*width + j] != p_map2[i*width + j]){
+                
+                return false ;
+            }
+        }
+    }
+    return true;
+
+}
+
+char* solve_function(FILE *p_file) {
+    
+    if (p_file == NULL) {
+        fprintf(stderr, "Cannot read file !\n");
+        exit(EXIT_FAILURE);
+    }
+
+    // read dimensions on first line
+    int width         = 0;
+    int height        = 0;
+    int fscanf_result = 0;
+
+    fscanf_result = fscanf(p_file, "%d %d\n", &width, &height);
+
+    if (fscanf_result != 2) {
+        fprintf(stderr, "First line is not syntactically correct!\n");
+        exit(EXIT_FAILURE);
+    }
+
+    //STARTING THE SOLVER  (Sokoban solver algorithm)
+
+    char* p_initial_map = load(width , height , p_file);
+    cell_map* p_initial_map_cell = malloc(sizeof(cell_map));
+
+    p_initial_map_cell->depth = 0 ;
+    p_initial_map_cell->p_map = p_initial_map ;
+    p_initial_map_cell->p_origin_map = NULL;
+    p_initial_map_cell->p_next_map = NULL;
+
+    queue_map* search_queue = malloc(sizeof(queue_map)); 
+    queue_map* dequeued_queue = malloc(sizeof(queue_map));
+    
+    linked_list_map* explored_list = malloc(sizeof(linked_list_map));
+
+    nil_queue(search_queue);
+    nil_queue(dequeued_queue);
+    nil(explored_list);
+
+    enqueue_cell(search_queue , p_initial_map_cell);
+    add_cell(explored_list , p_initial_map_cell);
+
+    cell_map*  p_current_cell ;
+
+    while (search_queue->p_tail->p_next_map != NULL){
+
+        p_current_cell = dequeue(search_queue);
+        char* p_current_map = p_current_cell->p_map ;
+
+        enqueue_cell(dequeued_queue , p_current_cell);
+
+        if(is_a_winnig_map(p_current_map , height , width)){
+
+            break; 
+        }  
+
+        char directions[] = {'N', 'S', 'W' , 'E'};
+
+        for (int i=0 ; i < 4 ; i++){
+
+            char dir = directions[i];
+
+            char* p_new_map = move_function(dir, p_current_map, height, width);
+
+            //Si mvmt impossible on a pas d'espace a liberer on a pas utiliser malloc dans move
+            if(p_current_map != p_new_map){
+
+                if (is_in_list_map(explored_list, p_new_map,  height , width)){
+
+                    free(p_new_map);
+                }
+                else{
+
+                    cell_map* p_new_cell = malloc(sizeof(cell_map));
+
+                    p_new_cell->dir = dir;
+                    p_new_cell->p_map = p_new_map ;
+                    p_new_cell->p_origin_map = p_current_cell ;
+                    p_new_cell->depth = p_current_cell->depth + 1 ;
+                    
+                    add_cell(explored_list , p_new_cell);
+                    enqueue_cell(search_queue , p_new_cell);
+                }
+            }
+        }
+
+    }
+
+    if(is_a_winnig_map(p_current_cell->p_map , height , width)){
+            
+            char* plan = build_plan(p_current_cell , p_initial_map_cell);
+
+            deallocate_queue(search_queue);
+            free(search_queue);
+            deallocate_queue(dequeued_queue);
+            free(dequeued_queue);
+            free(explored_list);
+
+            return plan ;
+    }
+    
+    else{
+
+        deallocate_queue(search_queue);
+        free(search_queue);
+        deallocate_queue(dequeued_queue);
+        free(dequeued_queue);
+        free(explored_list);
+
+        printf("THIS MAP IS IMPOSSIBLE TO SOLVE \n");
+
+        char* plan = (char*) malloc(11*sizeof(char)) ;
+        plan = "IMPOSSIBLE";
+        
+        return plan ;
+    }
+
+}

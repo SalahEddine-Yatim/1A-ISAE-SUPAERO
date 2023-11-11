@@ -1,0 +1,57 @@
+\hypertarget{sokoban_8c}{}\section{src/sokoban.c File Reference}
+\label{sokoban_8c}\index{src/sokoban.\+c@{src/sokoban.\+c}}
+
+
+A simple program to print a p\+\_\+map.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+Include dependency graph for sokoban.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{sokoban_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{sokoban_8c_a912d92caf3bec438719114c0c54d66de}{print\+\_\+map}} (char $\ast$p\+\_\+map, int height, int width)
+\begin{DoxyCompactList}\small\item\em as the name this function print the p\+\_\+map loaded in a pointer \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A simple program to print a p\+\_\+map. 
+
+\begin{DoxyAuthor}{Author}
+Salah-\/\+Eddine Yatim 
+\end{DoxyAuthor}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{sokoban_8c_a912d92caf3bec438719114c0c54d66de}\label{sokoban_8c_a912d92caf3bec438719114c0c54d66de}} 
+\index{sokoban.\+c@{sokoban.\+c}!print\+\_\+map@{print\+\_\+map}}
+\index{print\+\_\+map@{print\+\_\+map}!sokoban.\+c@{sokoban.\+c}}
+\subsubsection{\texorpdfstring{print\+\_\+map()}{print\_map()}}
+{\footnotesize\ttfamily void print\+\_\+map (\begin{DoxyParamCaption}\item[{char $\ast$}]{p\+\_\+map,  }\item[{int}]{height,  }\item[{int}]{width }\end{DoxyParamCaption})}
+
+
+
+as the name this function print the p\+\_\+map loaded in a pointer 
+
+it takes the loaded p\+\_\+map and print each charachter of the p\+\_\+map as wanted
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & the width of the p\+\_\+map\\
+\hline
+{\em height} & the height of the p\+\_\+map\\
+\hline
+{\em p\+\_\+map} & the loaded p\+\_\+map by load fonction it\textquotesingle{}s a pointer\\
+\hline
+\end{DoxyParams}
+\begin{DoxyAuthor}{Author}
+Salah-\/\+Eddine Yatim 
+\end{DoxyAuthor}

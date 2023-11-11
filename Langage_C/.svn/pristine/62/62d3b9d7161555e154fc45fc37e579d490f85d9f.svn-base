@@ -1,0 +1,102 @@
+/**
+ * @file test_linked_list_map.c
+ * 
+ * @brief Simple test to see if linked list work 
+ *
+ * @author S.Yatim
+ *
+ */
+
+#include <assert.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include "loader.h"
+#include "linked_list_map.h"
+
+char* load_map(FILE *p_file);
+void test_linked_list_map(FILE *p_file1 , FILE *p_file2 , FILE *p_file3 , FILE *p_file4);
+
+char* load_map(FILE *p_file) {
+
+    // read dimensions on first line
+    int width         = 0;
+    int height        = 0;
+    int fscanf_result = 0;
+
+    fscanf_result = fscanf(p_file, "%d %d\n", &width, &height);
+
+    if (fscanf_result != 2) {
+        fprintf(stderr, "First line is not syntactically correct!\n");
+        exit(EXIT_FAILURE);
+    }
+
+    char *p_map = load( width , height , p_file);
+
+    return p_map;
+   
+}
+
+void test_linked_list_map(FILE *p_file1 , FILE *p_file2 , FILE *p_file3 , FILE *p_file4) {
+
+    //Loading the maps from files
+
+    char* p_map1 = load_map(p_file1);
+    char* p_map2 = load_map(p_file2);
+    char* p_map3 = load_map(p_file3);
+    char* p_map4 = load_map(p_file4);
+
+    //Staet building the linked_list 
+    linked_list_map* map_list = malloc(sizeof(linked_list_map));
+    nil(map_list);
+    cons(map_list , p_map4);
+    cons(map_list , p_map3);
+    cons(map_list , p_map2);
+    cons(map_list , p_map1);
+
+    //getting element from the list we built 
+    char* map1_from_list = get_element(map_list, 0);
+    char* map2_from_list = get_element(map_list , 1);
+    char* map3_from_list = get_element(map_list , 2);
+    char* map4_from_list = get_element(map_list , 3);
+
+    printf("Comparing map from load fonction and from linked list... Done \n\n");
+
+    //Comparing ...
+    assert(p_map1 == map1_from_list);
+    assert(p_map2 == map2_from_list);
+    assert(p_map3 == map3_from_list);
+    assert(p_map4 == map4_from_list);
+
+    //Delallocating
+    deallocate_map(map_list);
+    
+    free(map_list);
+    
+    printf("Test building a linked list and filing it with 4 maps OK!\n");
+}
+
+
+
+int main(void) {
+
+    // open file. The filename is the first argument on the command
+    FILE *p_file1 = NULL;
+    FILE *p_file2 = NULL;
+    FILE *p_file3 = NULL;
+    FILE *p_file4 = NULL;
+    
+    // open file. The filename is the first argument on the command fopen 
+    p_file1 = fopen("./data/soko1.in", "r");
+    p_file2 = fopen("./data/soko2.in", "r");
+    p_file3 = fopen("./data/soko3.in", "r");
+    p_file4 = fopen("./data/soko4.in", "r");
+
+
+    printf("* Starting linked list tests...\n\n");
+
+    test_linked_list_map(p_file1 , p_file2 , p_file3 , p_file4);
+
+    printf("  +-> OK!\n\n");
+
+    return 0;
+}

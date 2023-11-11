@@ -1,0 +1,329 @@
+\hypertarget{binary__search__tree__int_8h}{}\doxysection{include/binary\+\_\+search\+\_\+tree\+\_\+int.h File Reference}
+\label{binary__search__tree__int_8h}\index{include/binary\_search\_tree\_int.h@{include/binary\_search\_tree\_int.h}}
+
+
+Simple definition of BST containing {\ttfamily int} values.  
+
+
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+Include dependency graph for binary\+\_\+search\+\_\+tree\+\_\+int.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structbst__node__int}{bst\+\_\+node\+\_\+int}}
+\begin{DoxyCompactList}\small\item\em The structure representing the nodes of the binary tree. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{binary__search__tree__int_8h_a4dbb053d7fc4f4eb76e1d8e5f82fcdfd}\label{binary__search__tree__int_8h_a4dbb053d7fc4f4eb76e1d8e5f82fcdfd}} 
+typedef struct \mbox{\hyperlink{structbst__node__int}{bst\+\_\+node\+\_\+int}} \mbox{\hyperlink{binary__search__tree__int_8h_a4dbb053d7fc4f4eb76e1d8e5f82fcdfd}{bst\+\_\+node\+\_\+int}}
+\begin{DoxyCompactList}\small\item\em An alias to the structure representing the nodes of the tree. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{binary__search__tree__int_8h_ac4bf7c1347160e92cc8bd82a5c18e31d}\label{binary__search__tree__int_8h_ac4bf7c1347160e92cc8bd82a5c18e31d}} 
+typedef \mbox{\hyperlink{structbst__node__int}{bst\+\_\+node\+\_\+int}} $\ast$ \mbox{\hyperlink{binary__search__tree__int_8h_ac4bf7c1347160e92cc8bd82a5c18e31d}{bst\+\_\+int}}
+\begin{DoxyCompactList}\small\item\em A binary tree is just a pointer to the root node of the tree. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{binary__search__tree__int_8h_ac4bf7c1347160e92cc8bd82a5c18e31d}{bst\+\_\+int}} \mbox{\hyperlink{binary__search__tree__int_8h_a129d27c8b6928d92f8794171e36f7c3e}{nil}} ()
+\begin{DoxyCompactList}\small\item\em Create a nil binary search tree. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{binary__search__tree__int_8h_ac34673c04e11de43c3d4e773be70ffda}{is\+\_\+empty}} (\mbox{\hyperlink{binary__search__tree__int_8h_ac4bf7c1347160e92cc8bd82a5c18e31d}{bst\+\_\+int}} tree)
+\begin{DoxyCompactList}\small\item\em Is the binary search tree empty? \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{binary__search__tree__int_8h_a0e2f84fcdc38784c5dc75fee42fdaa0a}{value}} (\mbox{\hyperlink{binary__search__tree__int_8h_ac4bf7c1347160e92cc8bd82a5c18e31d}{bst\+\_\+int}} tree)
+\begin{DoxyCompactList}\small\item\em The value in the root of the binary search tree. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{binary__search__tree__int_8h_af1accc21179665643f12e5ad7b6f1b49}{size}} (\mbox{\hyperlink{binary__search__tree__int_8h_ac4bf7c1347160e92cc8bd82a5c18e31d}{bst\+\_\+int}} tree)
+\begin{DoxyCompactList}\small\item\em The number of nodes in the binary search tree. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{binary__search__tree__int_8h_a9c114d273e54c7b04c13cbcad3a39478}{height}} (\mbox{\hyperlink{binary__search__tree__int_8h_ac4bf7c1347160e92cc8bd82a5c18e31d}{bst\+\_\+int}} tree)
+\begin{DoxyCompactList}\small\item\em The height of the binary search tree. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{binary__search__tree__int_8h_ac4bf7c1347160e92cc8bd82a5c18e31d}{bst\+\_\+int}} \mbox{\hyperlink{binary__search__tree__int_8h_a7c40db4e6ab396b0cb0e7154aa22cac8}{left\+\_\+child}} (\mbox{\hyperlink{binary__search__tree__int_8h_ac4bf7c1347160e92cc8bd82a5c18e31d}{bst\+\_\+int}} tree)
+\begin{DoxyCompactList}\small\item\em The left subtree of the tree. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{binary__search__tree__int_8h_ac4bf7c1347160e92cc8bd82a5c18e31d}{bst\+\_\+int}} \mbox{\hyperlink{binary__search__tree__int_8h_aa55d44941cb4dd9f60acd30109ff0409}{right\+\_\+child}} (\mbox{\hyperlink{binary__search__tree__int_8h_ac4bf7c1347160e92cc8bd82a5c18e31d}{bst\+\_\+int}} tree)
+\begin{DoxyCompactList}\small\item\em The right subtree of the tree. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{binary__search__tree__int_8h_ac4bf7c1347160e92cc8bd82a5c18e31d}{bst\+\_\+int}} \mbox{\hyperlink{binary__search__tree__int_8h_a999880f630cac3147bacba4152c483f0}{retrieve}} (\mbox{\hyperlink{binary__search__tree__int_8h_ac4bf7c1347160e92cc8bd82a5c18e31d}{bst\+\_\+int}} tree, int \mbox{\hyperlink{binary__search__tree__int_8h_a0e2f84fcdc38784c5dc75fee42fdaa0a}{value}})
+\begin{DoxyCompactList}\small\item\em Retrieve a subtree in the tree given the value of its root. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{binary__search__tree__int_8h_ac4bf7c1347160e92cc8bd82a5c18e31d}{bst\+\_\+int}} \mbox{\hyperlink{binary__search__tree__int_8h_aaae3b570050793245d4869cdce114d7c}{insert}} (\mbox{\hyperlink{binary__search__tree__int_8h_ac4bf7c1347160e92cc8bd82a5c18e31d}{bst\+\_\+int}} tree, int \mbox{\hyperlink{binary__search__tree__int_8h_a0e2f84fcdc38784c5dc75fee42fdaa0a}{value}})
+\begin{DoxyCompactList}\small\item\em Insert a value in the tree. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{binary__search__tree__int_8h_ac4bf7c1347160e92cc8bd82a5c18e31d}{bst\+\_\+int}} \mbox{\hyperlink{binary__search__tree__int_8h_a1b8a224628ec2e49bdfc1b7286d00144}{delete}} (\mbox{\hyperlink{binary__search__tree__int_8h_ac4bf7c1347160e92cc8bd82a5c18e31d}{bst\+\_\+int}} tree, int \mbox{\hyperlink{binary__search__tree__int_8h_a0e2f84fcdc38784c5dc75fee42fdaa0a}{value}})
+\begin{DoxyCompactList}\small\item\em Delete a value in the tree. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{binary__search__tree__int_8h_ab591a901ac81731a9308130343d4e64c}{in\+\_\+order\+\_\+dfs\+\_\+infix}} (\mbox{\hyperlink{binary__search__tree__int_8h_ac4bf7c1347160e92cc8bd82a5c18e31d}{bst\+\_\+int}} tree)
+\begin{DoxyCompactList}\small\item\em Traverse the tree depth-\/first and print the value in order (infix style). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{binary__search__tree__int_8h_a647c4c444a239b9db74a04341ddb4a97}{deallocate\+\_\+bst}} (\mbox{\hyperlink{binary__search__tree__int_8h_ac4bf7c1347160e92cc8bd82a5c18e31d}{bst\+\_\+int}} tree)
+\begin{DoxyCompactList}\small\item\em Deallocate a binary search tree. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{binary__search__tree__int_8h_afb38a55ddb8477590f40394515d5a15d}{print\+\_\+bst}} (\mbox{\hyperlink{binary__search__tree__int_8h_ac4bf7c1347160e92cc8bd82a5c18e31d}{bst\+\_\+int}} tree)
+\begin{DoxyCompactList}\small\item\em Prints the tree. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Simple definition of BST containing {\ttfamily int} values. 
+
+\begin{DoxyAuthor}{Author}
+Christophe Garion
+\end{DoxyAuthor}
+This is a simple definition of a binary search tree containing {\ttfamily int} values implemented using nodes linked by pointers. Warning\+: the cells pointers should not be shared as deallocation of a BST deallocates the memory space reserved for the cells!
+
+The API of the BST is defined as follows\+:
+
+
+\begin{DoxyItemize}
+\item a function to create an empty BST
+\item a function to check if the BST is empty
+\item a function to get the value at the root of the BST
+\item a function to get the size of the BST
+\item a function to get the height of the BST
+\item a function to get the left child of the BST
+\item a function to get the right child of the BST
+\item a function to retrieve a value in the BST
+\item a function to insert a value in the BST
+\item a function to delete a value in the BST
+\item a function to print the nodes values in-\/order
+\item a function to deallocate the BST
+\item a function to print the BST 
+\end{DoxyItemize}
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{binary__search__tree__int_8h_a647c4c444a239b9db74a04341ddb4a97}\label{binary__search__tree__int_8h_a647c4c444a239b9db74a04341ddb4a97}} 
+\index{binary\_search\_tree\_int.h@{binary\_search\_tree\_int.h}!deallocate\_bst@{deallocate\_bst}}
+\index{deallocate\_bst@{deallocate\_bst}!binary\_search\_tree\_int.h@{binary\_search\_tree\_int.h}}
+\doxysubsubsection{\texorpdfstring{deallocate\_bst()}{deallocate\_bst()}}
+{\footnotesize\ttfamily void deallocate\+\_\+bst (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{binary__search__tree__int_8h_ac4bf7c1347160e92cc8bd82a5c18e31d}{bst\+\_\+int}}}]{tree }\end{DoxyParamCaption})}
+
+
+
+Deallocate a binary search tree. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tree} & the tree to be deallocated\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPostcond}{Postcondition}
+After the call, all memory regions used for the nodes are deallocated 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{binary__search__tree__int_8h_a1b8a224628ec2e49bdfc1b7286d00144}\label{binary__search__tree__int_8h_a1b8a224628ec2e49bdfc1b7286d00144}} 
+\index{binary\_search\_tree\_int.h@{binary\_search\_tree\_int.h}!delete@{delete}}
+\index{delete@{delete}!binary\_search\_tree\_int.h@{binary\_search\_tree\_int.h}}
+\doxysubsubsection{\texorpdfstring{delete()}{delete()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{binary__search__tree__int_8h_ac4bf7c1347160e92cc8bd82a5c18e31d}{bst\+\_\+int}} delete (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{binary__search__tree__int_8h_ac4bf7c1347160e92cc8bd82a5c18e31d}{bst\+\_\+int}}}]{tree,  }\item[{int}]{value }\end{DoxyParamCaption})}
+
+
+
+Delete a value in the tree. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tree} & the tree in which the value is to be deleted \\
+\hline
+{\em value} & the value to be deleted\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a tree such that if there was a node containing {\ttfamily value} in {\ttfamily tree}, then this node is deleted. This deletion is such that the binary search property is verified. If the node was not in the tree, {\ttfamily tree} is returned. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{binary__search__tree__int_8h_a9c114d273e54c7b04c13cbcad3a39478}\label{binary__search__tree__int_8h_a9c114d273e54c7b04c13cbcad3a39478}} 
+\index{binary\_search\_tree\_int.h@{binary\_search\_tree\_int.h}!height@{height}}
+\index{height@{height}!binary\_search\_tree\_int.h@{binary\_search\_tree\_int.h}}
+\doxysubsubsection{\texorpdfstring{height()}{height()}}
+{\footnotesize\ttfamily int height (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{binary__search__tree__int_8h_ac4bf7c1347160e92cc8bd82a5c18e31d}{bst\+\_\+int}}}]{tree }\end{DoxyParamCaption})}
+
+
+
+The height of the binary search tree. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tree} & the tree\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the height of the tree 
+\end{DoxyReturn}
+\mbox{\Hypertarget{binary__search__tree__int_8h_ab591a901ac81731a9308130343d4e64c}\label{binary__search__tree__int_8h_ab591a901ac81731a9308130343d4e64c}} 
+\index{binary\_search\_tree\_int.h@{binary\_search\_tree\_int.h}!in\_order\_dfs\_infix@{in\_order\_dfs\_infix}}
+\index{in\_order\_dfs\_infix@{in\_order\_dfs\_infix}!binary\_search\_tree\_int.h@{binary\_search\_tree\_int.h}}
+\doxysubsubsection{\texorpdfstring{in\_order\_dfs\_infix()}{in\_order\_dfs\_infix()}}
+{\footnotesize\ttfamily void in\+\_\+order\+\_\+dfs\+\_\+infix (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{binary__search__tree__int_8h_ac4bf7c1347160e92cc8bd82a5c18e31d}{bst\+\_\+int}}}]{tree }\end{DoxyParamCaption})}
+
+
+
+Traverse the tree depth-\/first and print the value in order (infix style). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tree} & the tree to be traversed\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPostcond}{Postcondition}
+After the call, the values in the nodes are printed in order. 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{binary__search__tree__int_8h_aaae3b570050793245d4869cdce114d7c}\label{binary__search__tree__int_8h_aaae3b570050793245d4869cdce114d7c}} 
+\index{binary\_search\_tree\_int.h@{binary\_search\_tree\_int.h}!insert@{insert}}
+\index{insert@{insert}!binary\_search\_tree\_int.h@{binary\_search\_tree\_int.h}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{binary__search__tree__int_8h_ac4bf7c1347160e92cc8bd82a5c18e31d}{bst\+\_\+int}} insert (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{binary__search__tree__int_8h_ac4bf7c1347160e92cc8bd82a5c18e31d}{bst\+\_\+int}}}]{tree,  }\item[{int}]{value }\end{DoxyParamCaption})}
+
+
+
+Insert a value in the tree. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tree} & the tree in which the value is to be inserted \\
+\hline
+{\em value} & the value to be inserted\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a tree in which there is a node containing {\ttfamily value}. This node is correctly placed with respect to the binary search tree property. If the node was already in the tree, no new node is inserted and {\ttfamily tree} is returned. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{binary__search__tree__int_8h_ac34673c04e11de43c3d4e773be70ffda}\label{binary__search__tree__int_8h_ac34673c04e11de43c3d4e773be70ffda}} 
+\index{binary\_search\_tree\_int.h@{binary\_search\_tree\_int.h}!is\_empty@{is\_empty}}
+\index{is\_empty@{is\_empty}!binary\_search\_tree\_int.h@{binary\_search\_tree\_int.h}}
+\doxysubsubsection{\texorpdfstring{is\_empty()}{is\_empty()}}
+{\footnotesize\ttfamily bool is\+\_\+empty (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{binary__search__tree__int_8h_ac4bf7c1347160e92cc8bd82a5c18e31d}{bst\+\_\+int}}}]{tree }\end{DoxyParamCaption})}
+
+
+
+Is the binary search tree empty? 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tree} & a the tree you want to check the emptiness\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if {\ttfamily tree} is empty, {\ttfamily false} else 
+\end{DoxyReturn}
+\mbox{\Hypertarget{binary__search__tree__int_8h_a7c40db4e6ab396b0cb0e7154aa22cac8}\label{binary__search__tree__int_8h_a7c40db4e6ab396b0cb0e7154aa22cac8}} 
+\index{binary\_search\_tree\_int.h@{binary\_search\_tree\_int.h}!left\_child@{left\_child}}
+\index{left\_child@{left\_child}!binary\_search\_tree\_int.h@{binary\_search\_tree\_int.h}}
+\doxysubsubsection{\texorpdfstring{left\_child()}{left\_child()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{binary__search__tree__int_8h_ac4bf7c1347160e92cc8bd82a5c18e31d}{bst\+\_\+int}} left\+\_\+child (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{binary__search__tree__int_8h_ac4bf7c1347160e92cc8bd82a5c18e31d}{bst\+\_\+int}}}]{tree }\end{DoxyParamCaption})}
+
+
+
+The left subtree of the tree. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tree} & the tree\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+{\ttfamily tree} is not empty.
+\end{DoxyPrecond}
+\begin{DoxyReturn}{Returns}
+the left subtree of {\ttfamily tree} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{binary__search__tree__int_8h_a129d27c8b6928d92f8794171e36f7c3e}\label{binary__search__tree__int_8h_a129d27c8b6928d92f8794171e36f7c3e}} 
+\index{binary\_search\_tree\_int.h@{binary\_search\_tree\_int.h}!nil@{nil}}
+\index{nil@{nil}!binary\_search\_tree\_int.h@{binary\_search\_tree\_int.h}}
+\doxysubsubsection{\texorpdfstring{nil()}{nil()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{binary__search__tree__int_8h_ac4bf7c1347160e92cc8bd82a5c18e31d}{bst\+\_\+int}} nil (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Create a nil binary search tree. 
+
+\begin{DoxyReturn}{Returns}
+an empty binary search tree 
+\end{DoxyReturn}
+\mbox{\Hypertarget{binary__search__tree__int_8h_afb38a55ddb8477590f40394515d5a15d}\label{binary__search__tree__int_8h_afb38a55ddb8477590f40394515d5a15d}} 
+\index{binary\_search\_tree\_int.h@{binary\_search\_tree\_int.h}!print\_bst@{print\_bst}}
+\index{print\_bst@{print\_bst}!binary\_search\_tree\_int.h@{binary\_search\_tree\_int.h}}
+\doxysubsubsection{\texorpdfstring{print\_bst()}{print\_bst()}}
+{\footnotesize\ttfamily void print\+\_\+bst (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{binary__search__tree__int_8h_ac4bf7c1347160e92cc8bd82a5c18e31d}{bst\+\_\+int}}}]{tree }\end{DoxyParamCaption})}
+
+
+
+Prints the tree. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tree} & the tree to be printed\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPostcond}{Postcondition}
+After the call, the tree is printed. 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{binary__search__tree__int_8h_a999880f630cac3147bacba4152c483f0}\label{binary__search__tree__int_8h_a999880f630cac3147bacba4152c483f0}} 
+\index{binary\_search\_tree\_int.h@{binary\_search\_tree\_int.h}!retrieve@{retrieve}}
+\index{retrieve@{retrieve}!binary\_search\_tree\_int.h@{binary\_search\_tree\_int.h}}
+\doxysubsubsection{\texorpdfstring{retrieve()}{retrieve()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{binary__search__tree__int_8h_ac4bf7c1347160e92cc8bd82a5c18e31d}{bst\+\_\+int}} retrieve (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{binary__search__tree__int_8h_ac4bf7c1347160e92cc8bd82a5c18e31d}{bst\+\_\+int}}}]{tree,  }\item[{int}]{value }\end{DoxyParamCaption})}
+
+
+
+Retrieve a subtree in the tree given the value of its root. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tree} & a pointer to the tree \\
+\hline
+{\em value} & the value of the root of the subtree to search\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an empty tree if the value is not in the binary search tree, the subtree whose root contains the value otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{binary__search__tree__int_8h_aa55d44941cb4dd9f60acd30109ff0409}\label{binary__search__tree__int_8h_aa55d44941cb4dd9f60acd30109ff0409}} 
+\index{binary\_search\_tree\_int.h@{binary\_search\_tree\_int.h}!right\_child@{right\_child}}
+\index{right\_child@{right\_child}!binary\_search\_tree\_int.h@{binary\_search\_tree\_int.h}}
+\doxysubsubsection{\texorpdfstring{right\_child()}{right\_child()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{binary__search__tree__int_8h_ac4bf7c1347160e92cc8bd82a5c18e31d}{bst\+\_\+int}} right\+\_\+child (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{binary__search__tree__int_8h_ac4bf7c1347160e92cc8bd82a5c18e31d}{bst\+\_\+int}}}]{tree }\end{DoxyParamCaption})}
+
+
+
+The right subtree of the tree. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tree} & the tree\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+{\ttfamily tree} is not empty.
+\end{DoxyPrecond}
+\begin{DoxyReturn}{Returns}
+the right subtree of {\ttfamily tree} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{binary__search__tree__int_8h_af1accc21179665643f12e5ad7b6f1b49}\label{binary__search__tree__int_8h_af1accc21179665643f12e5ad7b6f1b49}} 
+\index{binary\_search\_tree\_int.h@{binary\_search\_tree\_int.h}!size@{size}}
+\index{size@{size}!binary\_search\_tree\_int.h@{binary\_search\_tree\_int.h}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily int size (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{binary__search__tree__int_8h_ac4bf7c1347160e92cc8bd82a5c18e31d}{bst\+\_\+int}}}]{tree }\end{DoxyParamCaption})}
+
+
+
+The number of nodes in the binary search tree. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tree} & the tree\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the number of nodes in the tree 
+\end{DoxyReturn}
+\mbox{\Hypertarget{binary__search__tree__int_8h_a0e2f84fcdc38784c5dc75fee42fdaa0a}\label{binary__search__tree__int_8h_a0e2f84fcdc38784c5dc75fee42fdaa0a}} 
+\index{binary\_search\_tree\_int.h@{binary\_search\_tree\_int.h}!value@{value}}
+\index{value@{value}!binary\_search\_tree\_int.h@{binary\_search\_tree\_int.h}}
+\doxysubsubsection{\texorpdfstring{value()}{value()}}
+{\footnotesize\ttfamily int value (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{binary__search__tree__int_8h_ac4bf7c1347160e92cc8bd82a5c18e31d}{bst\+\_\+int}}}]{tree }\end{DoxyParamCaption})}
+
+
+
+The value in the root of the binary search tree. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tree} & the tree\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+{\ttfamily tree} is not empty.
+\end{DoxyPrecond}
+\begin{DoxyReturn}{Returns}
+the value in the root of the tree 
+\end{DoxyReturn}

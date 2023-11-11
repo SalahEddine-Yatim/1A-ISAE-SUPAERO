@@ -1,0 +1,872 @@
+\hypertarget{binary__search__tree__int__tests_8c}{}\doxysection{tests/binary\+\_\+search\+\_\+tree\+\_\+int\+\_\+tests.c File Reference}
+\label{binary__search__tree__int__tests_8c}\index{tests/binary\_search\_tree\_int\_tests.c@{tests/binary\_search\_tree\_int\_tests.c}}
+
+
+Unit tests for binary search trees containing {\ttfamily int} values.  
+
+
+{\ttfamily \#include \char`\"{}unity\+\_\+fixture.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+{\ttfamily \#include $<$error.\+h$>$}\newline
+{\ttfamily \#include $<$getopt.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}binary\+\_\+search\+\_\+tree\+\_\+int.\+h\char`\"{}}\newline
+Include dependency graph for binary\+\_\+search\+\_\+tree\+\_\+int\+\_\+tests.\+c\+:
+% FIG 0
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a369266c24eacffb87046522897a570d5}\label{binary__search__tree__int__tests_8c_a369266c24eacffb87046522897a570d5}} 
+\#define {\bfseries \+\_\+\+GNU\+\_\+\+SOURCE}
+\item 
+\#define {\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+IS\+\_\+\+EMPTY}(THE\+\_\+\+SIZE)
+\item 
+\#define {\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+SIZE}(THE\+\_\+\+SIZE)
+\item 
+\#define {\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+VALUE\+\_\+\+LEFT}(THE\+\_\+\+SIZE)
+\item 
+\#define {\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+VALUE\+\_\+\+RIGHT}(THE\+\_\+\+SIZE)
+\item 
+\#define {\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+HEIGHT\+\_\+\+LEFT}(THE\+\_\+\+SIZE)
+\item 
+\#define {\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+HEIGHT\+\_\+\+RIGHT}(THE\+\_\+\+SIZE)
+\item 
+\#define {\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+HEIGHT}(THE\+\_\+\+SIZE)
+\item 
+\#define {\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+LEFT\+\_\+\+CHILD\+\_\+\+LEFT}(THE\+\_\+\+DEPTH)
+\item 
+\#define {\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+RIGHT\+\_\+\+CHILD\+\_\+\+RIGHT}(THE\+\_\+\+DEPTH)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a726f0ceb050ad9f27e06dc5728e1f11b}\label{binary__search__tree__int__tests_8c_a726f0ceb050ad9f27e06dc5728e1f11b}} 
+\#define {\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+RETRIEVE}(THE\+\_\+\+SIZE)
+\item 
+\#define {\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+INSERT\+\_\+\+EX}(THE\+\_\+\+SIZE)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a61c0a8867e41517745ca5e77fa8cba20}\label{binary__search__tree__int__tests_8c_a61c0a8867e41517745ca5e77fa8cba20}} 
+\#define {\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+INSERT\+\_\+\+RANDOM}(THE\+\_\+\+SIZE)
+\item 
+\#define {\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+DELETE}(THE\+\_\+\+SIZE)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a571b9f3d0869893948b3733298c83339}\label{binary__search__tree__int__tests_8c_a571b9f3d0869893948b3733298c83339}} 
+\#define {\bfseries MAX\+\_\+\+NB\+\_\+\+OF\+\_\+\+NODES}~51200
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_abf76d5b5ce58f5e05908a6d9a2f20375}\label{binary__search__tree__int__tests_8c_abf76d5b5ce58f5e05908a6d9a2f20375}} 
+\mbox{\hyperlink{binary__search__tree__int_8h_ac4bf7c1347160e92cc8bd82a5c18e31d}{bst\+\_\+int}} {\bfseries create\+\_\+bst\+\_\+right} (int nb)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a5c61160a8a4180f1f7d84ce2bba92a70}\label{binary__search__tree__int__tests_8c_a5c61160a8a4180f1f7d84ce2bba92a70}} 
+\mbox{\hyperlink{binary__search__tree__int_8h_ac4bf7c1347160e92cc8bd82a5c18e31d}{bst\+\_\+int}} {\bfseries create\+\_\+bst\+\_\+left} (int nb)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a1dd676899fd86cbd8dfe2272e66b4245}\label{binary__search__tree__int__tests_8c_a1dd676899fd86cbd8dfe2272e66b4245}} 
+\mbox{\hyperlink{binary__search__tree__int_8h_ac4bf7c1347160e92cc8bd82a5c18e31d}{bst\+\_\+int}} {\bfseries create\+\_\+bst} (int nb)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a0c1afdcca77f9b3e016168c29fccc5cd}\label{binary__search__tree__int__tests_8c_a0c1afdcca77f9b3e016168c29fccc5cd}} 
+int {\bfseries in\+\_\+order\+\_\+dpt\+\_\+tab} (\mbox{\hyperlink{binary__search__tree__int_8h_ac4bf7c1347160e92cc8bd82a5c18e31d}{bst\+\_\+int}} tree, int tab\mbox{[}$\,$\mbox{]}, int index)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_ae75cd143d8468c49fcba5d5459222203}\label{binary__search__tree__int__tests_8c_ae75cd143d8468c49fcba5d5459222203}} 
+void {\bfseries check\+\_\+bst\+\_\+property} (\mbox{\hyperlink{binary__search__tree__int_8h_ac4bf7c1347160e92cc8bd82a5c18e31d}{bst\+\_\+int}} tree, int \mbox{\hyperlink{binary__search__tree__int_8h_af1accc21179665643f12e5ad7b6f1b49}{size}})
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_aef31f96cf76a77b4068f7505599a825e}\label{binary__search__tree__int__tests_8c_aef31f96cf76a77b4068f7505599a825e}} 
+int {\bfseries my\+\_\+size} (\mbox{\hyperlink{binary__search__tree__int_8h_ac4bf7c1347160e92cc8bd82a5c18e31d}{bst\+\_\+int}} tree)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a32f71509145fccc21081afba90366905}\label{binary__search__tree__int__tests_8c_a32f71509145fccc21081afba90366905}} 
+{\bfseries TEST\+\_\+\+GROUP} (\mbox{\hyperlink{binary__search__tree__int_8h_a129d27c8b6928d92f8794171e36f7c3e}{nil}})
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a0316bb4a662c661b90abe70a638b5f8c}\label{binary__search__tree__int__tests_8c_a0316bb4a662c661b90abe70a638b5f8c}} 
+{\bfseries TEST\+\_\+\+SETUP} (\mbox{\hyperlink{binary__search__tree__int_8h_a129d27c8b6928d92f8794171e36f7c3e}{nil}})
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a728b6dd3fb0c62964074465323110280}\label{binary__search__tree__int__tests_8c_a728b6dd3fb0c62964074465323110280}} 
+{\bfseries TEST\+\_\+\+TEAR\+\_\+\+DOWN} (\mbox{\hyperlink{binary__search__tree__int_8h_a129d27c8b6928d92f8794171e36f7c3e}{nil}})
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_abf5a15c5de41c1b9e445344ad9b6c73b}\label{binary__search__tree__int__tests_8c_abf5a15c5de41c1b9e445344ad9b6c73b}} 
+{\bfseries TEST} (\mbox{\hyperlink{binary__search__tree__int_8h_a129d27c8b6928d92f8794171e36f7c3e}{nil}}, linked\+\_\+bst\+\_\+int\+\_\+nil)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a4348ed20de6a7c14bbbaab0ae779e48b}\label{binary__search__tree__int__tests_8c_a4348ed20de6a7c14bbbaab0ae779e48b}} 
+{\bfseries TEST\+\_\+\+GROUP\+\_\+\+RUNNER} (\mbox{\hyperlink{binary__search__tree__int_8h_a129d27c8b6928d92f8794171e36f7c3e}{nil}})
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a8fc36531aa525bfbed955bb77dcca62e}\label{binary__search__tree__int__tests_8c_a8fc36531aa525bfbed955bb77dcca62e}} 
+{\bfseries TEST\+\_\+\+GROUP} (\mbox{\hyperlink{binary__search__tree__int_8h_ac34673c04e11de43c3d4e773be70ffda}{is\+\_\+empty}})
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a12e5fcab312d79aed6b8c9a8f801faa7}\label{binary__search__tree__int__tests_8c_a12e5fcab312d79aed6b8c9a8f801faa7}} 
+{\bfseries TEST\+\_\+\+SETUP} (\mbox{\hyperlink{binary__search__tree__int_8h_ac34673c04e11de43c3d4e773be70ffda}{is\+\_\+empty}})
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a2d3c1e43f1bc7c2eefc306062be48255}\label{binary__search__tree__int__tests_8c_a2d3c1e43f1bc7c2eefc306062be48255}} 
+{\bfseries TEST\+\_\+\+TEAR\+\_\+\+DOWN} (\mbox{\hyperlink{binary__search__tree__int_8h_ac34673c04e11de43c3d4e773be70ffda}{is\+\_\+empty}})
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a969f578529354409069e555f52d39bc8}\label{binary__search__tree__int__tests_8c_a969f578529354409069e555f52d39bc8}} 
+{\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+IS\+\_\+\+EMPTY} (0)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a2bf0701619a2dad1fb4bb0f6f0bb7781}\label{binary__search__tree__int__tests_8c_a2bf0701619a2dad1fb4bb0f6f0bb7781}} 
+{\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+IS\+\_\+\+EMPTY} (1)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a88ee0241a4cabbf6dd49eafb9e793015}\label{binary__search__tree__int__tests_8c_a88ee0241a4cabbf6dd49eafb9e793015}} 
+{\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+IS\+\_\+\+EMPTY} (2)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_ad9f3e7cecd37a9b91ea784ca80f494ff}\label{binary__search__tree__int__tests_8c_ad9f3e7cecd37a9b91ea784ca80f494ff}} 
+{\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+IS\+\_\+\+EMPTY} (3)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_aad4d2260cd5f062bc4225bfc0491c08a}\label{binary__search__tree__int__tests_8c_aad4d2260cd5f062bc4225bfc0491c08a}} 
+{\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+IS\+\_\+\+EMPTY} (4)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a6c23188bca0075c713cbca1a6c3d58a8}\label{binary__search__tree__int__tests_8c_a6c23188bca0075c713cbca1a6c3d58a8}} 
+{\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+IS\+\_\+\+EMPTY} (5)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a07c65c9c665ac94f67c291547fdcf363}\label{binary__search__tree__int__tests_8c_a07c65c9c665ac94f67c291547fdcf363}} 
+{\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+IS\+\_\+\+EMPTY} (6)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a02ff8141bd65da78903861a4af5c5ed1}\label{binary__search__tree__int__tests_8c_a02ff8141bd65da78903861a4af5c5ed1}} 
+{\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+IS\+\_\+\+EMPTY} (7)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a3db0b90cbf4fa40d4206b5461e5b7acc}\label{binary__search__tree__int__tests_8c_a3db0b90cbf4fa40d4206b5461e5b7acc}} 
+{\bfseries TEST\+\_\+\+GROUP\+\_\+\+RUNNER} (\mbox{\hyperlink{binary__search__tree__int_8h_ac34673c04e11de43c3d4e773be70ffda}{is\+\_\+empty}})
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_aded820637f5e26876f3e1112adb00051}\label{binary__search__tree__int__tests_8c_aded820637f5e26876f3e1112adb00051}} 
+{\bfseries TEST\+\_\+\+GROUP} (\mbox{\hyperlink{binary__search__tree__int_8h_af1accc21179665643f12e5ad7b6f1b49}{size}})
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a1dbce50d8b2e9ca31bf0ca69f5cbe960}\label{binary__search__tree__int__tests_8c_a1dbce50d8b2e9ca31bf0ca69f5cbe960}} 
+{\bfseries TEST\+\_\+\+SETUP} (\mbox{\hyperlink{binary__search__tree__int_8h_af1accc21179665643f12e5ad7b6f1b49}{size}})
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a214b81d01733be287ae9be3153cca2f5}\label{binary__search__tree__int__tests_8c_a214b81d01733be287ae9be3153cca2f5}} 
+{\bfseries TEST\+\_\+\+TEAR\+\_\+\+DOWN} (\mbox{\hyperlink{binary__search__tree__int_8h_af1accc21179665643f12e5ad7b6f1b49}{size}})
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a9fbef52d6a1b1919c4c6c850942f433e}\label{binary__search__tree__int__tests_8c_a9fbef52d6a1b1919c4c6c850942f433e}} 
+{\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+SIZE} (0)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_ad4a3f507dcab245255674e80bb500ecf}\label{binary__search__tree__int__tests_8c_ad4a3f507dcab245255674e80bb500ecf}} 
+{\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+SIZE} (1)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a8b73c5b9d71f6d0bd00776fd4456724b}\label{binary__search__tree__int__tests_8c_a8b73c5b9d71f6d0bd00776fd4456724b}} 
+{\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+SIZE} (2)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a4472da75338629894c8e9a1bb8c239fb}\label{binary__search__tree__int__tests_8c_a4472da75338629894c8e9a1bb8c239fb}} 
+{\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+SIZE} (3)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_af5d7b29968cde5d1c5c85fc93a653c91}\label{binary__search__tree__int__tests_8c_af5d7b29968cde5d1c5c85fc93a653c91}} 
+{\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+SIZE} (4)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a5baf0002cf78fdf36b086c966f960301}\label{binary__search__tree__int__tests_8c_a5baf0002cf78fdf36b086c966f960301}} 
+{\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+SIZE} (5)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a395beb93529ce83ba1b64a46fcae62ab}\label{binary__search__tree__int__tests_8c_a395beb93529ce83ba1b64a46fcae62ab}} 
+{\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+SIZE} (6)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a1e1b3d5912fdb994a1ad6f15b6defb63}\label{binary__search__tree__int__tests_8c_a1e1b3d5912fdb994a1ad6f15b6defb63}} 
+{\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+SIZE} (7)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a830e4e9b0baf13cff060709e2addfdc0}\label{binary__search__tree__int__tests_8c_a830e4e9b0baf13cff060709e2addfdc0}} 
+{\bfseries TEST\+\_\+\+GROUP\+\_\+\+RUNNER} (\mbox{\hyperlink{binary__search__tree__int_8h_af1accc21179665643f12e5ad7b6f1b49}{size}})
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a67831a68188f246253f334b3d14b8a2a}\label{binary__search__tree__int__tests_8c_a67831a68188f246253f334b3d14b8a2a}} 
+{\bfseries TEST\+\_\+\+GROUP} (\mbox{\hyperlink{binary__search__tree__int_8h_a0e2f84fcdc38784c5dc75fee42fdaa0a}{value}})
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_af4dfe609ba88c401707b62ed92cfb7d7}\label{binary__search__tree__int__tests_8c_af4dfe609ba88c401707b62ed92cfb7d7}} 
+{\bfseries TEST\+\_\+\+SETUP} (\mbox{\hyperlink{binary__search__tree__int_8h_a0e2f84fcdc38784c5dc75fee42fdaa0a}{value}})
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a56f4859371f7c0d8d7dd347e9deb9fa9}\label{binary__search__tree__int__tests_8c_a56f4859371f7c0d8d7dd347e9deb9fa9}} 
+{\bfseries TEST\+\_\+\+TEAR\+\_\+\+DOWN} (\mbox{\hyperlink{binary__search__tree__int_8h_a0e2f84fcdc38784c5dc75fee42fdaa0a}{value}})
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_aa421489a2b5d88290b933fcfde453008}\label{binary__search__tree__int__tests_8c_aa421489a2b5d88290b933fcfde453008}} 
+{\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+VALUE\+\_\+\+LEFT} (1)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a2ad0f9340c76e45ccb4cf9b7acc1cb47}\label{binary__search__tree__int__tests_8c_a2ad0f9340c76e45ccb4cf9b7acc1cb47}} 
+{\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+VALUE\+\_\+\+LEFT} (2)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a6df8154a38f87aef135ae1d9bcbd6ca9}\label{binary__search__tree__int__tests_8c_a6df8154a38f87aef135ae1d9bcbd6ca9}} 
+{\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+VALUE\+\_\+\+LEFT} (3)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a791cf0f00d7534786a1226d0c1f4471d}\label{binary__search__tree__int__tests_8c_a791cf0f00d7534786a1226d0c1f4471d}} 
+{\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+VALUE\+\_\+\+LEFT} (4)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_aa732f3c92d9b6cde6548590b1526fdac}\label{binary__search__tree__int__tests_8c_aa732f3c92d9b6cde6548590b1526fdac}} 
+{\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+VALUE\+\_\+\+LEFT} (5)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_abac26d3af56a6ee5eedea8067ea3ab7c}\label{binary__search__tree__int__tests_8c_abac26d3af56a6ee5eedea8067ea3ab7c}} 
+{\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+VALUE\+\_\+\+LEFT} (6)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a4ff5045015a28cb2138ddd5b864d0275}\label{binary__search__tree__int__tests_8c_a4ff5045015a28cb2138ddd5b864d0275}} 
+{\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+VALUE\+\_\+\+LEFT} (7)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a5845d1dc50b06ece944ea9fc667e5db5}\label{binary__search__tree__int__tests_8c_a5845d1dc50b06ece944ea9fc667e5db5}} 
+{\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+VALUE\+\_\+\+RIGHT} (1)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a55c04a236c0fc92c2bfebda4082c86a7}\label{binary__search__tree__int__tests_8c_a55c04a236c0fc92c2bfebda4082c86a7}} 
+{\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+VALUE\+\_\+\+RIGHT} (2)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a3a56cc33a7b203db77b912c2fac1edf3}\label{binary__search__tree__int__tests_8c_a3a56cc33a7b203db77b912c2fac1edf3}} 
+{\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+VALUE\+\_\+\+RIGHT} (3)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a93c1dde1fc1d1193d4d311026310d6f4}\label{binary__search__tree__int__tests_8c_a93c1dde1fc1d1193d4d311026310d6f4}} 
+{\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+VALUE\+\_\+\+RIGHT} (4)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_acd53c24a6a1546f9ed21948253273f79}\label{binary__search__tree__int__tests_8c_acd53c24a6a1546f9ed21948253273f79}} 
+{\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+VALUE\+\_\+\+RIGHT} (5)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a08ce25b227b00ca829fdab96e44c320e}\label{binary__search__tree__int__tests_8c_a08ce25b227b00ca829fdab96e44c320e}} 
+{\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+VALUE\+\_\+\+RIGHT} (6)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a8efd7b212a17c227e19c6cf349106f3d}\label{binary__search__tree__int__tests_8c_a8efd7b212a17c227e19c6cf349106f3d}} 
+{\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+VALUE\+\_\+\+RIGHT} (7)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a128c83d566251524edaaec0a181bac62}\label{binary__search__tree__int__tests_8c_a128c83d566251524edaaec0a181bac62}} 
+{\bfseries TEST\+\_\+\+GROUP\+\_\+\+RUNNER} (\mbox{\hyperlink{binary__search__tree__int_8h_a0e2f84fcdc38784c5dc75fee42fdaa0a}{value}})
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a442f9be20f499d00dbb694d79585517b}\label{binary__search__tree__int__tests_8c_a442f9be20f499d00dbb694d79585517b}} 
+{\bfseries TEST\+\_\+\+GROUP} (\mbox{\hyperlink{binary__search__tree__int_8h_a9c114d273e54c7b04c13cbcad3a39478}{height}})
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a2b8b01a0ac04c669bd53b6e16b7ea0d8}\label{binary__search__tree__int__tests_8c_a2b8b01a0ac04c669bd53b6e16b7ea0d8}} 
+{\bfseries TEST\+\_\+\+SETUP} (\mbox{\hyperlink{binary__search__tree__int_8h_a9c114d273e54c7b04c13cbcad3a39478}{height}})
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a3a9bed85a09bc85e4873bc68519dd710}\label{binary__search__tree__int__tests_8c_a3a9bed85a09bc85e4873bc68519dd710}} 
+{\bfseries TEST\+\_\+\+TEAR\+\_\+\+DOWN} (\mbox{\hyperlink{binary__search__tree__int_8h_a9c114d273e54c7b04c13cbcad3a39478}{height}})
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a17151e7adea0ce353f8ad1e56c7d78b7}\label{binary__search__tree__int__tests_8c_a17151e7adea0ce353f8ad1e56c7d78b7}} 
+{\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+HEIGHT\+\_\+\+LEFT} (0)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_ad8fd39a7f869879e3e7cb6996acf9934}\label{binary__search__tree__int__tests_8c_ad8fd39a7f869879e3e7cb6996acf9934}} 
+{\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+HEIGHT\+\_\+\+LEFT} (1)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a48fd0563b577d19f2cc0a2476cc7fe5b}\label{binary__search__tree__int__tests_8c_a48fd0563b577d19f2cc0a2476cc7fe5b}} 
+{\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+HEIGHT\+\_\+\+LEFT} (2)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a34ea410a434c8f6c2f0a6620d36c78f6}\label{binary__search__tree__int__tests_8c_a34ea410a434c8f6c2f0a6620d36c78f6}} 
+{\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+HEIGHT\+\_\+\+LEFT} (3)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_aa34f7e6097b16bfa630d25b3015e667c}\label{binary__search__tree__int__tests_8c_aa34f7e6097b16bfa630d25b3015e667c}} 
+{\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+HEIGHT\+\_\+\+LEFT} (4)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_aeca583086b74a65ca288733677f3861f}\label{binary__search__tree__int__tests_8c_aeca583086b74a65ca288733677f3861f}} 
+{\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+HEIGHT\+\_\+\+LEFT} (5)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a624a62f74670f4329f75f87d1a9e0bbc}\label{binary__search__tree__int__tests_8c_a624a62f74670f4329f75f87d1a9e0bbc}} 
+{\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+HEIGHT\+\_\+\+LEFT} (6)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_ae7406775a9a083e83aad72c264b996f4}\label{binary__search__tree__int__tests_8c_ae7406775a9a083e83aad72c264b996f4}} 
+{\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+HEIGHT\+\_\+\+LEFT} (7)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a7932bd4bc9cd6d3348a82af2d83275f2}\label{binary__search__tree__int__tests_8c_a7932bd4bc9cd6d3348a82af2d83275f2}} 
+{\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+HEIGHT\+\_\+\+RIGHT} (0)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_aa8026b34525d4765e3c3382334fe4164}\label{binary__search__tree__int__tests_8c_aa8026b34525d4765e3c3382334fe4164}} 
+{\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+HEIGHT\+\_\+\+RIGHT} (1)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a567ae9cdf1b998c2aac5f02f2f4cd381}\label{binary__search__tree__int__tests_8c_a567ae9cdf1b998c2aac5f02f2f4cd381}} 
+{\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+HEIGHT\+\_\+\+RIGHT} (2)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a867948d499889f9cf68281208d22a72a}\label{binary__search__tree__int__tests_8c_a867948d499889f9cf68281208d22a72a}} 
+{\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+HEIGHT\+\_\+\+RIGHT} (3)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a47d14b1888ad0525cf14c64823561f14}\label{binary__search__tree__int__tests_8c_a47d14b1888ad0525cf14c64823561f14}} 
+{\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+HEIGHT\+\_\+\+RIGHT} (4)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a5082832aeec2380b9f75536ed5f4b546}\label{binary__search__tree__int__tests_8c_a5082832aeec2380b9f75536ed5f4b546}} 
+{\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+HEIGHT\+\_\+\+RIGHT} (5)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a66b0635571c24b9b0d41b928bd7433a0}\label{binary__search__tree__int__tests_8c_a66b0635571c24b9b0d41b928bd7433a0}} 
+{\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+HEIGHT\+\_\+\+RIGHT} (6)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a034f6bad37f2624fd2d811dc10ae123c}\label{binary__search__tree__int__tests_8c_a034f6bad37f2624fd2d811dc10ae123c}} 
+{\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+HEIGHT\+\_\+\+RIGHT} (7)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a715589d86f57346293751aa0f9c21a6e}\label{binary__search__tree__int__tests_8c_a715589d86f57346293751aa0f9c21a6e}} 
+{\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+HEIGHT} (0)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a04c3e020e344a8f5e6ed058a51219960}\label{binary__search__tree__int__tests_8c_a04c3e020e344a8f5e6ed058a51219960}} 
+{\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+HEIGHT} (1)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a1297843158328e609abf8e4a1668be8d}\label{binary__search__tree__int__tests_8c_a1297843158328e609abf8e4a1668be8d}} 
+{\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+HEIGHT} (2)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a0a6db6dbd866d827d738faf15f0e0639}\label{binary__search__tree__int__tests_8c_a0a6db6dbd866d827d738faf15f0e0639}} 
+{\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+HEIGHT} (3)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a0111968537fcd506efd9c0f295035f17}\label{binary__search__tree__int__tests_8c_a0111968537fcd506efd9c0f295035f17}} 
+{\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+HEIGHT} (4)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a0b26da9b5e71c98f4e2c643ba92f69fa}\label{binary__search__tree__int__tests_8c_a0b26da9b5e71c98f4e2c643ba92f69fa}} 
+{\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+HEIGHT} (5)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a9a418052c0872b406256a77cde33e259}\label{binary__search__tree__int__tests_8c_a9a418052c0872b406256a77cde33e259}} 
+{\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+HEIGHT} (6)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a4ce2763d38c0a9d0a37bff3c121b599c}\label{binary__search__tree__int__tests_8c_a4ce2763d38c0a9d0a37bff3c121b599c}} 
+{\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+HEIGHT} (7)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a79618f3bf9fcd79ae12a954cbc1166e0}\label{binary__search__tree__int__tests_8c_a79618f3bf9fcd79ae12a954cbc1166e0}} 
+{\bfseries TEST\+\_\+\+GROUP\+\_\+\+RUNNER} (\mbox{\hyperlink{binary__search__tree__int_8h_a9c114d273e54c7b04c13cbcad3a39478}{height}})
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a0acb76c6a5459299f71135c44e935711}\label{binary__search__tree__int__tests_8c_a0acb76c6a5459299f71135c44e935711}} 
+{\bfseries TEST\+\_\+\+GROUP} (\mbox{\hyperlink{binary__search__tree__int_8h_a7c40db4e6ab396b0cb0e7154aa22cac8}{left\+\_\+child}})
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a08e46d2f85c2facf317ce0257d29e01d}\label{binary__search__tree__int__tests_8c_a08e46d2f85c2facf317ce0257d29e01d}} 
+{\bfseries TEST\+\_\+\+SETUP} (\mbox{\hyperlink{binary__search__tree__int_8h_a7c40db4e6ab396b0cb0e7154aa22cac8}{left\+\_\+child}})
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_acc46701ff8d5fef4aa7e64c278ba7015}\label{binary__search__tree__int__tests_8c_acc46701ff8d5fef4aa7e64c278ba7015}} 
+{\bfseries TEST\+\_\+\+TEAR\+\_\+\+DOWN} (\mbox{\hyperlink{binary__search__tree__int_8h_a7c40db4e6ab396b0cb0e7154aa22cac8}{left\+\_\+child}})
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_af25786dda5330a328dbf1a6e12b1083c}\label{binary__search__tree__int__tests_8c_af25786dda5330a328dbf1a6e12b1083c}} 
+{\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+LEFT\+\_\+\+CHILD\+\_\+\+LEFT} (0)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a1315c30941aa707114cce756d0f694f7}\label{binary__search__tree__int__tests_8c_a1315c30941aa707114cce756d0f694f7}} 
+{\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+LEFT\+\_\+\+CHILD\+\_\+\+LEFT} (1)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a95d70f61f672c2bafad233372e424f46}\label{binary__search__tree__int__tests_8c_a95d70f61f672c2bafad233372e424f46}} 
+{\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+LEFT\+\_\+\+CHILD\+\_\+\+LEFT} (2)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a21cf7dd3c80d61d008c98e9cfed9d1c7}\label{binary__search__tree__int__tests_8c_a21cf7dd3c80d61d008c98e9cfed9d1c7}} 
+{\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+LEFT\+\_\+\+CHILD\+\_\+\+LEFT} (3)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a51dc3edaea0fe36206d892050cbc35dc}\label{binary__search__tree__int__tests_8c_a51dc3edaea0fe36206d892050cbc35dc}} 
+{\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+LEFT\+\_\+\+CHILD\+\_\+\+LEFT} (4)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_af555bc3545273195ae1e4107aa856b3d}\label{binary__search__tree__int__tests_8c_af555bc3545273195ae1e4107aa856b3d}} 
+{\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+LEFT\+\_\+\+CHILD\+\_\+\+LEFT} (5)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a0d92728faf878eb763b4015d823916e5}\label{binary__search__tree__int__tests_8c_a0d92728faf878eb763b4015d823916e5}} 
+{\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+LEFT\+\_\+\+CHILD\+\_\+\+LEFT} (6)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a2b45c5a4d0fa7b330b4530d1faa95ea7}\label{binary__search__tree__int__tests_8c_a2b45c5a4d0fa7b330b4530d1faa95ea7}} 
+{\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+LEFT\+\_\+\+CHILD\+\_\+\+LEFT} (7)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a787e66aa8373d6d74a989fe076672056}\label{binary__search__tree__int__tests_8c_a787e66aa8373d6d74a989fe076672056}} 
+{\bfseries TEST\+\_\+\+GROUP\+\_\+\+RUNNER} (\mbox{\hyperlink{binary__search__tree__int_8h_a7c40db4e6ab396b0cb0e7154aa22cac8}{left\+\_\+child}})
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a3e0175890ee8ca9a94c694b6374b5fa5}\label{binary__search__tree__int__tests_8c_a3e0175890ee8ca9a94c694b6374b5fa5}} 
+{\bfseries TEST\+\_\+\+GROUP} (\mbox{\hyperlink{binary__search__tree__int_8h_aa55d44941cb4dd9f60acd30109ff0409}{right\+\_\+child}})
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a387d898c1d70fe9db3ce27a6a60d0e07}\label{binary__search__tree__int__tests_8c_a387d898c1d70fe9db3ce27a6a60d0e07}} 
+{\bfseries TEST\+\_\+\+SETUP} (\mbox{\hyperlink{binary__search__tree__int_8h_aa55d44941cb4dd9f60acd30109ff0409}{right\+\_\+child}})
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a316bfb22f8218fb2f8104898f22f971a}\label{binary__search__tree__int__tests_8c_a316bfb22f8218fb2f8104898f22f971a}} 
+{\bfseries TEST\+\_\+\+TEAR\+\_\+\+DOWN} (\mbox{\hyperlink{binary__search__tree__int_8h_aa55d44941cb4dd9f60acd30109ff0409}{right\+\_\+child}})
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a884b64c2996f7a0251307c108f1879df}\label{binary__search__tree__int__tests_8c_a884b64c2996f7a0251307c108f1879df}} 
+{\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+RIGHT\+\_\+\+CHILD\+\_\+\+RIGHT} (0)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a2acd8e4e7bbdeb58c7b6a1e0c7e5ee63}\label{binary__search__tree__int__tests_8c_a2acd8e4e7bbdeb58c7b6a1e0c7e5ee63}} 
+{\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+RIGHT\+\_\+\+CHILD\+\_\+\+RIGHT} (1)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a7db60c705dba681a3a072949230be507}\label{binary__search__tree__int__tests_8c_a7db60c705dba681a3a072949230be507}} 
+{\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+RIGHT\+\_\+\+CHILD\+\_\+\+RIGHT} (2)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_af0b80fb321dabac1a1b62cf5fbe4005a}\label{binary__search__tree__int__tests_8c_af0b80fb321dabac1a1b62cf5fbe4005a}} 
+{\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+RIGHT\+\_\+\+CHILD\+\_\+\+RIGHT} (3)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a5ff95c090c5cdf4074821b67dd1b240f}\label{binary__search__tree__int__tests_8c_a5ff95c090c5cdf4074821b67dd1b240f}} 
+{\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+RIGHT\+\_\+\+CHILD\+\_\+\+RIGHT} (4)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_aa89db5dad6d43ef1c4c62b024dbebd73}\label{binary__search__tree__int__tests_8c_aa89db5dad6d43ef1c4c62b024dbebd73}} 
+{\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+RIGHT\+\_\+\+CHILD\+\_\+\+RIGHT} (5)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a200842cbbb32a1b786c71e1c447bdf15}\label{binary__search__tree__int__tests_8c_a200842cbbb32a1b786c71e1c447bdf15}} 
+{\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+RIGHT\+\_\+\+CHILD\+\_\+\+RIGHT} (6)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_aceae9e932ed217caa270e2c56b8b933e}\label{binary__search__tree__int__tests_8c_aceae9e932ed217caa270e2c56b8b933e}} 
+{\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+RIGHT\+\_\+\+CHILD\+\_\+\+RIGHT} (7)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_ac797168aebe7402a8c6b4aea67603394}\label{binary__search__tree__int__tests_8c_ac797168aebe7402a8c6b4aea67603394}} 
+{\bfseries TEST\+\_\+\+GROUP\+\_\+\+RUNNER} (\mbox{\hyperlink{binary__search__tree__int_8h_aa55d44941cb4dd9f60acd30109ff0409}{right\+\_\+child}})
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_ae7c2694d00fa01f4a9de3ab8552ed872}\label{binary__search__tree__int__tests_8c_ae7c2694d00fa01f4a9de3ab8552ed872}} 
+{\bfseries TEST\+\_\+\+GROUP} (\mbox{\hyperlink{binary__search__tree__int_8h_a999880f630cac3147bacba4152c483f0}{retrieve}})
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a699a20e5064ee44b516d85fb245bccea}\label{binary__search__tree__int__tests_8c_a699a20e5064ee44b516d85fb245bccea}} 
+{\bfseries TEST\+\_\+\+SETUP} (\mbox{\hyperlink{binary__search__tree__int_8h_a999880f630cac3147bacba4152c483f0}{retrieve}})
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_ab4bf5436292fc57e19d7228c8dd887cb}\label{binary__search__tree__int__tests_8c_ab4bf5436292fc57e19d7228c8dd887cb}} 
+{\bfseries TEST\+\_\+\+TEAR\+\_\+\+DOWN} (\mbox{\hyperlink{binary__search__tree__int_8h_a999880f630cac3147bacba4152c483f0}{retrieve}})
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a6c8939e35ed57a184c3c959e4013166a}\label{binary__search__tree__int__tests_8c_a6c8939e35ed57a184c3c959e4013166a}} 
+{\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+RETRIEVE} (0)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a0a20c987e3744e89d9bfea2886ec8364}\label{binary__search__tree__int__tests_8c_a0a20c987e3744e89d9bfea2886ec8364}} 
+{\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+RETRIEVE} (1)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a66f1f1cfc040b50d4dd3b01ce8cde5a7}\label{binary__search__tree__int__tests_8c_a66f1f1cfc040b50d4dd3b01ce8cde5a7}} 
+{\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+RETRIEVE} (2)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_af498c4c234cfa9b89050e13ba9eefdde}\label{binary__search__tree__int__tests_8c_af498c4c234cfa9b89050e13ba9eefdde}} 
+{\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+RETRIEVE} (3)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a7243bd03f0b5db94febef72d27b76198}\label{binary__search__tree__int__tests_8c_a7243bd03f0b5db94febef72d27b76198}} 
+{\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+RETRIEVE} (4)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_ab8b2799e0f7df895b054f14de9741362}\label{binary__search__tree__int__tests_8c_ab8b2799e0f7df895b054f14de9741362}} 
+{\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+RETRIEVE} (5)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_ad21c28245c050e3468a98095c39c2c86}\label{binary__search__tree__int__tests_8c_ad21c28245c050e3468a98095c39c2c86}} 
+{\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+RETRIEVE} (6)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a7ff7f9e72b9007e490b235c5b26b50bd}\label{binary__search__tree__int__tests_8c_a7ff7f9e72b9007e490b235c5b26b50bd}} 
+{\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+RETRIEVE} (7)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_ac30612767f7ffcfae08ba55ef2b9de13}\label{binary__search__tree__int__tests_8c_ac30612767f7ffcfae08ba55ef2b9de13}} 
+{\bfseries TEST\+\_\+\+GROUP\+\_\+\+RUNNER} (\mbox{\hyperlink{binary__search__tree__int_8h_a999880f630cac3147bacba4152c483f0}{retrieve}})
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a54c4627427c64ec95aa4aa13dca9fd27}\label{binary__search__tree__int__tests_8c_a54c4627427c64ec95aa4aa13dca9fd27}} 
+{\bfseries TEST\+\_\+\+GROUP} (\mbox{\hyperlink{binary__search__tree__int_8h_aaae3b570050793245d4869cdce114d7c}{insert}})
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a5dfa3a834618fd62913406566dd2309e}\label{binary__search__tree__int__tests_8c_a5dfa3a834618fd62913406566dd2309e}} 
+{\bfseries TEST\+\_\+\+SETUP} (\mbox{\hyperlink{binary__search__tree__int_8h_aaae3b570050793245d4869cdce114d7c}{insert}})
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a7390ef2d571ffcf8a4f204f72c35ce81}\label{binary__search__tree__int__tests_8c_a7390ef2d571ffcf8a4f204f72c35ce81}} 
+{\bfseries TEST\+\_\+\+TEAR\+\_\+\+DOWN} (\mbox{\hyperlink{binary__search__tree__int_8h_aaae3b570050793245d4869cdce114d7c}{insert}})
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_ac9b76cb35240b33c2ac733835cab2ddd}\label{binary__search__tree__int__tests_8c_ac9b76cb35240b33c2ac733835cab2ddd}} 
+{\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+INSERT\+\_\+\+EX} (0)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_af173429d165ea886f0c2aebb7761b48c}\label{binary__search__tree__int__tests_8c_af173429d165ea886f0c2aebb7761b48c}} 
+{\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+INSERT\+\_\+\+EX} (1)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a829d7f6571b5660d375e37c4bdb08a85}\label{binary__search__tree__int__tests_8c_a829d7f6571b5660d375e37c4bdb08a85}} 
+{\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+INSERT\+\_\+\+EX} (2)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a4adaf4d928c31f23e84f7980edc93471}\label{binary__search__tree__int__tests_8c_a4adaf4d928c31f23e84f7980edc93471}} 
+{\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+INSERT\+\_\+\+EX} (3)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a0e54d4c8d487441d7496118fc87054bb}\label{binary__search__tree__int__tests_8c_a0e54d4c8d487441d7496118fc87054bb}} 
+{\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+INSERT\+\_\+\+EX} (4)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_afd1959c4a21e34feea4e4eb370d9f4b5}\label{binary__search__tree__int__tests_8c_afd1959c4a21e34feea4e4eb370d9f4b5}} 
+{\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+INSERT\+\_\+\+EX} (5)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_af95bb101b9b1b276e4651b0e92f65cb7}\label{binary__search__tree__int__tests_8c_af95bb101b9b1b276e4651b0e92f65cb7}} 
+{\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+INSERT\+\_\+\+EX} (6)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_ae00c8eb9898aca2b00845ef5b1207490}\label{binary__search__tree__int__tests_8c_ae00c8eb9898aca2b00845ef5b1207490}} 
+{\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+INSERT\+\_\+\+EX} (7)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a2df26f6544bd406945a8a3a2a21738ff}\label{binary__search__tree__int__tests_8c_a2df26f6544bd406945a8a3a2a21738ff}} 
+{\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+INSERT\+\_\+\+RANDOM} (0)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_adfce87afd03544b062d1fa3f0ebde22a}\label{binary__search__tree__int__tests_8c_adfce87afd03544b062d1fa3f0ebde22a}} 
+{\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+INSERT\+\_\+\+RANDOM} (1)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a6fa76d4f1108e74664eaf823ab4eff3f}\label{binary__search__tree__int__tests_8c_a6fa76d4f1108e74664eaf823ab4eff3f}} 
+{\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+INSERT\+\_\+\+RANDOM} (2)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a739392e20e09cb2e1b3c7670bb703c27}\label{binary__search__tree__int__tests_8c_a739392e20e09cb2e1b3c7670bb703c27}} 
+{\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+INSERT\+\_\+\+RANDOM} (3)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_abb9851131839f7d9e959667405cd72c4}\label{binary__search__tree__int__tests_8c_abb9851131839f7d9e959667405cd72c4}} 
+{\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+INSERT\+\_\+\+RANDOM} (4)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a41f369f18c0a42e7ad92ae77433fe2f2}\label{binary__search__tree__int__tests_8c_a41f369f18c0a42e7ad92ae77433fe2f2}} 
+{\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+INSERT\+\_\+\+RANDOM} (5)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a4b3f7fff2085b314c777181755ed87f3}\label{binary__search__tree__int__tests_8c_a4b3f7fff2085b314c777181755ed87f3}} 
+{\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+INSERT\+\_\+\+RANDOM} (6)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_afe2c465f87c494944a101489bbbd99f5}\label{binary__search__tree__int__tests_8c_afe2c465f87c494944a101489bbbd99f5}} 
+{\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+INSERT\+\_\+\+RANDOM} (7)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a734884dadbce5ad63f7bc9aa3d76f81d}\label{binary__search__tree__int__tests_8c_a734884dadbce5ad63f7bc9aa3d76f81d}} 
+{\bfseries TEST\+\_\+\+GROUP\+\_\+\+RUNNER} (\mbox{\hyperlink{binary__search__tree__int_8h_aaae3b570050793245d4869cdce114d7c}{insert}})
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a7ba26e55c8c63cd52ec16b33506aa689}\label{binary__search__tree__int__tests_8c_a7ba26e55c8c63cd52ec16b33506aa689}} 
+{\bfseries TEST\+\_\+\+GROUP} (\mbox{\hyperlink{binary__search__tree__int_8h_a1b8a224628ec2e49bdfc1b7286d00144}{delete}})
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_ab2a36419e4efd745398fc7802d9c5a7f}\label{binary__search__tree__int__tests_8c_ab2a36419e4efd745398fc7802d9c5a7f}} 
+{\bfseries TEST\+\_\+\+SETUP} (\mbox{\hyperlink{binary__search__tree__int_8h_a1b8a224628ec2e49bdfc1b7286d00144}{delete}})
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_abc3988baa0dc1cb739ed6b27874b04c1}\label{binary__search__tree__int__tests_8c_abc3988baa0dc1cb739ed6b27874b04c1}} 
+{\bfseries TEST\+\_\+\+TEAR\+\_\+\+DOWN} (\mbox{\hyperlink{binary__search__tree__int_8h_a1b8a224628ec2e49bdfc1b7286d00144}{delete}})
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a5862a3edc451cecd3d6905d489284de1}\label{binary__search__tree__int__tests_8c_a5862a3edc451cecd3d6905d489284de1}} 
+{\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+DELETE} (0)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_afd8846a442d3b1c58a029a4c93269426}\label{binary__search__tree__int__tests_8c_afd8846a442d3b1c58a029a4c93269426}} 
+{\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+DELETE} (1)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a23a7b5d78fac6e57769325c87c2a7f56}\label{binary__search__tree__int__tests_8c_a23a7b5d78fac6e57769325c87c2a7f56}} 
+{\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+DELETE} (2)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a050e1dab96a7620e229f9aafc80a8e3e}\label{binary__search__tree__int__tests_8c_a050e1dab96a7620e229f9aafc80a8e3e}} 
+{\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+DELETE} (3)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a87dba0bbc9838362df040140d02e0b89}\label{binary__search__tree__int__tests_8c_a87dba0bbc9838362df040140d02e0b89}} 
+{\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+DELETE} (4)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a8eb6db025383dfd32dcf386e2443e3ee}\label{binary__search__tree__int__tests_8c_a8eb6db025383dfd32dcf386e2443e3ee}} 
+{\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+DELETE} (5)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_aaec3fc0c5a9e8a1b00741d2bae5b24ca}\label{binary__search__tree__int__tests_8c_aaec3fc0c5a9e8a1b00741d2bae5b24ca}} 
+{\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+DELETE} (6)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a72e6e22da4ff85cd3fc501110a4c47c6}\label{binary__search__tree__int__tests_8c_a72e6e22da4ff85cd3fc501110a4c47c6}} 
+{\bfseries TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+DELETE} (7)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a6fd40a607536a393ff9242ca7abcfe27}\label{binary__search__tree__int__tests_8c_a6fd40a607536a393ff9242ca7abcfe27}} 
+{\bfseries TEST\+\_\+\+GROUP\+\_\+\+RUNNER} (\mbox{\hyperlink{binary__search__tree__int_8h_a1b8a224628ec2e49bdfc1b7286d00144}{delete}})
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_adf7b679229ec86f12051ef80c32f73e3}\label{binary__search__tree__int__tests_8c_adf7b679229ec86f12051ef80c32f73e3}} 
+double {\bfseries time\+\_\+to\+\_\+insert\+\_\+worst\+\_\+case} (\mbox{\hyperlink{binary__search__tree__int_8h_ac4bf7c1347160e92cc8bd82a5c18e31d}{bst\+\_\+int}} $\ast$p\+\_\+tree, int nb)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_ad6ece519e780ae605d0d8ee12af4716b}\label{binary__search__tree__int__tests_8c_ad6ece519e780ae605d0d8ee12af4716b}} 
+double {\bfseries time\+\_\+to\+\_\+delete\+\_\+worst\+\_\+case} (\mbox{\hyperlink{binary__search__tree__int_8h_ac4bf7c1347160e92cc8bd82a5c18e31d}{bst\+\_\+int}} $\ast$p\+\_\+tree, int nb)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a3b21385eff2120a36d28007a5cbb8ea5}\label{binary__search__tree__int__tests_8c_a3b21385eff2120a36d28007a5cbb8ea5}} 
+bool {\bfseries test\+\_\+complexity\+\_\+worst\+\_\+case} ()
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a6be0fed84d0a861cb5975b77b4416184}\label{binary__search__tree__int__tests_8c_a6be0fed84d0a861cb5975b77b4416184}} 
+double {\bfseries time\+\_\+to\+\_\+insert\+\_\+random} (\mbox{\hyperlink{binary__search__tree__int_8h_ac4bf7c1347160e92cc8bd82a5c18e31d}{bst\+\_\+int}} $\ast$p\+\_\+tree, int nb)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a7fbff0888973cca2840154af4207f9cc}\label{binary__search__tree__int__tests_8c_a7fbff0888973cca2840154af4207f9cc}} 
+double {\bfseries time\+\_\+to\+\_\+delete\+\_\+random} (\mbox{\hyperlink{binary__search__tree__int_8h_ac4bf7c1347160e92cc8bd82a5c18e31d}{bst\+\_\+int}} $\ast$p\+\_\+tree, int nb)
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a84f75ac7ba6e6c07834b4c46bd48aebe}\label{binary__search__tree__int__tests_8c_a84f75ac7ba6e6c07834b4c46bd48aebe}} 
+bool {\bfseries test\+\_\+complexity\+\_\+random} ()
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a3b8e799b0d3f73dc36d6ca2ed9cb726c}\label{binary__search__tree__int__tests_8c_a3b8e799b0d3f73dc36d6ca2ed9cb726c}} 
+void {\bfseries run\+\_\+complexity\+\_\+tests} ()
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a0ddf1224851353fc92bfbff6f499fa97}\label{binary__search__tree__int__tests_8c_a0ddf1224851353fc92bfbff6f499fa97}} 
+int {\bfseries main} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a162fcdda9395ad031abae5164cdd2d7a}\label{binary__search__tree__int__tests_8c_a162fcdda9395ad031abae5164cdd2d7a}} 
+int {\bfseries chosen} \mbox{[}MAX\+\_\+\+NB\+\_\+\+OF\+\_\+\+NODES\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Unit tests for binary search trees containing {\ttfamily int} values. 
+
+\begin{DoxyAuthor}{Author}
+Christophe Garion 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_ae1f71c3627038a668a7306aba104e87b}\label{binary__search__tree__int__tests_8c_ae1f71c3627038a668a7306aba104e87b}} 
+\index{binary\_search\_tree\_int\_tests.c@{binary\_search\_tree\_int\_tests.c}!TEST\_BST\_INT\_DELETE@{TEST\_BST\_INT\_DELETE}}
+\index{TEST\_BST\_INT\_DELETE@{TEST\_BST\_INT\_DELETE}!binary\_search\_tree\_int\_tests.c@{binary\_search\_tree\_int\_tests.c}}
+\doxysubsubsection{\texorpdfstring{TEST\_BST\_INT\_DELETE}{TEST\_BST\_INT\_DELETE}}
+{\footnotesize\ttfamily \#define TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+DELETE(\begin{DoxyParamCaption}\item[{}]{THE\+\_\+\+SIZE }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    TEST(\textcolor{keyword}{delete}, bst\_int\_delete\_\#\#THE\_SIZE) \{                           \(\backslash\)}
+\DoxyCodeLine{        test\_bst = create\_bst(THE\_SIZE);                                \(\backslash\)}
+\DoxyCodeLine{                                                                        \(\backslash\)}
+\DoxyCodeLine{        printf(\textcolor{stringliteral}{"{}testing delete with example BST, deleting \%dth element)\(\backslash\)n"{}}, \(\backslash\)}
+\DoxyCodeLine{               THE\_SIZE);                                               \(\backslash\)}
+\DoxyCodeLine{                                                                        \(\backslash\)}
+\DoxyCodeLine{        for (\textcolor{keywordtype}{int} i = 0; i < THE\_SIZE; i++) \{                            \(\backslash\)}
+\DoxyCodeLine{            test\_bst = \textcolor{keyword}{delete}(test\_bst, values[i]);                     \(\backslash\)}
+\DoxyCodeLine{            check\_bst\_property(test\_bst, THE\_SIZE -\/ i -\/ 1);             \(\backslash\)}
+\DoxyCodeLine{            TEST\_ASSERT\_NULL(\mbox{\hyperlink{binary__search__tree__int_8h_a999880f630cac3147bacba4152c483f0}{retrieve}}(test\_bst, values[i]));            \(\backslash\)}
+\DoxyCodeLine{            TEST\_ASSERT\_EQUAL\_INT(THE\_SIZE -\/ i -\/ 1,                     \(\backslash\)}
+\DoxyCodeLine{                                  my\_size(test\_bst));                   \(\backslash\)}
+\DoxyCodeLine{        \}                                                               \(\backslash\)}
+\DoxyCodeLine{    \};}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a21674aee6243bc48ed78a48a61586679}\label{binary__search__tree__int__tests_8c_a21674aee6243bc48ed78a48a61586679}} 
+\index{binary\_search\_tree\_int\_tests.c@{binary\_search\_tree\_int\_tests.c}!TEST\_BST\_INT\_HEIGHT@{TEST\_BST\_INT\_HEIGHT}}
+\index{TEST\_BST\_INT\_HEIGHT@{TEST\_BST\_INT\_HEIGHT}!binary\_search\_tree\_int\_tests.c@{binary\_search\_tree\_int\_tests.c}}
+\doxysubsubsection{\texorpdfstring{TEST\_BST\_INT\_HEIGHT}{TEST\_BST\_INT\_HEIGHT}}
+{\footnotesize\ttfamily \#define TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+HEIGHT(\begin{DoxyParamCaption}\item[{}]{THE\+\_\+\+SIZE }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    TEST(\mbox{\hyperlink{binary__search__tree__int_8h_a9c114d273e54c7b04c13cbcad3a39478}{height}}, bst\_int\_height\_\#\#THE\_SIZE) \{                           \(\backslash\)}
+\DoxyCodeLine{        test\_bst = create\_bst(THE\_SIZE);                                \(\backslash\)}
+\DoxyCodeLine{                                                                        \(\backslash\)}
+\DoxyCodeLine{        printf(\textcolor{stringliteral}{"{}testing height with example BST of size \%d\(\backslash\)n"{}},          \(\backslash\)}
+\DoxyCodeLine{               THE\_SIZE);                                               \(\backslash\)}
+\DoxyCodeLine{                                                                        \(\backslash\)}
+\DoxyCodeLine{        char *msg;                                                      \(\backslash\)}
+\DoxyCodeLine{        asprintf(\&msg,                                                  \(\backslash\)}
+\DoxyCodeLine{                 \textcolor{stringliteral}{"{}The height of the tree should be \%d"{}},                 \(\backslash\)}
+\DoxyCodeLine{                 heights[THE\_SIZE]);                                    \(\backslash\)}
+\DoxyCodeLine{                                                                        \(\backslash\)}
+\DoxyCodeLine{        TEST\_ASSERT\_EQUAL\_INT\_MESSAGE(heights[THE\_SIZE], \mbox{\hyperlink{binary__search__tree__int_8h_a9c114d273e54c7b04c13cbcad3a39478}{height}}(test\_bst), \(\backslash\)}
+\DoxyCodeLine{                                      msg);                             \(\backslash\)}
+\DoxyCodeLine{                                                                        \(\backslash\)}
+\DoxyCodeLine{        free(msg);                                                      \(\backslash\)}
+\DoxyCodeLine{                                                                        \(\backslash\)}
+\DoxyCodeLine{        check\_bst\_property(test\_bst, THE\_SIZE);                         \(\backslash\)}
+\DoxyCodeLine{    \};}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a7effb0223d55a4f94d9bb30cf419e8ed}\label{binary__search__tree__int__tests_8c_a7effb0223d55a4f94d9bb30cf419e8ed}} 
+\index{binary\_search\_tree\_int\_tests.c@{binary\_search\_tree\_int\_tests.c}!TEST\_BST\_INT\_HEIGHT\_LEFT@{TEST\_BST\_INT\_HEIGHT\_LEFT}}
+\index{TEST\_BST\_INT\_HEIGHT\_LEFT@{TEST\_BST\_INT\_HEIGHT\_LEFT}!binary\_search\_tree\_int\_tests.c@{binary\_search\_tree\_int\_tests.c}}
+\doxysubsubsection{\texorpdfstring{TEST\_BST\_INT\_HEIGHT\_LEFT}{TEST\_BST\_INT\_HEIGHT\_LEFT}}
+{\footnotesize\ttfamily \#define TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+HEIGHT\+\_\+\+LEFT(\begin{DoxyParamCaption}\item[{}]{THE\+\_\+\+SIZE }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    TEST(\mbox{\hyperlink{binary__search__tree__int_8h_a9c114d273e54c7b04c13cbcad3a39478}{height}}, bst\_int\_height\_left\_\#\#THE\_SIZE) \{                      \(\backslash\)}
+\DoxyCodeLine{        test\_bst = create\_bst\_left(THE\_SIZE);                           \(\backslash\)}
+\DoxyCodeLine{                                                                        \(\backslash\)}
+\DoxyCodeLine{        printf(\textcolor{stringliteral}{"{}testing height with BST of size \%d like a (left) linked list (height \%d)\(\backslash\)n"{}}, \(\backslash\)}
+\DoxyCodeLine{               THE\_SIZE, THE\_SIZE);                                     \(\backslash\)}
+\DoxyCodeLine{                                                                        \(\backslash\)}
+\DoxyCodeLine{        char *msg;                                                      \(\backslash\)}
+\DoxyCodeLine{        asprintf(\&msg,                                                  \(\backslash\)}
+\DoxyCodeLine{                 \textcolor{stringliteral}{"{}The height of the tree should be \%d"{}},                 \(\backslash\)}
+\DoxyCodeLine{                 THE\_SIZE);                                             \(\backslash\)}
+\DoxyCodeLine{                                                                        \(\backslash\)}
+\DoxyCodeLine{        TEST\_ASSERT\_EQUAL\_INT\_MESSAGE(THE\_SIZE, \mbox{\hyperlink{binary__search__tree__int_8h_a9c114d273e54c7b04c13cbcad3a39478}{height}}(test\_bst),       \(\backslash\)}
+\DoxyCodeLine{                                      msg);                             \(\backslash\)}
+\DoxyCodeLine{                                                                        \(\backslash\)}
+\DoxyCodeLine{        free(msg);                                                      \(\backslash\)}
+\DoxyCodeLine{                                                                        \(\backslash\)}
+\DoxyCodeLine{        check\_bst\_property(test\_bst, THE\_SIZE);                         \(\backslash\)}
+\DoxyCodeLine{    \};}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a6bb8eb0a5d8f079c132498c20eaab7a9}\label{binary__search__tree__int__tests_8c_a6bb8eb0a5d8f079c132498c20eaab7a9}} 
+\index{binary\_search\_tree\_int\_tests.c@{binary\_search\_tree\_int\_tests.c}!TEST\_BST\_INT\_HEIGHT\_RIGHT@{TEST\_BST\_INT\_HEIGHT\_RIGHT}}
+\index{TEST\_BST\_INT\_HEIGHT\_RIGHT@{TEST\_BST\_INT\_HEIGHT\_RIGHT}!binary\_search\_tree\_int\_tests.c@{binary\_search\_tree\_int\_tests.c}}
+\doxysubsubsection{\texorpdfstring{TEST\_BST\_INT\_HEIGHT\_RIGHT}{TEST\_BST\_INT\_HEIGHT\_RIGHT}}
+{\footnotesize\ttfamily \#define TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+HEIGHT\+\_\+\+RIGHT(\begin{DoxyParamCaption}\item[{}]{THE\+\_\+\+SIZE }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    TEST(\mbox{\hyperlink{binary__search__tree__int_8h_a9c114d273e54c7b04c13cbcad3a39478}{height}}, bst\_int\_height\_right\_\#\#THE\_SIZE) \{                     \(\backslash\)}
+\DoxyCodeLine{        test\_bst = create\_bst\_right(THE\_SIZE);                          \(\backslash\)}
+\DoxyCodeLine{                                                                        \(\backslash\)}
+\DoxyCodeLine{        printf(\textcolor{stringliteral}{"{}testing height with BST of size \%d like a (right) linked list (height \%d)\(\backslash\)n"{}}, \(\backslash\)}
+\DoxyCodeLine{               THE\_SIZE, THE\_SIZE);                                     \(\backslash\)}
+\DoxyCodeLine{                                                                        \(\backslash\)}
+\DoxyCodeLine{        char *msg;                                                      \(\backslash\)}
+\DoxyCodeLine{        asprintf(\&msg,                                                  \(\backslash\)}
+\DoxyCodeLine{                 \textcolor{stringliteral}{"{}The height of the tree should be \%d"{}},                 \(\backslash\)}
+\DoxyCodeLine{                 THE\_SIZE);                                             \(\backslash\)}
+\DoxyCodeLine{                                                                        \(\backslash\)}
+\DoxyCodeLine{        TEST\_ASSERT\_EQUAL\_INT\_MESSAGE(THE\_SIZE, \mbox{\hyperlink{binary__search__tree__int_8h_a9c114d273e54c7b04c13cbcad3a39478}{height}}(test\_bst),       \(\backslash\)}
+\DoxyCodeLine{                                      msg);                             \(\backslash\)}
+\DoxyCodeLine{                                                                        \(\backslash\)}
+\DoxyCodeLine{        free(msg);                                                      \(\backslash\)}
+\DoxyCodeLine{                                                                        \(\backslash\)}
+\DoxyCodeLine{        check\_bst\_property(test\_bst, THE\_SIZE);                         \(\backslash\)}
+\DoxyCodeLine{    \};}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a7887fbba4f7f6af41ed76072b8d1cdb7}\label{binary__search__tree__int__tests_8c_a7887fbba4f7f6af41ed76072b8d1cdb7}} 
+\index{binary\_search\_tree\_int\_tests.c@{binary\_search\_tree\_int\_tests.c}!TEST\_BST\_INT\_INSERT\_EX@{TEST\_BST\_INT\_INSERT\_EX}}
+\index{TEST\_BST\_INT\_INSERT\_EX@{TEST\_BST\_INT\_INSERT\_EX}!binary\_search\_tree\_int\_tests.c@{binary\_search\_tree\_int\_tests.c}}
+\doxysubsubsection{\texorpdfstring{TEST\_BST\_INT\_INSERT\_EX}{TEST\_BST\_INT\_INSERT\_EX}}
+{\footnotesize\ttfamily \#define TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+INSERT\+\_\+\+EX(\begin{DoxyParamCaption}\item[{}]{THE\+\_\+\+SIZE }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    TEST(\mbox{\hyperlink{binary__search__tree__int_8h_aaae3b570050793245d4869cdce114d7c}{insert}}, bst\_int\_insert\_ex\_\#\#THE\_SIZE) \{                        \(\backslash\)}
+\DoxyCodeLine{        test\_bst = \mbox{\hyperlink{binary__search__tree__int_8h_a129d27c8b6928d92f8794171e36f7c3e}{nil}}();                                               \(\backslash\)}
+\DoxyCodeLine{                                                                        \(\backslash\)}
+\DoxyCodeLine{        printf(\textcolor{stringliteral}{"{}testing insert with empty BST, inserting \%d example nodes in order\(\backslash\)n"{}}, \(\backslash\)}
+\DoxyCodeLine{               THE\_SIZE);                                               \(\backslash\)}
+\DoxyCodeLine{                                                                        \(\backslash\)}
+\DoxyCodeLine{        for (\textcolor{keywordtype}{int} i = 0; i < THE\_SIZE; i++) \{                            \(\backslash\)}
+\DoxyCodeLine{            test\_bst = \mbox{\hyperlink{binary__search__tree__int_8h_aaae3b570050793245d4869cdce114d7c}{insert}}(test\_bst, values[i]);                     \(\backslash\)}
+\DoxyCodeLine{            check\_bst\_property(test\_bst, i + 1);                        \(\backslash\)}
+\DoxyCodeLine{        \}                                                               \(\backslash\)}
+\DoxyCodeLine{                                                                        \(\backslash\)}
+\DoxyCodeLine{        for (\textcolor{keywordtype}{int} i = 0; i < THE\_SIZE; i++) \{                            \(\backslash\)}
+\DoxyCodeLine{            TEST\_ASSERT\_NOT\_NULL(\mbox{\hyperlink{binary__search__tree__int_8h_a999880f630cac3147bacba4152c483f0}{retrieve}}(test\_bst, values[i]));        \(\backslash\)}
+\DoxyCodeLine{        \}                                                               \(\backslash\)}
+\DoxyCodeLine{                                                                        \(\backslash\)}
+\DoxyCodeLine{        char *msg;                                                      \(\backslash\)}
+\DoxyCodeLine{                                                                        \(\backslash\)}
+\DoxyCodeLine{        asprintf(\&msg, \textcolor{stringliteral}{"{}the size of the tree should be \%d"{}}, THE\_SIZE);  \(\backslash\)}
+\DoxyCodeLine{                                                                        \(\backslash\)}
+\DoxyCodeLine{        TEST\_ASSERT\_EQUAL\_INT\_MESSAGE(THE\_SIZE, my\_size(test\_bst),      \(\backslash\)}
+\DoxyCodeLine{                                      msg);                             \(\backslash\)}
+\DoxyCodeLine{                                                                        \(\backslash\)}
+\DoxyCodeLine{        free(msg);                                                      \(\backslash\)}
+\DoxyCodeLine{    \};}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_ad3c971a957d7e22b8d977d4eccd3cba8}\label{binary__search__tree__int__tests_8c_ad3c971a957d7e22b8d977d4eccd3cba8}} 
+\index{binary\_search\_tree\_int\_tests.c@{binary\_search\_tree\_int\_tests.c}!TEST\_BST\_INT\_IS\_EMPTY@{TEST\_BST\_INT\_IS\_EMPTY}}
+\index{TEST\_BST\_INT\_IS\_EMPTY@{TEST\_BST\_INT\_IS\_EMPTY}!binary\_search\_tree\_int\_tests.c@{binary\_search\_tree\_int\_tests.c}}
+\doxysubsubsection{\texorpdfstring{TEST\_BST\_INT\_IS\_EMPTY}{TEST\_BST\_INT\_IS\_EMPTY}}
+{\footnotesize\ttfamily \#define TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+IS\+\_\+\+EMPTY(\begin{DoxyParamCaption}\item[{}]{THE\+\_\+\+SIZE }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    TEST(\mbox{\hyperlink{binary__search__tree__int_8h_ac34673c04e11de43c3d4e773be70ffda}{is\_empty}}, bst\_int\_is\_empty\_\#\#THE\_SIZE) \{                       \(\backslash\)}
+\DoxyCodeLine{        test\_bst = create\_bst(THE\_SIZE);                                \(\backslash\)}
+\DoxyCodeLine{                                                                        \(\backslash\)}
+\DoxyCodeLine{        printf(\textcolor{stringliteral}{"{}testing is\_empty with BST of size \%d\(\backslash\)n"{}},                \(\backslash\)}
+\DoxyCodeLine{               THE\_SIZE);                                               \(\backslash\)}
+\DoxyCodeLine{                                                                        \(\backslash\)}
+\DoxyCodeLine{        if (THE\_SIZE == 0) \{                                            \(\backslash\)}
+\DoxyCodeLine{            TEST\_ASSERT\_TRUE\_MESSAGE(\mbox{\hyperlink{binary__search__tree__int_8h_ac34673c04e11de43c3d4e773be70ffda}{is\_empty}}(test\_bst),                \(\backslash\)}
+\DoxyCodeLine{                                     \textcolor{stringliteral}{"{}The BST should be empty!"{}});       \(\backslash\)}
+\DoxyCodeLine{                                                                        \(\backslash\)}
+\DoxyCodeLine{        \} \textcolor{keywordflow}{else} \{                                                        \(\backslash\)}
+\DoxyCodeLine{            TEST\_ASSERT\_FALSE\_MESSAGE(\mbox{\hyperlink{binary__search__tree__int_8h_ac34673c04e11de43c3d4e773be70ffda}{is\_empty}}(test\_bst),               \(\backslash\)}
+\DoxyCodeLine{                                      \textcolor{stringliteral}{"{}The BST should not be empty!"{}});  \(\backslash\)}
+\DoxyCodeLine{        \}                                                               \(\backslash\)}
+\DoxyCodeLine{    \};}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_aa7bafd7a1e2d43fd0aaeafcfb26d3b6e}\label{binary__search__tree__int__tests_8c_aa7bafd7a1e2d43fd0aaeafcfb26d3b6e}} 
+\index{binary\_search\_tree\_int\_tests.c@{binary\_search\_tree\_int\_tests.c}!TEST\_BST\_INT\_LEFT\_CHILD\_LEFT@{TEST\_BST\_INT\_LEFT\_CHILD\_LEFT}}
+\index{TEST\_BST\_INT\_LEFT\_CHILD\_LEFT@{TEST\_BST\_INT\_LEFT\_CHILD\_LEFT}!binary\_search\_tree\_int\_tests.c@{binary\_search\_tree\_int\_tests.c}}
+\doxysubsubsection{\texorpdfstring{TEST\_BST\_INT\_LEFT\_CHILD\_LEFT}{TEST\_BST\_INT\_LEFT\_CHILD\_LEFT}}
+{\footnotesize\ttfamily \#define TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+LEFT\+\_\+\+CHILD\+\_\+\+LEFT(\begin{DoxyParamCaption}\item[{}]{THE\+\_\+\+DEPTH }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    TEST(\mbox{\hyperlink{binary__search__tree__int_8h_a7c40db4e6ab396b0cb0e7154aa22cac8}{left\_child}}, bst\_int\_left\_child\_left\_\#\#THE\_DEPTH) \{             \(\backslash\)}
+\DoxyCodeLine{        test\_bst = create\_bst\_left(7);                                  \(\backslash\)}
+\DoxyCodeLine{                                                                        \(\backslash\)}
+\DoxyCodeLine{        printf(\textcolor{stringliteral}{"{}testing left\_child with BST of size 7 like a (left) linked list (left\_child applied \%d times)\(\backslash\)n"{}}, \(\backslash\)}
+\DoxyCodeLine{               THE\_DEPTH);                                              \(\backslash\)}
+\DoxyCodeLine{                                                                        \(\backslash\)}
+\DoxyCodeLine{        bst\_node\_int *p\_current\_node = test\_bst;                        \(\backslash\)}
+\DoxyCodeLine{                                                                        \(\backslash\)}
+\DoxyCodeLine{        for (\textcolor{keywordtype}{int} i = 0; i < THE\_DEPTH; i++) \{                           \(\backslash\)}
+\DoxyCodeLine{            p\_current\_node = \mbox{\hyperlink{binary__search__tree__int_8h_a7c40db4e6ab396b0cb0e7154aa22cac8}{left\_child}}(p\_current\_node);                \(\backslash\)}
+\DoxyCodeLine{        \}                                                               \(\backslash\)}
+\DoxyCodeLine{                                                                        \(\backslash\)}
+\DoxyCodeLine{        if (THE\_DEPTH == 7) \{                                           \(\backslash\)}
+\DoxyCodeLine{            TEST\_ASSERT\_NULL\_MESSAGE(p\_current\_node,                    \(\backslash\)}
+\DoxyCodeLine{                                     \textcolor{stringliteral}{"{}The subtree should be empty!"{}});   \(\backslash\)}
+\DoxyCodeLine{        \} \textcolor{keywordflow}{else} \{                                                        \(\backslash\)}
+\DoxyCodeLine{            char *msg;                                                  \(\backslash\)}
+\DoxyCodeLine{            asprintf(\&msg,                                              \(\backslash\)}
+\DoxyCodeLine{                     \textcolor{stringliteral}{"{}The value of the left\_child of the tree should be \%d"{}}, \(\backslash\)}
+\DoxyCodeLine{                     7 -\/ THE\_DEPTH);                                    \(\backslash\)}
+\DoxyCodeLine{                                                                        \(\backslash\)}
+\DoxyCodeLine{            TEST\_ASSERT\_EQUAL\_INT\_MESSAGE(7 -\/ THE\_DEPTH,                \(\backslash\)}
+\DoxyCodeLine{                                          \mbox{\hyperlink{binary__search__tree__int_8h_a0e2f84fcdc38784c5dc75fee42fdaa0a}{value}}(p\_current\_node),        \(\backslash\)}
+\DoxyCodeLine{                                          msg);                         \(\backslash\)}
+\DoxyCodeLine{                                                                        \(\backslash\)}
+\DoxyCodeLine{            free(msg);                                                  \(\backslash\)}
+\DoxyCodeLine{        \}                                                               \(\backslash\)}
+\DoxyCodeLine{                                                                        \(\backslash\)}
+\DoxyCodeLine{        check\_bst\_property(test\_bst, 7);                                \(\backslash\)}
+\DoxyCodeLine{    \};}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a65631ad05a1a68e92ba97c3ce45ff38c}\label{binary__search__tree__int__tests_8c_a65631ad05a1a68e92ba97c3ce45ff38c}} 
+\index{binary\_search\_tree\_int\_tests.c@{binary\_search\_tree\_int\_tests.c}!TEST\_BST\_INT\_RIGHT\_CHILD\_RIGHT@{TEST\_BST\_INT\_RIGHT\_CHILD\_RIGHT}}
+\index{TEST\_BST\_INT\_RIGHT\_CHILD\_RIGHT@{TEST\_BST\_INT\_RIGHT\_CHILD\_RIGHT}!binary\_search\_tree\_int\_tests.c@{binary\_search\_tree\_int\_tests.c}}
+\doxysubsubsection{\texorpdfstring{TEST\_BST\_INT\_RIGHT\_CHILD\_RIGHT}{TEST\_BST\_INT\_RIGHT\_CHILD\_RIGHT}}
+{\footnotesize\ttfamily \#define TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+RIGHT\+\_\+\+CHILD\+\_\+\+RIGHT(\begin{DoxyParamCaption}\item[{}]{THE\+\_\+\+DEPTH }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    TEST(\mbox{\hyperlink{binary__search__tree__int_8h_aa55d44941cb4dd9f60acd30109ff0409}{right\_child}}, bst\_int\_right\_child\_right\_\#\#THE\_DEPTH) \{          \(\backslash\)}
+\DoxyCodeLine{        test\_bst = create\_bst\_right(7);                                 \(\backslash\)}
+\DoxyCodeLine{                                                                        \(\backslash\)}
+\DoxyCodeLine{        printf(\textcolor{stringliteral}{"{}testing right\_child with BST of size 7 like a (right) linked list (right\_child applied \%d times)\(\backslash\)n"{}}, \(\backslash\)}
+\DoxyCodeLine{               THE\_DEPTH);                                              \(\backslash\)}
+\DoxyCodeLine{                                                                        \(\backslash\)}
+\DoxyCodeLine{        bst\_node\_int *p\_current\_node = test\_bst;                        \(\backslash\)}
+\DoxyCodeLine{                                                                        \(\backslash\)}
+\DoxyCodeLine{        for (\textcolor{keywordtype}{int} i = 0; i < THE\_DEPTH; i++) \{                           \(\backslash\)}
+\DoxyCodeLine{            p\_current\_node = \mbox{\hyperlink{binary__search__tree__int_8h_aa55d44941cb4dd9f60acd30109ff0409}{right\_child}}(p\_current\_node);               \(\backslash\)}
+\DoxyCodeLine{        \}                                                               \(\backslash\)}
+\DoxyCodeLine{                                                                        \(\backslash\)}
+\DoxyCodeLine{        if (THE\_DEPTH == 7) \{                                           \(\backslash\)}
+\DoxyCodeLine{            TEST\_ASSERT\_NULL\_MESSAGE(p\_current\_node,                    \(\backslash\)}
+\DoxyCodeLine{                                     \textcolor{stringliteral}{"{}The subtree should be empty!"{}});   \(\backslash\)}
+\DoxyCodeLine{        \} \textcolor{keywordflow}{else} \{                                                        \(\backslash\)}
+\DoxyCodeLine{            char *msg;                                                  \(\backslash\)}
+\DoxyCodeLine{            asprintf(\&msg,                                              \(\backslash\)}
+\DoxyCodeLine{                     \textcolor{stringliteral}{"{}The value of the right\_child of the tree should be \%d"{}}, \(\backslash\)}
+\DoxyCodeLine{                     THE\_DEPTH);                                        \(\backslash\)}
+\DoxyCodeLine{                                                                        \(\backslash\)}
+\DoxyCodeLine{            TEST\_ASSERT\_EQUAL\_INT\_MESSAGE(THE\_DEPTH,                    \(\backslash\)}
+\DoxyCodeLine{                                          \mbox{\hyperlink{binary__search__tree__int_8h_a0e2f84fcdc38784c5dc75fee42fdaa0a}{value}}(p\_current\_node),        \(\backslash\)}
+\DoxyCodeLine{                                          msg);                         \(\backslash\)}
+\DoxyCodeLine{                                                                        \(\backslash\)}
+\DoxyCodeLine{            free(msg);                                                  \(\backslash\)}
+\DoxyCodeLine{        \}                                                               \(\backslash\)}
+\DoxyCodeLine{                                                                        \(\backslash\)}
+\DoxyCodeLine{        check\_bst\_property(test\_bst, 7);                                \(\backslash\)}
+\DoxyCodeLine{    \};}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_ad7951fb25f5fbfb7fc25a95743203990}\label{binary__search__tree__int__tests_8c_ad7951fb25f5fbfb7fc25a95743203990}} 
+\index{binary\_search\_tree\_int\_tests.c@{binary\_search\_tree\_int\_tests.c}!TEST\_BST\_INT\_SIZE@{TEST\_BST\_INT\_SIZE}}
+\index{TEST\_BST\_INT\_SIZE@{TEST\_BST\_INT\_SIZE}!binary\_search\_tree\_int\_tests.c@{binary\_search\_tree\_int\_tests.c}}
+\doxysubsubsection{\texorpdfstring{TEST\_BST\_INT\_SIZE}{TEST\_BST\_INT\_SIZE}}
+{\footnotesize\ttfamily \#define TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+SIZE(\begin{DoxyParamCaption}\item[{}]{THE\+\_\+\+SIZE }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    TEST(\mbox{\hyperlink{binary__search__tree__int_8h_af1accc21179665643f12e5ad7b6f1b49}{size}}, bst\_int\_size\_\#\#THE\_SIZE) \{                               \(\backslash\)}
+\DoxyCodeLine{        test\_bst = create\_bst(THE\_SIZE);                                \(\backslash\)}
+\DoxyCodeLine{                                                                        \(\backslash\)}
+\DoxyCodeLine{        printf(\textcolor{stringliteral}{"{}testing size with BST of size \%d\(\backslash\)n"{}},                    \(\backslash\)}
+\DoxyCodeLine{               THE\_SIZE);                                               \(\backslash\)}
+\DoxyCodeLine{                                                                        \(\backslash\)}
+\DoxyCodeLine{        TEST\_ASSERT\_EQUAL\_INT\_MESSAGE(THE\_SIZE, \mbox{\hyperlink{binary__search__tree__int_8h_af1accc21179665643f12e5ad7b6f1b49}{size}}(test\_bst),         \(\backslash\)}
+\DoxyCodeLine{                                      \textcolor{stringliteral}{"{}The size should be THE\_SIZE"{}});   \(\backslash\)}
+\DoxyCodeLine{                                                                        \(\backslash\)}
+\DoxyCodeLine{        check\_bst\_property(test\_bst, THE\_SIZE);                         \(\backslash\)}
+\DoxyCodeLine{    \};}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a1357c0db337e1e9110a3828dbf54bc45}\label{binary__search__tree__int__tests_8c_a1357c0db337e1e9110a3828dbf54bc45}} 
+\index{binary\_search\_tree\_int\_tests.c@{binary\_search\_tree\_int\_tests.c}!TEST\_BST\_INT\_VALUE\_LEFT@{TEST\_BST\_INT\_VALUE\_LEFT}}
+\index{TEST\_BST\_INT\_VALUE\_LEFT@{TEST\_BST\_INT\_VALUE\_LEFT}!binary\_search\_tree\_int\_tests.c@{binary\_search\_tree\_int\_tests.c}}
+\doxysubsubsection{\texorpdfstring{TEST\_BST\_INT\_VALUE\_LEFT}{TEST\_BST\_INT\_VALUE\_LEFT}}
+{\footnotesize\ttfamily \#define TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+VALUE\+\_\+\+LEFT(\begin{DoxyParamCaption}\item[{}]{THE\+\_\+\+SIZE }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    TEST(\mbox{\hyperlink{binary__search__tree__int_8h_a0e2f84fcdc38784c5dc75fee42fdaa0a}{value}}, bst\_int\_value\_left\_\#\#THE\_SIZE) \{                        \(\backslash\)}
+\DoxyCodeLine{        test\_bst = create\_bst\_left(THE\_SIZE);                           \(\backslash\)}
+\DoxyCodeLine{                                                                        \(\backslash\)}
+\DoxyCodeLine{        printf(\textcolor{stringliteral}{"{}testing value with BST of size \%d like a (left) linked list (value at root \%d)\(\backslash\)n"{}}, \(\backslash\)}
+\DoxyCodeLine{               THE\_SIZE, THE\_SIZE);                                     \(\backslash\)}
+\DoxyCodeLine{                                                                        \(\backslash\)}
+\DoxyCodeLine{        char *msg;                                                      \(\backslash\)}
+\DoxyCodeLine{        asprintf(\&msg,                                                  \(\backslash\)}
+\DoxyCodeLine{                 \textcolor{stringliteral}{"{}The value at the root should be \%d"{}},                  \(\backslash\)}
+\DoxyCodeLine{                 THE\_SIZE);                                             \(\backslash\)}
+\DoxyCodeLine{                                                                        \(\backslash\)}
+\DoxyCodeLine{        TEST\_ASSERT\_EQUAL\_INT\_MESSAGE(THE\_SIZE, \mbox{\hyperlink{binary__search__tree__int_8h_a0e2f84fcdc38784c5dc75fee42fdaa0a}{value}}(test\_bst),        \(\backslash\)}
+\DoxyCodeLine{                                      msg);                             \(\backslash\)}
+\DoxyCodeLine{                                                                        \(\backslash\)}
+\DoxyCodeLine{        free(msg);                                                      \(\backslash\)}
+\DoxyCodeLine{                                                                        \(\backslash\)}
+\DoxyCodeLine{        check\_bst\_property(test\_bst, THE\_SIZE);                         \(\backslash\)}
+\DoxyCodeLine{    \};}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{binary__search__tree__int__tests_8c_a79515f41be7e6ad95fd11299dd78f065}\label{binary__search__tree__int__tests_8c_a79515f41be7e6ad95fd11299dd78f065}} 
+\index{binary\_search\_tree\_int\_tests.c@{binary\_search\_tree\_int\_tests.c}!TEST\_BST\_INT\_VALUE\_RIGHT@{TEST\_BST\_INT\_VALUE\_RIGHT}}
+\index{TEST\_BST\_INT\_VALUE\_RIGHT@{TEST\_BST\_INT\_VALUE\_RIGHT}!binary\_search\_tree\_int\_tests.c@{binary\_search\_tree\_int\_tests.c}}
+\doxysubsubsection{\texorpdfstring{TEST\_BST\_INT\_VALUE\_RIGHT}{TEST\_BST\_INT\_VALUE\_RIGHT}}
+{\footnotesize\ttfamily \#define TEST\+\_\+\+BST\+\_\+\+INT\+\_\+\+VALUE\+\_\+\+RIGHT(\begin{DoxyParamCaption}\item[{}]{THE\+\_\+\+SIZE }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    TEST(\mbox{\hyperlink{binary__search__tree__int_8h_a0e2f84fcdc38784c5dc75fee42fdaa0a}{value}}, bst\_int\_value\_right\_\#\#THE\_SIZE) \{                       \(\backslash\)}
+\DoxyCodeLine{        test\_bst = create\_bst\_right(THE\_SIZE);                          \(\backslash\)}
+\DoxyCodeLine{                                                                        \(\backslash\)}
+\DoxyCodeLine{        printf(\textcolor{stringliteral}{"{}testing value with BST of size \%d like a (right) linked list (value at root \%d)\(\backslash\)n"{}}, \(\backslash\)}
+\DoxyCodeLine{               THE\_SIZE, THE\_SIZE);                                     \(\backslash\)}
+\DoxyCodeLine{                                                                        \(\backslash\)}
+\DoxyCodeLine{        char *msg;                                                      \(\backslash\)}
+\DoxyCodeLine{        asprintf(\&msg,                                                  \(\backslash\)}
+\DoxyCodeLine{                 \textcolor{stringliteral}{"{}The value of the tree should be \%d"{}},                  \(\backslash\)}
+\DoxyCodeLine{                 0);                                                    \(\backslash\)}
+\DoxyCodeLine{                                                                        \(\backslash\)}
+\DoxyCodeLine{        TEST\_ASSERT\_EQUAL\_INT\_MESSAGE(0, \mbox{\hyperlink{binary__search__tree__int_8h_a0e2f84fcdc38784c5dc75fee42fdaa0a}{value}}(test\_bst),               \(\backslash\)}
+\DoxyCodeLine{                                      msg);                             \(\backslash\)}
+\DoxyCodeLine{                                                                        \(\backslash\)}
+\DoxyCodeLine{        free(msg);                                                      \(\backslash\)}
+\DoxyCodeLine{                                                                        \(\backslash\)}
+\DoxyCodeLine{        check\_bst\_property(test\_bst, THE\_SIZE);                         \(\backslash\)}
+\DoxyCodeLine{    \};}
+
+\end{DoxyCode}

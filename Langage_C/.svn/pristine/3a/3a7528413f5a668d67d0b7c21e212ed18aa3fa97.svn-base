@@ -1,0 +1,63 @@
+\hypertarget{move_8c}{}\doxysection{src/move.c File Reference}
+\label{move_8c}\index{src/move.c@{src/move.c}}
+
+
+A simple program to move the a player ~\newline
+  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+Include dependency graph for move.\+c\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \mbox{\hyperlink{move_8c_a54fff3269515a65fdccd10d075094841}{move\+\_\+function}} (char direction, char $\ast$p\+\_\+map, int height, int width)
+\begin{DoxyCompactList}\small\item\em Loading the p\+\_\+map from a file to a pointer towards a charmoving the player . \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A simple program to move the a player ~\newline
+ 
+
+\begin{DoxyAuthor}{Author}
+Salah-\/\+Eddine Yatim 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{move_8c_a54fff3269515a65fdccd10d075094841}\label{move_8c_a54fff3269515a65fdccd10d075094841}} 
+\index{move.c@{move.c}!move\_function@{move\_function}}
+\index{move\_function@{move\_function}!move.c@{move.c}}
+\doxysubsubsection{\texorpdfstring{move\_function()}{move\_function()}}
+{\footnotesize\ttfamily char$\ast$ move\+\_\+function (\begin{DoxyParamCaption}\item[{char}]{direction,  }\item[{char $\ast$}]{p\+\_\+map,  }\item[{int}]{height,  }\item[{int}]{width }\end{DoxyParamCaption})}
+
+
+
+Loading the p\+\_\+map from a file to a pointer towards a charmoving the player . 
+
+It takes loaded p\+\_\+map and see if we can move the player and give a new p\+\_\+map if the movement was possible and return the original p\+\_\+map if not
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & the width of the p\+\_\+map\\
+\hline
+{\em height} & the height of the p\+\_\+map\\
+\hline
+{\em p\+\_\+map} & the loaded p\+\_\+map by load fonction it\textquotesingle{}s a pointer\\
+\hline
+{\em direction} & \textquotesingle{}S\textquotesingle{} or \textquotesingle{}N\textquotesingle{} or \textquotesingle{}E\textquotesingle{} or \textquotesingle{}W\textquotesingle{}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyAuthor}{Author}
+Salah-\/\+Eddine Yatim 
+\end{DoxyAuthor}
+Trying to move north ~\newline
+
+
+Trying to move south
+
+Trying to move east
+
+Trying to move west

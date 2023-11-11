@@ -1,0 +1,180 @@
+/**
+ * @file test-replay.c
+ *
+ * @brief Simple test executable to show if the replay function is good 
+ *
+ * @author Salah-Eddine Yatim
+ *
+ */
+
+#include <assert.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include "loader.h"
+#include "move.h"
+#include "replay_function.h"
+
+//define the bigplan for soko1.in
+#define BIG_PLAN "NNWWSWWNEESWSWWWNNEESSESSWWNSEENNNENENESSSWSWENEESWWNENNWWSWWNWWSSESSEENNWNEWNEEENESSSWSWENENNWWWWWWSSESSEENNWESEENEESWWWENENNWWWWSSENWNEEENESSNWWWWWWSSESSEENEEEENWSWWWNNWNEEENESSSESWW"
+
+void test_replay_function(FILE *p_file , char* plan , int lenght, FILE *rp_file ) {
+
+    printf("  | tests for replay function ... ");
+
+    //Rest p_file because we use multiple time
+    
+    rewind(p_file); 
+    rewind(rp_file);
+
+
+    // read dimensions on first line
+    int width         = 0;
+    int height        = 0;
+    int fscanf_result = 0;
+
+    fscanf_result = fscanf(p_file, "%d %d\n", &width, &height);
+
+    if (fscanf_result != 2) {
+        fprintf(stderr, "First line is not syntactically correct!\n");
+        exit(EXIT_FAILURE);
+    }
+
+    //Starting replaying test 
+    
+    char *origin_map = load( width , height , p_file);
+
+    //Using replay function 
+    char *replay_origin_map = replay( origin_map , height , width , lenght , plan);
+
+
+    // ignore the first line  from result file to load the result p_map for using fgets function 
+    int trash_width         = 0;
+    int trash_height        = 0;
+    int trash_fscanf_result = 0;
+    trash_fscanf_result = fscanf(rp_file, "%d %d\n", &trash_width, &trash_height);
+
+    if (trash_fscanf_result != 2) {
+        fprintf(stderr, "First line is not syntactically correct!\n");
+        exit(EXIT_FAILURE);
+    }
+    //Done with first line from result p_map
+
+
+    //Getting result p_map 
+    char *result_map = load( width , height , rp_file);
+    
+
+    //Start comparing each char from each p_map 
+    for(int i=0 ; i < height ; i++ ){
+        
+        for(int j=0 ; j < width ; j++ ){
+
+        //Comparing
+        assert(result_map[i*width + j] == replay_origin_map[i*width + j]); 
+       
+        }
+    }
+
+
+    // //Si mvmt impossible on a pas d'espace a liberer on a pas utiliser malloc dans move donc cond reste 0
+    // int cond=0;
+    // if(replay_origin_map != origin_map){
+    //     cond = 1;
+    // }
+
+    // //Si on a utiliser malloc dans move cond==1 il faut liberer l'espace 
+    // if(cond == 1){
+    //     free(replay_origin_map);
+    // }
+    
+    
+    free(result_map);
+    free(origin_map);
+    free(replay_origin_map);
+
+    printf("OK!\n\n");
+}
+
+int main(void) {
+
+//Origin File     
+    FILE *p_file1 = NULL;
+    FILE *p_file2 = NULL;
+    
+
+   //Result File 
+    FILE *rp_file1 = NULL;
+    FILE *rp_file2 = NULL;
+    FILE *rp_file3 = NULL;
+    FILE *rp_file4 = NULL;
+    FILE *rp_file5 = NULL;
+    FILE *rp_file6 = NULL;
+    FILE *rp_file7 = NULL;
+   
+
+    // open Origin   file. The filename is the first argument on the command fopen 
+    p_file1 = fopen("./data/soko_dumb.in", "r");
+    p_file2 = fopen("./data/soko1.in", "r");
+
+
+    // open Result file. The filename is the first argument on the command fopen
+    rp_file1 = fopen("./data/soko_dumb_1.in", "r");
+    rp_file2 = fopen("./data/soko_dumb_2.in", "r");
+    rp_file3 = fopen("./data/soko_dumb_win.in", "r");
+    rp_file4 = fopen("./data/soko_dumb_3.in", "r");
+    rp_file5 = fopen("./data/soko1_1.in", "r");
+    rp_file6 = fopen("./data/soko1_2.in", "r");
+    rp_file7 = fopen("./data/soko1_win.in", "r");
+    
+    
+
+    
+    //Starting Moving Tests
+
+    printf("* Starting replay tests  \n");
+    
+    printf("Test for this replay : soko_dumb.in -- 3 -- ""SSSEENN"" -- soko_dumb_1.in \n");
+    test_replay_function(p_file1 , "SSSEENN" , 3 , rp_file1);
+
+    printf("Test for this replay : soko_dumb.in -- 5 -- ""SSSEENN"" -- soko_dumb_2.in \n");
+    test_replay_function(p_file1 , "SSSEENN" , 5 , rp_file2);
+
+    printf("Test for this replay : soko_dumb.in -- 7 -- ""SSSEENN"" -- soko_dumb_win.in \n");
+    test_replay_function(p_file1 , "SSSEENN" , 7 , rp_file3);
+
+    printf("Test for this replay : soko_dumb.in -- 7 -- ""ESEESSWNN"" -- soko_dumb_3.in \n");
+    test_replay_function(p_file1 , "ESEESSWNN" , 7 , rp_file4);
+
+    printf("Test for this replay : soko_dumb.in -- 9 -- ""ESEESSWNN"" -- soko_dumb_win.in \n");
+    test_replay_function(p_file1 , "ESEESSWNN" , 9 , rp_file3);
+
+    printf("Test for this replay : soko1.in -- 100 -- ""SSSEENN"" -- soko1_1.in \n");
+    test_replay_function(p_file2 , BIG_PLAN , 100 , rp_file5);
+
+    printf("Test for this replay : soko1.in -- 150 -- ""SSSEENN"" -- soko1_2.in \n");
+    test_replay_function(p_file2 , BIG_PLAN , 150 , rp_file6);
+
+    printf("Test for this replay : soko1.in -- 184 -- ""SSSEENN"" -- soko1_win.in \n");
+    test_replay_function(p_file2 , BIG_PLAN , 184 , rp_file7);
+
+
+
+
+    printf("  +-> OK!\n\n");
+
+//Closing Origin files 
+    fclose(p_file1);
+    fclose(p_file2);
+    
+
+//Closing Result files 
+    fclose(rp_file1);
+    fclose(rp_file2);
+    fclose(rp_file3);
+    fclose(rp_file4);
+    fclose(rp_file5);
+    fclose(rp_file6);
+    fclose(rp_file7);
+
+    return EXIT_SUCCESS;
+}

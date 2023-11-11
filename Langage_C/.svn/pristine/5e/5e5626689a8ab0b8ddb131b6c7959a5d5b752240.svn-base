@@ -1,0 +1,114 @@
+{
+    // a simple task file to build the application
+    "version": "2.0.0",
+    "tasks": [
+        {
+        "type": "cppbuild",
+        "label": "build explore-int",
+        "command": "make",
+        "args": [
+            "explore-int"
+        ],
+        "options": {
+            "cwd": "${workspaceFolder}"
+        },
+        "problemMatcher": [
+            "$gcc"
+        ],
+        "group": {
+            "kind": "build",
+            "isDefault": false
+        },
+    },
+        {
+        "type": "cppbuild",
+        "label": "build fact-pointer",
+        "command": "make",
+        "args": [
+            "fact-pointer"
+        ],
+        "options": {
+            "cwd": "${workspaceFolder}"
+        },
+        "problemMatcher": [
+            "$gcc"
+        ],
+        "group": {
+            "kind": "build",
+            "isDefault": false
+        },
+    },
+        {
+        "type": "cppbuild",
+        "label": "build pointers-torture-test",
+        "command": "make",
+        "args": [
+            "pointers-torture-test"
+        ],
+        "options": {
+            "cwd": "${workspaceFolder}"
+        },
+        "problemMatcher": [
+            "$gcc"
+        ],
+        "group": {
+            "kind": "build",
+            "isDefault": false
+        },
+    },
+        {
+        "type": "cppbuild",
+        "label": "build swap",
+        "command": "make",
+        "args": [
+            "swap"
+        ],
+        "options": {
+            "cwd": "${workspaceFolder}"
+        },
+        "problemMatcher": [
+            "$gcc"
+        ],
+        "group": {
+            "kind": "build",
+            "isDefault": false
+        },
+    },
+        {
+        "type": "cppbuild",
+        "label": "build stack-return",
+        "command": "make",
+        "args": [
+            "stack-return"
+        ],
+        "options": {
+            "cwd": "${workspaceFolder}"
+        },
+        "problemMatcher": [
+            "$gcc"
+        ],
+        "group": {
+            "kind": "build",
+            "isDefault": false
+        },
+    },
+        {
+        "type": "cppbuild",
+        "label": "build point_prog",
+        "command": "make",
+        "args": [
+            "point_prog"
+        ],
+        "options": {
+            "cwd": "${workspaceFolder}"
+        },
+        "problemMatcher": [
+            "$gcc"
+        ],
+        "group": {
+            "kind": "build",
+            "isDefault": false
+        },
+    },
+    ]
+}

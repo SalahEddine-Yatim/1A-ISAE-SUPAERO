@@ -1,0 +1,59 @@
+/**
+ * @file bst_map.h
+ *
+ * @brief Simple definition of BST containing `cells_map` values
+ *
+ * @author S.Yatim
+ *
+ */
+
+#ifndef BST_MAP_H
+#define BST_MAP_H
+
+#include "linked_list_map.h"
+#include "queue_map.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdbool.h>
+#include "loader.h"
+#include "move.h"
+
+
+/**
+ * @brief An alias to the structure representing the nodes of
+ *        the tree.
+ */
+typedef struct bst_node_cell_map bst_node_cell_map;
+
+/**
+ * @brief A binary tree is just a pointer to the root node
+ *        of the tree.
+ */
+typedef bst_node_cell_map *bst_cell_map;
+
+/**
+ * @brief The structure representing the nodes of the
+ *        binary tree.
+ */
+struct bst_node_cell_map {
+    /** The left subtree of the node */
+    bst_cell_map left;
+    /** The cell in the node */
+    cell_map*    p_cell;
+    /** The right subtree of the node */
+    bst_cell_map right;
+};
+
+
+/**
+ * @brief building a wining plan 
+ * 
+ * @param p_map_cell a pointer to a cell 
+ * 
+ * @param p_initial_map a pointer to the origin map  
+ * 
+ * @return the plan frm where how got this map 
+ */
+char* solve_function_bst(FILE *p_file);
+
+#endif

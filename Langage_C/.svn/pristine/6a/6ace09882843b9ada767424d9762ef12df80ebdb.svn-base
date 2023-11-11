@@ -1,0 +1,32 @@
+\hypertarget{app-play__without__gui_8c}{}\doxysection{src/app-\/play\+\_\+without\+\_\+gui.c File Reference}
+\label{app-play__without__gui_8c}\index{src/app-\/play\_without\_gui.c@{src/app-\/play\_without\_gui.c}}
+
+
+A simple program to play the sokoban game on terminal without the console.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}move.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}loader.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}sokoban.\+h\char`\"{}}\newline
+Include dependency graph for app-\/play\+\_\+without\+\_\+gui.c\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{app-play__without__gui_8c_a0ddf1224851353fc92bfbff6f499fa97}\label{app-play__without__gui_8c_a0ddf1224851353fc92bfbff6f499fa97}} 
+int {\bfseries main} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A simple program to play the sokoban game on terminal without the console. 
+
+Ex. of usage\+:
+
+./app-\/play\+\_\+without\+\_\+gui ./data/soko1.in
+
+\begin{DoxyAuthor}{Author}
+Salah-\/\+Eddine Yatim 
+\end{DoxyAuthor}

@@ -1,0 +1,83 @@
+#ifndef SOLVER_H
+#define SOLVER_H
+
+#include "linked_list_map.h"
+#include "queue_map.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdbool.h>
+#include "loader.h"
+#include "move.h"
+
+/**
+ * @brief The structure representing if there is awinning map 
+ */
+struct stats {
+    /** if there is a winnig map */
+    bool winninh ;
+    /** the plan of the winnig map  */
+    char plan ;
+    /** the lenght of the plan  */
+    int plan_lenght ;
+    
+};
+
+/**
+ * @brief verifying if the map is a winnig one
+ * 
+ * @param p_map  a pointer to a map 
+ * 
+ * @param width
+ * 
+ * @param height 
+ * 
+ * @return True or False
+ */
+bool is_a_winnig_map(char* p_map , int height , int width);
+
+/**
+ * @brief verifying if the map is in p_list
+ * 
+ * @param p_map  a pointer to a map 
+ * 
+ * @param p_list a pointer to a list of maps 
+ * 
+ * @return True or False
+ */
+bool is_in_list_map(linked_list_map* p_list, char* p_map, int height , int width);
+
+/**
+ * @brief building a wining plan 
+ * 
+ * @param p_map_cell a pointer to a cell 
+ * 
+ * @param p_initial_map a pointer to the origin map  
+ * 
+ * @return the plan frm where how got this map 
+ */
+char* build_plan(cell_map* p_map_cell , cell_map* p_initial_cell);
+
+/**
+ * @brief building a wining plan 
+ * 
+ * @param p_map_cell a pointer to a cell 
+ * 
+ * @param p_initial_map a pointer to the origin map  
+ * 
+ * @return the plan frm where how got this map 
+ */
+bool equal_maps(char* map1 , char* map2 , int height , int width);
+
+/**
+ * @brief building a wining plan 
+ * 
+ * @param p_map_cell a pointer to a cell 
+ * 
+ * @param p_initial_map a pointer to the origin map  
+ * 
+ * @return the plan frm where how got this map 
+ */
+char* solve_function(FILE *p_file);
+
+
+#endif

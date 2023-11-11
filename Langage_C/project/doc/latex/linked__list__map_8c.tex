@@ -1,0 +1,140 @@
+\hypertarget{linked__list__map_8c}{}\doxysection{src/linked\+\_\+list\+\_\+map.c File Reference}
+\label{linked__list__map_8c}\index{src/linked\_list\_map.c@{src/linked\_list\_map.c}}
+
+
+A simple program to use linked list structure.  
+
+
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}linked\+\_\+list\+\_\+map.\+h\char`\"{}}\newline
+Include dependency graph for linked\+\_\+list\+\_\+map.\+c\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{linked__list__map_8c_a24ba13c124cf5c7dc1da5867eb847081}\label{linked__list__map_8c_a24ba13c124cf5c7dc1da5867eb847081}} 
+\mbox{\hyperlink{structcell__map}{cell\+\_\+map}} $\ast$ {\bfseries go\+\_\+to\+\_\+position} (const \mbox{\hyperlink{structcell__map}{linked\+\_\+list\+\_\+map}} $\ast$p\+\_\+map\+\_\+list, int pos)
+\item 
+void \mbox{\hyperlink{linked__list__map_8c_a74ed052b9073b82cb4040969592fa885}{nil}} (\mbox{\hyperlink{structcell__map}{linked\+\_\+list\+\_\+map}} $\ast$p\+\_\+map\+\_\+list)
+\begin{DoxyCompactList}\small\item\em Creates an empty list. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{linked__list__map_8c_a05bc5e5ce978e9d9f1e5c0d6a7ba8bcf}{cons}} (\mbox{\hyperlink{structcell__map}{linked\+\_\+list\+\_\+map}} $\ast$p\+\_\+map\+\_\+list, char $\ast$p\+\_\+map)
+\begin{DoxyCompactList}\small\item\em Append an element at the beginning of a list. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{linked__list__map_8c_a233f6015c47721929ad31a64883dfb4b}{add\+\_\+cell}} (\mbox{\hyperlink{structcell__map}{linked\+\_\+list\+\_\+map}} $\ast$p\+\_\+map\+\_\+list, \mbox{\hyperlink{structcell__map}{cell\+\_\+map}} $\ast$p\+\_\+new\+\_\+cell)
+\begin{DoxyCompactList}\small\item\em Append a cell at the beginning of a list. \end{DoxyCompactList}\item 
+char $\ast$ \mbox{\hyperlink{linked__list__map_8c_ae8b9dba528670c54db3c9befdf77c5fa}{get\+\_\+element}} (\mbox{\hyperlink{structcell__map}{linked\+\_\+list\+\_\+map}} $\ast$p\+\_\+map\+\_\+list, int pos)
+\begin{DoxyCompactList}\small\item\em Get an element in the list at a specified position. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{linked__list__map_8c_ad123ca15515d6ca70da5253d57ff2cda}{deallocate\+\_\+map}} (\mbox{\hyperlink{structcell__map}{linked\+\_\+list\+\_\+map}} $\ast$p\+\_\+map\+\_\+list)
+\begin{DoxyCompactList}\small\item\em Deallocate a list. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A simple program to use linked list structure. 
+
+\begin{DoxyAuthor}{Author}
+Salah-\/\+Eddine Yatim 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{linked__list__map_8c_a233f6015c47721929ad31a64883dfb4b}\label{linked__list__map_8c_a233f6015c47721929ad31a64883dfb4b}} 
+\index{linked\_list\_map.c@{linked\_list\_map.c}!add\_cell@{add\_cell}}
+\index{add\_cell@{add\_cell}!linked\_list\_map.c@{linked\_list\_map.c}}
+\doxysubsubsection{\texorpdfstring{add\_cell()}{add\_cell()}}
+{\footnotesize\ttfamily void add\+\_\+cell (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structcell__map}{linked\+\_\+list\+\_\+map}} $\ast$}]{p\+\_\+map\+\_\+list,  }\item[{\mbox{\hyperlink{structcell__map}{cell\+\_\+map}} $\ast$}]{p\+\_\+new\+\_\+cell }\end{DoxyParamCaption})}
+
+
+
+Append a cell at the beginning of a list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+map\+\_\+list} & a pointer to the list to be modified \\
+\hline
+{\em new\+\_\+cell} & the cell to be added in the list\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPostcond}{Postcondition}
+The first cell of the list is now the cell passed as parameter. The other cells of the list are not modified and the new first cell has the previously first cell for next cell. (Cette fonction sera utiliser dans le solver) 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{linked__list__map_8c_a05bc5e5ce978e9d9f1e5c0d6a7ba8bcf}\label{linked__list__map_8c_a05bc5e5ce978e9d9f1e5c0d6a7ba8bcf}} 
+\index{linked\_list\_map.c@{linked\_list\_map.c}!cons@{cons}}
+\index{cons@{cons}!linked\_list\_map.c@{linked\_list\_map.c}}
+\doxysubsubsection{\texorpdfstring{cons()}{cons()}}
+{\footnotesize\ttfamily void cons (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structcell__map}{linked\+\_\+list\+\_\+map}} $\ast$}]{p\+\_\+map\+\_\+list,  }\item[{char $\ast$}]{p\+\_\+map }\end{DoxyParamCaption})}
+
+
+
+Append an element at the beginning of a list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+map\+\_\+list} & a pointer to the list to be modified \\
+\hline
+{\em p\+\_\+map} & the value to be added in the list\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPostcond}{Postcondition}
+The first cell of the list is now a new cell containing the value passed as parameter. The other cells of the list are not modified and the new first cell has the previously first cell for next cell. 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{linked__list__map_8c_ad123ca15515d6ca70da5253d57ff2cda}\label{linked__list__map_8c_ad123ca15515d6ca70da5253d57ff2cda}} 
+\index{linked\_list\_map.c@{linked\_list\_map.c}!deallocate\_map@{deallocate\_map}}
+\index{deallocate\_map@{deallocate\_map}!linked\_list\_map.c@{linked\_list\_map.c}}
+\doxysubsubsection{\texorpdfstring{deallocate\_map()}{deallocate\_map()}}
+{\footnotesize\ttfamily void deallocate\+\_\+map (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structcell__map}{linked\+\_\+list\+\_\+map}} $\ast$}]{p\+\_\+map\+\_\+list }\end{DoxyParamCaption})}
+
+
+
+Deallocate a list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+map\+\_\+list} & a pointer to them p\+\_\+map to be deallocated\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPostcond}{Postcondition}
+After the call to {\ttfamily deallocate\+\_\+map}, all cells composing {\ttfamily list} are deallocated AND the pointer representing the list is also deallocated. {\ttfamily p\+\_\+map\+\_\+list} is {\ttfamily NULL} after the call. 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{linked__list__map_8c_ae8b9dba528670c54db3c9befdf77c5fa}\label{linked__list__map_8c_ae8b9dba528670c54db3c9befdf77c5fa}} 
+\index{linked\_list\_map.c@{linked\_list\_map.c}!get\_element@{get\_element}}
+\index{get\_element@{get\_element}!linked\_list\_map.c@{linked\_list\_map.c}}
+\doxysubsubsection{\texorpdfstring{get\_element()}{get\_element()}}
+{\footnotesize\ttfamily char$\ast$ get\+\_\+element (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structcell__map}{linked\+\_\+list\+\_\+map}} $\ast$}]{p\+\_\+map\+\_\+list,  }\item[{int}]{pos }\end{DoxyParamCaption})}
+
+
+
+Get an element in the list at a specified position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+map\+\_\+list} & a pointer to the list to be queried \\
+\hline
+{\em pos} & the position of the wanted element \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+{\ttfamily pos} should be comprised between 0 and the length of the list (excluded)
+\end{DoxyPrecond}
+\begin{DoxyReturn}{Returns}
+the value stored at position {\ttfamily pos} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{linked__list__map_8c_a74ed052b9073b82cb4040969592fa885}\label{linked__list__map_8c_a74ed052b9073b82cb4040969592fa885}} 
+\index{linked\_list\_map.c@{linked\_list\_map.c}!nil@{nil}}
+\index{nil@{nil}!linked\_list\_map.c@{linked\_list\_map.c}}
+\doxysubsubsection{\texorpdfstring{nil()}{nil()}}
+{\footnotesize\ttfamily void nil (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structcell__map}{linked\+\_\+list\+\_\+map}} $\ast$}]{p\+\_\+map\+\_\+list }\end{DoxyParamCaption})}
+
+
+
+Creates an empty list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+list} & a pointer to the list to be set to nil\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPostcond}{Postcondition}
+After the call, p\+\_\+list points to a NULL cell. 
+\end{DoxyPostcond}

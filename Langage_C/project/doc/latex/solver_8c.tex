@@ -1,0 +1,149 @@
+\hypertarget{solver_8c}{}\doxysection{src/solver.c File Reference}
+\label{solver_8c}\index{src/solver.c@{src/solver.c}}
+
+
+A simple program to solve maps.  
+
+
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}solver.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}linked\+\_\+list\+\_\+map.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}queue\+\_\+map.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}loader.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}move.\+h\char`\"{}}\newline
+Include dependency graph for solver.\+c\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{solver_8c_a5aeea433c26de4cefdaa5320fb9bf441}{is\+\_\+a\+\_\+winnig\+\_\+map}} (char $\ast$p\+\_\+map, int \mbox{\hyperlink{bst__map_8c_a5b6eab7c0c0e148caacae4d6c92d4e9b}{height}}, int width)
+\begin{DoxyCompactList}\small\item\em verifying if the map is a winnig one \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{solver_8c_a9114d3566322ee5bcf7dcf83aa37818b}{is\+\_\+in\+\_\+list\+\_\+map}} (\mbox{\hyperlink{structcell__map}{linked\+\_\+list\+\_\+map}} $\ast$p\+\_\+list, char $\ast$p\+\_\+map, int \mbox{\hyperlink{bst__map_8c_a5b6eab7c0c0e148caacae4d6c92d4e9b}{height}}, int width)
+\begin{DoxyCompactList}\small\item\em verifying if the map is in p\+\_\+list \end{DoxyCompactList}\item 
+char $\ast$ \mbox{\hyperlink{solver_8c_a37331f35a0c6967da77e57837e1e8e03}{build\+\_\+plan}} (\mbox{\hyperlink{structcell__map}{cell\+\_\+map}} $\ast$p\+\_\+map\+\_\+cell, \mbox{\hyperlink{structcell__map}{cell\+\_\+map}} $\ast$p\+\_\+initial\+\_\+cell)
+\begin{DoxyCompactList}\small\item\em building a wining plan \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{solver_8c_aacacd6bf539d1f3c013fa34e7fd70a4a}{equal\+\_\+maps}} (char $\ast$p\+\_\+map1, char $\ast$p\+\_\+map2, int \mbox{\hyperlink{bst__map_8c_a5b6eab7c0c0e148caacae4d6c92d4e9b}{height}}, int width)
+\begin{DoxyCompactList}\small\item\em verifying if two maps are the same ~\newline
+ \end{DoxyCompactList}\item 
+char $\ast$ \mbox{\hyperlink{solver_8c_a90a95aeaba27d120611356bfa8b54ee5}{solve\+\_\+function}} (FILE $\ast$p\+\_\+file)
+\begin{DoxyCompactList}\small\item\em give the solvi,g plan if possible \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A simple program to solve maps. 
+
+\begin{DoxyAuthor}{Author}
+Salah-\/\+Eddine Yatim 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{solver_8c_a37331f35a0c6967da77e57837e1e8e03}\label{solver_8c_a37331f35a0c6967da77e57837e1e8e03}} 
+\index{solver.c@{solver.c}!build\_plan@{build\_plan}}
+\index{build\_plan@{build\_plan}!solver.c@{solver.c}}
+\doxysubsubsection{\texorpdfstring{build\_plan()}{build\_plan()}}
+{\footnotesize\ttfamily char$\ast$ build\+\_\+plan (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structcell__map}{cell\+\_\+map}} $\ast$}]{p\+\_\+map\+\_\+cell,  }\item[{\mbox{\hyperlink{structcell__map}{cell\+\_\+map}} $\ast$}]{p\+\_\+initial\+\_\+cell }\end{DoxyParamCaption})}
+
+
+
+building a wining plan 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+map\+\_\+cell} & a pointer to a cell\\
+\hline
+{\em p\+\_\+initial\+\_\+cell} & a pointer to the origin \mbox{\hyperlink{structcell__map}{cell\+\_\+map}} ~\newline
+\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the plan to get the map in initial\+\_\+cell 
+\end{DoxyReturn}
+\mbox{\Hypertarget{solver_8c_aacacd6bf539d1f3c013fa34e7fd70a4a}\label{solver_8c_aacacd6bf539d1f3c013fa34e7fd70a4a}} 
+\index{solver.c@{solver.c}!equal\_maps@{equal\_maps}}
+\index{equal\_maps@{equal\_maps}!solver.c@{solver.c}}
+\doxysubsubsection{\texorpdfstring{equal\_maps()}{equal\_maps()}}
+{\footnotesize\ttfamily bool equal\+\_\+maps (\begin{DoxyParamCaption}\item[{char $\ast$}]{p\+\_\+map1,  }\item[{char $\ast$}]{p\+\_\+map2,  }\item[{int}]{height,  }\item[{int}]{width }\end{DoxyParamCaption})}
+
+
+
+verifying if two maps are the same ~\newline
+ 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+map1} & a pointer to first map\\
+\hline
+{\em p\+\_\+map2} & a pointer to the second map\\
+\hline
+{\em width} & \\
+\hline
+{\em height} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True or false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{solver_8c_a5aeea433c26de4cefdaa5320fb9bf441}\label{solver_8c_a5aeea433c26de4cefdaa5320fb9bf441}} 
+\index{solver.c@{solver.c}!is\_a\_winnig\_map@{is\_a\_winnig\_map}}
+\index{is\_a\_winnig\_map@{is\_a\_winnig\_map}!solver.c@{solver.c}}
+\doxysubsubsection{\texorpdfstring{is\_a\_winnig\_map()}{is\_a\_winnig\_map()}}
+{\footnotesize\ttfamily bool is\+\_\+a\+\_\+winnig\+\_\+map (\begin{DoxyParamCaption}\item[{char $\ast$}]{p\+\_\+map,  }\item[{int}]{height,  }\item[{int}]{width }\end{DoxyParamCaption})}
+
+
+
+verifying if the map is a winnig one 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+map} & a pointer to a map\\
+\hline
+{\em width} & \\
+\hline
+{\em height} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True or False 
+\end{DoxyReturn}
+\mbox{\Hypertarget{solver_8c_a9114d3566322ee5bcf7dcf83aa37818b}\label{solver_8c_a9114d3566322ee5bcf7dcf83aa37818b}} 
+\index{solver.c@{solver.c}!is\_in\_list\_map@{is\_in\_list\_map}}
+\index{is\_in\_list\_map@{is\_in\_list\_map}!solver.c@{solver.c}}
+\doxysubsubsection{\texorpdfstring{is\_in\_list\_map()}{is\_in\_list\_map()}}
+{\footnotesize\ttfamily bool is\+\_\+in\+\_\+list\+\_\+map (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structcell__map}{linked\+\_\+list\+\_\+map}} $\ast$}]{p\+\_\+list,  }\item[{char $\ast$}]{p\+\_\+map,  }\item[{int}]{height,  }\item[{int}]{width }\end{DoxyParamCaption})}
+
+
+
+verifying if the map is in p\+\_\+list 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+map} & a pointer to a map\\
+\hline
+{\em p\+\_\+list} & a pointer to a list of maps\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True or False 
+\end{DoxyReturn}
+\mbox{\Hypertarget{solver_8c_a90a95aeaba27d120611356bfa8b54ee5}\label{solver_8c_a90a95aeaba27d120611356bfa8b54ee5}} 
+\index{solver.c@{solver.c}!solve\_function@{solve\_function}}
+\index{solve\_function@{solve\_function}!solver.c@{solver.c}}
+\doxysubsubsection{\texorpdfstring{solve\_function()}{solve\_function()}}
+{\footnotesize\ttfamily char$\ast$ solve\+\_\+function (\begin{DoxyParamCaption}\item[{FILE $\ast$}]{p\+\_\+file }\end{DoxyParamCaption})}
+
+
+
+give the solvi,g plan if possible 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+file} & the file contains the map to solve\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the plan to solve the map ~\newline
+ 
+\end{DoxyReturn}

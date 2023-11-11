@@ -1,0 +1,39 @@
+\hypertarget{app-sokoban__for__testing_8c}{}\section{src/app-\/sokoban\+\_\+for\+\_\+testing.c File Reference}
+\label{app-sokoban__for__testing_8c}\index{src/app-\/sokoban\+\_\+for\+\_\+testing.\+c@{src/app-\/sokoban\+\_\+for\+\_\+testing.\+c}}
+
+
+A simple program to try all function load move print and replay on a file.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}move.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}loader.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}sokoban.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}replay\+\_\+function.\+h\char`\"{}}\newline
+Include dependency graph for app-\/sokoban\+\_\+for\+\_\+testing.c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{app-sokoban__for__testing_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{app-sokoban__for__testing_8c_a0ddf1224851353fc92bfbff6f499fa97}\label{app-sokoban__for__testing_8c_a0ddf1224851353fc92bfbff6f499fa97}} 
+int {\bfseries main} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A simple program to try all function load move print and replay on a file. 
+
+Ex. of usage\+:
+
+./app-\/sokoban\+\_\+for\+\_\+testing ./data/soko1.in
+
+\begin{DoxyAuthor}{Author}
+Salah-\/\+Eddine Yatim 
+\end{DoxyAuthor}

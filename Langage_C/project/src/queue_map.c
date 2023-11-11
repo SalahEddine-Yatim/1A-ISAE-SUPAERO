@@ -1,0 +1,117 @@
+/**
+ * @file queue_map.c
+ * 
+ * @brief A simple program to use queue structure 
+ * 
+ * @author Salah-Eddine Yatim
+ */
+
+
+#include <stdbool.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+#include "linked_list_map.h"
+#include "queue_map.h"
+
+
+void nil_queue(queue_map* p_queue){
+    
+    //allocating space for the head and the tail 
+    p_queue->p_tail = malloc(sizeof(cell_map)) ;
+    p_queue->p_head = malloc(sizeof(cell_map)) ;
+
+    //Initialize the head and the tail 
+    //The head cell and the tail cell don't contain maps they just point 
+    // to the first and last cell of the queue
+    p_queue->p_tail->p_map = NULL ;
+    p_queue->p_tail->p_next_map = NULL ;
+
+    p_queue->p_head->p_map = NULL ;
+    p_queue->p_head->p_next_map = NULL ;
+
+}
+
+cell_map* dequeue(queue_map* p_queue){
+
+    //a cell represanting the first cell of the queue 
+    cell_map* head = p_queue->p_head->p_next_map ;
+
+    //this condition to see if there is only one cell left 
+    if(p_queue->p_head->p_next_map == p_queue->p_tail->p_next_map){ 
+
+        //if only one cell left then the queue will be a nilqueue
+        p_queue->p_tail->p_next_map = NULL ;
+        p_queue->p_head->p_next_map = NULL ;
+
+    }
+    else{
+        p_queue->p_head->p_next_map = head->p_next_map ;
+    }
+
+    return head ;
+}
+
+
+void enqueue(queue_map* p_queue , char* p_map){
+    
+    //the cell that will contain p_map and be the new last cell 
+    cell_map *p_new_tail = malloc(sizeof(cell_map));
+
+    if (p_new_tail == NULL) {
+        printf("problem with creating cell in enqueue!\n");
+    }
+
+    //Initializeing the cell ...
+    p_new_tail->p_map = p_map;
+    p_new_tail->p_next_map  = NULL;
+
+    //If the queue is empty 
+    if ( p_queue->p_head->p_next_map == NULL){
+        p_queue->p_head->p_next_map = p_new_tail ;
+    }
+
+    else{
+        p_queue->p_tail->p_next_map->p_next_map = p_new_tail ;
+    }
+    
+    p_queue->p_tail->p_next_map = p_new_tail ;
+
+}
+
+//This fonction is used in the solver 
+//Same fonction of enqueue exept we enqueue a cell that already exist 
+void enqueue_cell(queue_map* p_queue , cell_map* p_map_cell){
+
+    p_map_cell->p_next_map  = NULL;
+
+    if ( p_queue->p_head->p_next_map == NULL){
+        p_queue->p_head->p_next_map = p_map_cell ;
+    }
+    else{
+        p_queue->p_tail->p_next_map->p_next_map = p_map_cell ;
+    }
+    
+    p_queue->p_tail->p_next_map = p_map_cell ;
+
+}
+
+//Deallocating all cells and all maps in the cells of p_queue
+void deallocate_queue(queue_map* p_queue){
+
+    cell_map *p_temp_cell    = NULL;
+    cell_map *p_current_cell = p_queue->p_head->p_next_map;
+
+    while (p_current_cell != NULL) {
+        p_temp_cell    = p_current_cell;
+        p_current_cell = p_current_cell->p_next_map;
+        free(p_temp_cell->p_map); // THIS LINE IS IMPORTANT FOR THE SOLVER 
+        free(p_temp_cell);
+    }
+
+    free(p_queue->p_head);
+    free(p_queue->p_tail);
+
+}
+
+

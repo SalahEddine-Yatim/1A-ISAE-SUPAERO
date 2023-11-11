@@ -1,0 +1,124 @@
+\hypertarget{queue__map_8c}{}\doxysection{src/queue\+\_\+map.c File Reference}
+\label{queue__map_8c}\index{src/queue\_map.c@{src/queue\_map.c}}
+
+
+A simple program to use queue structure.  
+
+
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}linked\+\_\+list\+\_\+map.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}queue\+\_\+map.\+h\char`\"{}}\newline
+Include dependency graph for queue\+\_\+map.\+c\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{queue__map_8c_a667d772630af13c6b67c60f98349bb3b}{nil\+\_\+queue}} (\mbox{\hyperlink{structqueue__map}{queue\+\_\+map}} $\ast$p\+\_\+queue)
+\begin{DoxyCompactList}\small\item\em Creates an empty p\+\_\+queue. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structcell__map}{cell\+\_\+map}} $\ast$ \mbox{\hyperlink{queue__map_8c_aa24d1984d297776123360dd1c7d04e0a}{dequeue}} (\mbox{\hyperlink{structqueue__map}{queue\+\_\+map}} $\ast$p\+\_\+queue)
+\begin{DoxyCompactList}\small\item\em Get the head cell of the p\+\_\+queue. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{queue__map_8c_afa1fac27701a9ddbd46cb06389c23e2a}{enqueue}} (\mbox{\hyperlink{structqueue__map}{queue\+\_\+map}} $\ast$p\+\_\+queue, char $\ast$p\+\_\+map)
+\begin{DoxyCompactList}\small\item\em adding an element at the tail of the p\+\_\+queue \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{queue__map_8c_a8df9770655af3dec7a787d72ddc16694}{enqueue\+\_\+cell}} (\mbox{\hyperlink{structqueue__map}{queue\+\_\+map}} $\ast$p\+\_\+queue, \mbox{\hyperlink{structcell__map}{cell\+\_\+map}} $\ast$p\+\_\+map\+\_\+cell)
+\begin{DoxyCompactList}\small\item\em adding a cell at the tail of the p\+\_\+queue a this function is used in \mbox{\hyperlink{solver_8c}{solver.\+c}} \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{queue__map_8c_a62501532e033b96539413a9713df0576}{deallocate\+\_\+queue}} (\mbox{\hyperlink{structqueue__map}{queue\+\_\+map}} $\ast$p\+\_\+queue)
+\begin{DoxyCompactList}\small\item\em Deallocate a p\+\_\+queue. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A simple program to use queue structure. 
+
+\begin{DoxyAuthor}{Author}
+Salah-\/\+Eddine Yatim 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{queue__map_8c_a62501532e033b96539413a9713df0576}\label{queue__map_8c_a62501532e033b96539413a9713df0576}} 
+\index{queue\_map.c@{queue\_map.c}!deallocate\_queue@{deallocate\_queue}}
+\index{deallocate\_queue@{deallocate\_queue}!queue\_map.c@{queue\_map.c}}
+\doxysubsubsection{\texorpdfstring{deallocate\_queue()}{deallocate\_queue()}}
+{\footnotesize\ttfamily void deallocate\+\_\+queue (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structqueue__map}{queue\+\_\+map}} $\ast$}]{p\+\_\+queue }\end{DoxyParamCaption})}
+
+
+
+Deallocate a p\+\_\+queue. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+queue} & a p\+\_\+queue\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPostcond}{Postcondition}
+After the call to {\ttfamily deallocate\+\_\+queue}, all cells composing {\ttfamily p\+\_\+queue} are deallocated and p\+\_\+head and p\+\_\+tail point to NULL. 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{queue__map_8c_aa24d1984d297776123360dd1c7d04e0a}\label{queue__map_8c_aa24d1984d297776123360dd1c7d04e0a}} 
+\index{queue\_map.c@{queue\_map.c}!dequeue@{dequeue}}
+\index{dequeue@{dequeue}!queue\_map.c@{queue\_map.c}}
+\doxysubsubsection{\texorpdfstring{dequeue()}{dequeue()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structcell__map}{cell\+\_\+map}}$\ast$ dequeue (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structqueue__map}{queue\+\_\+map}} $\ast$}]{p\+\_\+queue }\end{DoxyParamCaption})}
+
+
+
+Get the head cell of the p\+\_\+queue. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+queue} & a p\+\_\+queue\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the head cell 
+\end{DoxyReturn}
+\mbox{\Hypertarget{queue__map_8c_afa1fac27701a9ddbd46cb06389c23e2a}\label{queue__map_8c_afa1fac27701a9ddbd46cb06389c23e2a}} 
+\index{queue\_map.c@{queue\_map.c}!enqueue@{enqueue}}
+\index{enqueue@{enqueue}!queue\_map.c@{queue\_map.c}}
+\doxysubsubsection{\texorpdfstring{enqueue()}{enqueue()}}
+{\footnotesize\ttfamily void enqueue (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structqueue__map}{queue\+\_\+map}} $\ast$}]{p\+\_\+queue,  }\item[{char $\ast$}]{p\+\_\+map }\end{DoxyParamCaption})}
+
+
+
+adding an element at the tail of the p\+\_\+queue 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+queue} & a p\+\_\+queue \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{queue__map_8c_a8df9770655af3dec7a787d72ddc16694}\label{queue__map_8c_a8df9770655af3dec7a787d72ddc16694}} 
+\index{queue\_map.c@{queue\_map.c}!enqueue\_cell@{enqueue\_cell}}
+\index{enqueue\_cell@{enqueue\_cell}!queue\_map.c@{queue\_map.c}}
+\doxysubsubsection{\texorpdfstring{enqueue\_cell()}{enqueue\_cell()}}
+{\footnotesize\ttfamily void enqueue\+\_\+cell (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structqueue__map}{queue\+\_\+map}} $\ast$}]{p\+\_\+queue,  }\item[{\mbox{\hyperlink{structcell__map}{cell\+\_\+map}} $\ast$}]{p\+\_\+map\+\_\+cell }\end{DoxyParamCaption})}
+
+
+
+adding a cell at the tail of the p\+\_\+queue a this function is used in \mbox{\hyperlink{solver_8c}{solver.\+c}} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+queue} & a p\+\_\+queue \\
+\hline
+{\em p\+\_\+map\+\_\+cell} & the cell to add to p\+\_\+queue \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{queue__map_8c_a667d772630af13c6b67c60f98349bb3b}\label{queue__map_8c_a667d772630af13c6b67c60f98349bb3b}} 
+\index{queue\_map.c@{queue\_map.c}!nil\_queue@{nil\_queue}}
+\index{nil\_queue@{nil\_queue}!queue\_map.c@{queue\_map.c}}
+\doxysubsubsection{\texorpdfstring{nil\_queue()}{nil\_queue()}}
+{\footnotesize\ttfamily void nil\+\_\+queue (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structqueue__map}{queue\+\_\+map}} $\ast$}]{p\+\_\+queue }\end{DoxyParamCaption})}
+
+
+
+Creates an empty p\+\_\+queue. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+queue} & a p\+\_\+queue be set to nil\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPostcond}{Postcondition}
+After the call, p\+\_\+head and p\+\_\+tail point to NULL. 
+\end{DoxyPostcond}

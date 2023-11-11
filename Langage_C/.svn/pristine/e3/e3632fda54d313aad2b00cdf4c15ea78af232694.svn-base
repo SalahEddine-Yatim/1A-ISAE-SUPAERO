@@ -1,0 +1,63 @@
+\hypertarget{replay__function_8c}{}\section{src/replay\+\_\+function.c File Reference}
+\label{replay__function_8c}\index{src/replay\+\_\+function.\+c@{src/replay\+\_\+function.\+c}}
+
+
+A simple program that allow u to replay a game.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}move.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}loader.\+h\char`\"{}}\newline
+Include dependency graph for replay\+\_\+function.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=291pt]{replay__function_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \mbox{\hyperlink{replay__function_8c_a050be740f27594c42fae7b50294f010d}{replay}} (char $\ast$p\+\_\+map, int height, int width, int lenght, char $\ast$plan)
+\begin{DoxyCompactList}\small\item\em its a similar fonction to move but insted of one movement we have a plan of mouvements \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A simple program that allow u to replay a game. 
+
+\begin{DoxyAuthor}{Author}
+Salah-\/\+Eddine Yati 
+\end{DoxyAuthor}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{replay__function_8c_a050be740f27594c42fae7b50294f010d}\label{replay__function_8c_a050be740f27594c42fae7b50294f010d}} 
+\index{replay\+\_\+function.\+c@{replay\+\_\+function.\+c}!replay@{replay}}
+\index{replay@{replay}!replay\+\_\+function.\+c@{replay\+\_\+function.\+c}}
+\subsubsection{\texorpdfstring{replay()}{replay()}}
+{\footnotesize\ttfamily char$\ast$ replay (\begin{DoxyParamCaption}\item[{char $\ast$}]{p\+\_\+map,  }\item[{int}]{height,  }\item[{int}]{width,  }\item[{int}]{lenght,  }\item[{char $\ast$}]{plan }\end{DoxyParamCaption})}
+
+
+
+its a similar fonction to move but insted of one movement we have a plan of mouvements 
+
+it takes the loaded p\+\_\+map and start moving the player and each time it creates a new p\+\_\+map if the mouvement is possible and free its space when done with it ? It return the last p\+\_\+map after all mouvements
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & the width of the p\+\_\+map\\
+\hline
+{\em height} & the height of the p\+\_\+map\\
+\hline
+{\em p\+\_\+map} & the loaded p\+\_\+map by load fonction it\textquotesingle{}s a pointer\\
+\hline
+{\em plan} & the string containing the direction wanted\\
+\hline
+{\em lenght} & how many opperation needed\\
+\hline
+\end{DoxyParams}
+\begin{DoxyAuthor}{Author}
+Salah-\/\+Eddine Yatim 
+\end{DoxyAuthor}

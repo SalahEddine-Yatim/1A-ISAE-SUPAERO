@@ -1,0 +1,57 @@
+\hypertarget{loader_8c}{}\section{src/loader.c File Reference}
+\label{loader_8c}\index{src/loader.\+c@{src/loader.\+c}}
+
+
+A simple program to load the p\+\_\+map from a .in file to a pointer.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+Include dependency graph for loader.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{loader_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \mbox{\hyperlink{loader_8c_af21d55079d546bf11a6e626dbd185d4f}{load}} (int width, int height, F\+I\+LE $\ast$p\+\_\+file)
+\begin{DoxyCompactList}\small\item\em Loading the p\+\_\+map from a file to a pointer towards a char . \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A simple program to load the p\+\_\+map from a .in file to a pointer. 
+
+\begin{DoxyAuthor}{Author}
+Salah-\/\+Eddine Yatim 
+\end{DoxyAuthor}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{loader_8c_af21d55079d546bf11a6e626dbd185d4f}\label{loader_8c_af21d55079d546bf11a6e626dbd185d4f}} 
+\index{loader.\+c@{loader.\+c}!load@{load}}
+\index{load@{load}!loader.\+c@{loader.\+c}}
+\subsubsection{\texorpdfstring{load()}{load()}}
+{\footnotesize\ttfamily char$\ast$ load (\begin{DoxyParamCaption}\item[{int}]{width,  }\item[{int}]{height,  }\item[{F\+I\+LE $\ast$}]{p\+\_\+file }\end{DoxyParamCaption})}
+
+
+
+Loading the p\+\_\+map from a file to a pointer towards a char . 
+
+It takes the p\+\_\+file and extract eache charch, notice that the load fonction should already have the dimension of the p\+\_\+map
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & the width of the p\+\_\+map\\
+\hline
+{\em height} & the height of the p\+\_\+map\\
+\hline
+{\em p\+\_\+file} & the file .in from which we want to load the p\+\_\+map\\
+\hline
+\end{DoxyParams}
+\begin{DoxyAuthor}{Author}
+Salah-\/\+Eddine Yatim 
+\end{DoxyAuthor}
